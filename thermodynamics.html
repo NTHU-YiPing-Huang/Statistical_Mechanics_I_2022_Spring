@@ -1,256 +1,285 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>Thermodynamics as an effective theory &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Thermodynamics as an effective theory</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Motivation: Why learn statistical mechanics?" href="motivation.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
-  
-   
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Motivation: Why learn statistical mechanics?" href="motivation.html" />
+  <link rel="prev" title="Introduction" href="introduction.html" /> 
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#thermodynamics" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
-           class="md-header-nav__button md-logo">
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-              <img src="_static/logo-wide.svg" height="26"
-                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
-          <span class="md-header-nav__topic"> Thermodynamics as an effective theory </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
   </div>
-</div>
-
-      </div>
-      
-      
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
   
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
 
-    </div>
-  </nav>
-</header>
+            
+          </li>
 
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
-          <li class="md-tabs__item"><a href="introduction.html" class="md-tabs__link">Introduction</a></li>
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
       </ul>
     </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
-      
-        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="syllabus.html"
-       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
-  </label>
   
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#thermodynamics--page-root" class="md-nav__link">Thermodynamics as an effective theory</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#what-is-thermodynamics" class="md-nav__link">What is thermodynamics?</a>
-        </li>
-        <li class="md-nav__item"><a href="#how-to-go-from-microscopic-to-macroscopic" class="md-nav__link">How to go from microscopic to macroscopic?</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" class="md-nav__link">Microscopic theory, statistical mechanics and macroscopic observables</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/thermodynamics.md">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
         
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+          <li class="toctree-l1 ">
             
-  
-<h1 id="thermodynamics--page-root">Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span> 6.4</em></p>
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
 
-<h2 id="what-is-thermodynamics">What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">¶</a></h2>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="introduction.html">Introduction</a> &raquo;</li>
+    
+    <li>Thermodynamics as an effective theory</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="introduction.html"
+       title="previous chapter">← Introduction</a>
+  </li>
+  <li class="next">
+    <a href="motivation.html"
+       title="next chapter">Motivation: Why learn statistical mechanics? →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="thermodynamics-as-an-effective-theory">
+<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline">¶</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span> 6.4</em></p>
+<div class="section" id="what-is-thermodynamics">
+<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">¶</a></h2>
 <p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
 <p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
 <p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
 <div class="figure align-default" id="micro-macro-1">
-<a class="reference internal image-reference" href="_images/micro_macro_1.png"><img alt="_images/micro_macro_1.png" src="_images/micro_macro_1.png" style="width: 750px;"/></a>
+<a class="reference internal image-reference" href="_images/micro_macro_1.png"><img alt="_images/micro_macro_1.png" src="_images/micro_macro_1.png" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The microscopic physics and connection with macroscopic physics.</span><a class="headerlink" href="#micro-macro-1" title="Permalink to this image">¶</a></p>
 </div>
-
-
-<h2 id="how-to-go-from-microscopic-to-macroscopic">How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-go-from-microscopic-to-macroscopic">
+<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">¶</a></h2>
 <p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
 <p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
 <p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
 <p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
-
-<h3 id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
+<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">¶</a></h3>
 <p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
 <p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
 <p>There are at least two routes:</p>
@@ -260,19 +289,20 @@
 </ol>
 <p>How to proceed using different routes is related to condensed matter physics, so I am not going to elaborate on them further. The point is, no matter which route we take, we will eventually get the information of the energy spectrum if the approach works. Depending on our approach, the spectrum might be discrete, or it might be continuous. The energy spectrum we derived will depend on the microscopic parameters that characterize the system. With the information of the spectrum(derived with various routes), statistical mechanics provides a protocol to convert that information into the macroscopic measurable quantities such as specific heat, magnetization, <em>etc.</em> Then one can compare our calculations with the real experiments and see if we can learn something from the experiments to construct what happened at the microscopic scale. The result will not be identical to the experiments since we usually need to make certain approximations to proceed. The difference between our calculation and the experiments provides hints on improving our approximation or abandon the theoretically proposed microscopic picture. By iterating this process and comparing the experiments and theoretical predictions back and forth, we will eventually reach some conclusion, if we are lucky.</p>
 <div class="figure align-default" id="micro-macro-logic-2">
-<a class="reference internal image-reference" href="_images/micro_macro_logic_2.png"><img alt="_images/micro_macro_logic_2.png" src="_images/micro_macro_logic_2.png" style="width: 750px;"/></a>
+<a class="reference internal image-reference" href="_images/micro_macro_logic_2.png"><img alt="_images/micro_macro_logic_2.png" src="_images/micro_macro_logic_2.png" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">How statistical mechanics helps us understanding the physics at microscopic level.</span><a class="headerlink" href="#micro-macro-logic-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.</p>
 <p>The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with <span class="math notranslate nohighlight">\(10^{23}\)</span> degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the <strong>effective theory</strong> of our complex system. It means we can understand the complex system effectively using our effective theory. <strong>Effective theory</strong> and the concept of <strong>emergent phenomena</strong> form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.</p>
 <div class="figure align-default" id="directive-fig">
-<a class="reference internal image-reference" href="_images/StatMech_roadmap.png"><img alt="_images/StatMech_roadmap.png" src="_images/StatMech_roadmap.png" style="width: 750px;"/></a>
+<a class="reference internal image-reference" href="_images/StatMech_roadmap.png"><img alt="_images/StatMech_roadmap.png" src="_images/StatMech_roadmap.png" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The roadmap of the course!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+</div>
+</div>
 
-
-
-<script type="text/x-thebe-config">
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -290,63 +320,29 @@
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
+    <script>kernelName = 'python3'</script>
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="introduction.html" title="Introduction"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> Introduction </span>
-              </div>
-            </a>
-          
-          
-            <a href="motivation.html" title="Motivation: Why learn statistical mechanics?"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Motivation: Why learn statistical mechanics? </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2021.
-              
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="introduction.html"
+       title="previous chapter">← Introduction</a>
+  </li>
+  <li class="next">
+    <a href="motivation.html"
+       title="next chapter">Motivation: Why learn statistical mechanics? →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>

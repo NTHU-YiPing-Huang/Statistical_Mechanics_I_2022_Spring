@@ -1,423 +1,366 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>Basic introduction of python &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Basic introduction of python</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic numerics and plot" href="Python_tutorial_1.html" />
-    <link rel="prev" title="Numerical tools" href="numerical_tools.html" />
-  
-   
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Basic numerics and plot" href="Python_tutorial_1.html" />
+  <link rel="prev" title="Numerical tools" href="numerical_tools.html" /> 
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#Python_tutorial_0" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
-           class="md-header-nav__button md-logo">
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-              <img src="_static/logo-wide.svg" height="26"
-                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
-          <span class="md-header-nav__topic"> Basic introduction of python </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
   </div>
-</div>
-
-      </div>
-      
-      
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
   
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
 
-    </div>
-  </nav>
-</header>
+            
+          </li>
 
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
-          <li class="md-tabs__item"><a href="numerical_tools.html" class="md-tabs__link">Numerical tools</a></li>
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
       </ul>
     </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
-      
-        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="syllabus.html"
-       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
-  </label>
   
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#python-tutorial-0--page-root" class="md-nav__link">Basic introduction of python</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#setting-the-environment-for-python" class="md-nav__link">Setting the environment for Python</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-numerical-approach" class="md-nav__link">Why numerical approach?</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#need-to-confirm-the-mechanism-of-your-idea" class="md-nav__link">Need to confirm the mechanism of your idea</a>
-        </li>
-        <li class="md-nav__item"><a href="#need-to-connect-with-real-experiments" class="md-nav__link">Need to connect with real experiments</a>
-        </li>
-        <li class="md-nav__item"><a href="#numerics-for-many-body-physics-is-non-trivial" class="md-nav__link">Numerics for many body physics is non-trivial!</a>
-        </li>
-        <li class="md-nav__item"><a href="#generate-data-to-convey-what-you-mean" class="md-nav__link">Generate data to convey what you mean</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#my-point-of-view-of-numerical-approaches" class="md-nav__link">My point of view of numerical approaches</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#level-of-numerical-loading" class="md-nav__link">Level of numerical loading</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#why-python" class="md-nav__link">Why Python?</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#simple-well-structured-general-purpose-language" class="md-nav__link">Simple, well-structured, general-purpose language</a>
-        </li>
-        <li class="md-nav__item"><a href="#high-level" class="md-nav__link">High-level</a>
-        </li>
-        <li class="md-nav__item"><a href="#interactive" class="md-nav__link">Interactive</a>
-        </li>
-        <li class="md-nav__item"><a href="#speed" class="md-nav__link">Speed</a>
-        </li>
-        <li class="md-nav__item"><a href="#vibrant-community" class="md-nav__link">Vibrant community</a>
-        </li>
-        <li class="md-nav__item"><a href="#rich-scientific-computing-libraries" class="md-nav__link">Rich scientific computing libraries</a>
-        </li>
-        <li class="md-nav__item"><a href="#accessible-for-everyone-no-need-to-pay-money" class="md-nav__link">Accessible for everyone. No need to pay money</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#scientific-python-key-components" class="md-nav__link">Scientific Python Key Components</a>
-        </li>
-        <li class="md-nav__item"><a href="#jupyter-workflow" class="md-nav__link">Jupyter Workflow</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#two-primary-workflows" class="md-nav__link">Two primary workflows:</a>
-        </li>
-        <li class="md-nav__item"><a href="#notebook-usage" class="md-nav__link">Notebook Usage</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#variables-and-objects" class="md-nav__link">Variables and Objects</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#overloading" class="md-nav__link">Overloading</a>
-        </li>
-        <li class="md-nav__item"><a href="#variables-as-references" class="md-nav__link">Variables as References</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#types-of-objects" class="md-nav__link">Types of Objects</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#basic-types" class="md-nav__link">Basic Types</a>
-        </li>
-        <li class="md-nav__item"><a href="#common-scientific-types" class="md-nav__link">Common Scientific Types</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#basic-types-numeric" class="md-nav__link">Basic Types: Numeric</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#careful-with-integer-division" class="md-nav__link">Careful with integer division!</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#basic-types-strings" class="md-nav__link">Basic Types: Strings</a>
-        </li>
-        <li class="md-nav__item"><a href="#basic-types-lists" class="md-nav__link">Basic Types: Lists</a>
-        </li>
-        <li class="md-nav__item"><a href="#basic-types-dictionaries" class="md-nav__link">Basic Types: Dictionaries</a>
-        </li>
-        <li class="md-nav__item"><a href="#basic-types-tuples" class="md-nav__link">Basic Types: Tuples</a>
-        </li>
-        <li class="md-nav__item"><a href="#control-flow" class="md-nav__link">Control Flow</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#if-elif-else" class="md-nav__link">If/elif/else</a>
-        </li>
-        <li class="md-nav__item"><a href="#for-loops" class="md-nav__link">For Loops</a>
-        </li>
-        <li class="md-nav__item"><a href="#while-loops" class="md-nav__link">While Loops</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#functions-are-objects" class="md-nav__link">Functions are Objects</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/Python_tutorial_0.ipynb">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
         
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+          <li class="toctree-l1 ">
             
-  
-<h1 id="python-tutorial-0--page-root">Basic introduction of python<a class="headerlink" href="#python-tutorial-0--page-root" title="Permalink to this headline">¶</a></h1>
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
 
-<h2 id="setting-the-environment-for-python">Setting the environment for Python<a class="headerlink" href="#setting-the-environment-for-python" title="Permalink to this headline">¶</a></h2>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="numerical_tools.html">Numerical tools</a> &raquo;</li>
+    
+    <li>Basic introduction of python</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="numerical_tools.html"
+       title="previous chapter">← Numerical tools</a>
+  </li>
+  <li class="next">
+    <a href="Python_tutorial_1.html"
+       title="next chapter">Basic numerics and plot →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="basic-introduction-of-python">
+<h1>Basic introduction of python<a class="headerlink" href="#basic-introduction-of-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setting-the-environment-for-python">
+<h2>Setting the environment for Python<a class="headerlink" href="#setting-the-environment-for-python" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> : Include essential packages for basic scientific computation. It is easy to install it just follow the instruction.</p></li>
 <li><p>Not required, but easy to use for beginners.</p></li>
 </ul>
-
-
-<h2 id="why-numerical-approach">Why numerical approach?<a class="headerlink" href="#why-numerical-approach" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="need-to-confirm-the-mechanism-of-your-idea">Need to confirm the mechanism of your idea<a class="headerlink" href="#need-to-confirm-the-mechanism-of-your-idea" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="why-numerical-approach">
+<h2>Why numerical approach?<a class="headerlink" href="#why-numerical-approach" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="need-to-confirm-the-mechanism-of-your-idea">
+<h3>Need to confirm the mechanism of your idea<a class="headerlink" href="#need-to-confirm-the-mechanism-of-your-idea" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>An idea for the novel physics</p></li>
 <li><p>Numerical experiments driven by scientific ideas</p></li>
 <li><p>Numerical experiments driven theoretical ideas</p></li>
 </ul>
-
-
-<h3 id="need-to-connect-with-real-experiments">Need to connect with real experiments<a class="headerlink" href="#need-to-connect-with-real-experiments" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="need-to-connect-with-real-experiments">
+<h3>Need to connect with real experiments<a class="headerlink" href="#need-to-connect-with-real-experiments" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>To strenthen the abstract idea and connect with real world</p></li>
 <li><p>Get additional information that is difficult to access in experiments and make prediction that is accessible for experiments</p></li>
 </ul>
-
-
-<h3 id="numerics-for-many-body-physics-is-non-trivial">Numerics for many body physics is non-trivial!<a class="headerlink" href="#numerics-for-many-body-physics-is-non-trivial" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="numerics-for-many-body-physics-is-non-trivial">
+<h3>Numerics for many body physics is non-trivial!<a class="headerlink" href="#numerics-for-many-body-physics-is-non-trivial" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The problem itself is a intelletral challenging and interesting discrete mathmetical problems.</p></li>
 <li><p>Hardware limitation force one to think in a smart way</p></li>
 </ul>
-
-
-<h3 id="generate-data-to-convey-what-you-mean">Generate data to convey what you mean<a class="headerlink" href="#generate-data-to-convey-what-you-mean" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="generate-data-to-convey-what-you-mean">
+<h3>Generate data to convey what you mean<a class="headerlink" href="#generate-data-to-convey-what-you-mean" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Statistics</p></li>
 <li><p>Plots</p></li>
 </ul>
-
-
-
-<h2 id="my-point-of-view-of-numerical-approaches">My point of view of numerical approaches<a class="headerlink" href="#my-point-of-view-of-numerical-approaches" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="level-of-numerical-loading">Level of numerical loading<a class="headerlink" href="#level-of-numerical-loading" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="my-point-of-view-of-numerical-approaches">
+<h2>My point of view of numerical approaches<a class="headerlink" href="#my-point-of-view-of-numerical-approaches" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="level-of-numerical-loading">
+<h3>Level of numerical loading<a class="headerlink" href="#level-of-numerical-loading" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Light: Mathematica, Python, matlab (For quick checking and benchmark. Once the simple concept passes, use the medium or heavy numerical approach)</p></li>
 <li><p>Heavy: C/C++, Fortran</p></li>
 </ul>
-
-
-
-<h2 id="why-python">Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="simple-well-structured-general-purpose-language">Simple, well-structured, general-purpose language<a class="headerlink" href="#simple-well-structured-general-purpose-language" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="why-python">
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple-well-structured-general-purpose-language">
+<h3>Simple, well-structured, general-purpose language<a class="headerlink" href="#simple-well-structured-general-purpose-language" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Readability great for quality control and collaboration</p></li>
 <li><p>Code how you think: many books now use python as pseudocode</p></li>
 </ul>
-
-
-<h3 id="high-level">High-level<a class="headerlink" href="#high-level" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="high-level">
+<h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Rapid development</p></li>
 <li><p>Do complicated things in few lines</p></li>
 </ul>
-
-
-<h3 id="interactive">Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="interactive">
+<h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Rapid development and exploration</p></li>
 <li><p>No need to compile, run, debug, revise, compile</p></li>
 <li><p>Data collection, generation, analysis and publication plotting in one place</p></li>
 </ul>
-
-
-<h3 id="speed">Speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="speed">
+<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Usually plenty fast – will discuss more</p></li>
 <li><p>Your development time is more important than CPU time</p></li>
 <li><p>Not as fast as C, C++, Fortran but these can be easily woven in where necessary</p></li>
 </ul>
-
-
-<h3 id="vibrant-community">Vibrant community<a class="headerlink" href="#vibrant-community" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="vibrant-community">
+<h3>Vibrant community<a class="headerlink" href="#vibrant-community" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Great online documentation / help available</p></li>
 <li><p>Open source</p></li>
 </ul>
-
-
-<h3 id="rich-scientific-computing-libraries">Rich scientific computing libraries<a class="headerlink" href="#rich-scientific-computing-libraries" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rich-scientific-computing-libraries">
+<h3>Rich scientific computing libraries<a class="headerlink" href="#rich-scientific-computing-libraries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Don’t reinvent the wheel. Only reinvent important wheels!</p></li>
 </ul>
-
-
-<h3 id="accessible-for-everyone-no-need-to-pay-money">Accessible for everyone. No need to pay money<a class="headerlink" href="#accessible-for-everyone-no-need-to-pay-money" title="Permalink to this headline">¶</a></h3>
-
-
-
-<h2 id="scientific-python-key-components">Scientific Python Key Components<a class="headerlink" href="#scientific-python-key-components" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="accessible-for-everyone-no-need-to-pay-money">
+<h3>Accessible for everyone. No need to pay money<a class="headerlink" href="#accessible-for-everyone-no-need-to-pay-money" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="scientific-python-key-components">
+<h2>Scientific Python Key Components<a class="headerlink" href="#scientific-python-key-components" title="Permalink to this headline">¶</a></h2>
 <p>The core pieces of the scientific Python platform are:</p>
 <p><strong><a class="reference external" href="http://www.python.org">Python</a></strong>, the language interpreter</p>
 <ul class="simple">
@@ -461,11 +404,11 @@
 <ul class="simple">
 <li><p>For more sophisticated 3-D needs (won’t discuss)</p></li>
 </ul>
-
-
-<h2 id="jupyter-workflow">Jupyter Workflow<a class="headerlink" href="#jupyter-workflow" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="two-primary-workflows">Two primary workflows:<a class="headerlink" href="#two-primary-workflows" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="jupyter-workflow">
+<h2>Jupyter Workflow<a class="headerlink" href="#jupyter-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="two-primary-workflows">
+<h3>Two primary workflows:<a class="headerlink" href="#two-primary-workflows" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Work in a Jupyter/IPython notebook. Write code in cells, analyze, plot, etc. Everything stored in <strong>.ipynb</strong> file.</p></li>
 <li><p>Write code in <strong>.py</strong> files using a text editor and run those within the IPython notebook or from the shell.</p></li>
@@ -473,9 +416,9 @@
 <p>We still stick to the first.</p>
 <p>While you are using a notebook, there is a <strong>kernel</strong> running which actually executes your commands and stores your variables, etc. If you quit/restart the kernel, all variables will be forgotten and you will need to re-execute the commands that set them up. This can be useful if you want to reset things. The input and output that is visible in the notebook is saved in the notebook file.</p>
 <p><em>Note:</em> .py files are called <strong>scripts</strong> if they consist primarily of a sequence of commands to be run and <strong>modules</strong> if they consist primarily of function definitions for import into other scripts/notebooks.</p>
-
-
-<h3 id="notebook-usage">Notebook Usage<a class="headerlink" href="#notebook-usage" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="notebook-usage">
+<h3>Notebook Usage<a class="headerlink" href="#notebook-usage" title="Permalink to this headline">¶</a></h3>
 <p>Two modes: editing and command mode.</p>
 <p>Press escape to go to command mode.
 Press return to go into editing mode on selected cell.</p>
@@ -513,7 +456,7 @@ Press return to go into editing mode on selected cell.</p>
 <p>Run this stuff.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -525,12 +468,12 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">"Hello, world!"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, world!&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Hello, world!'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, world!&#39;
 </pre></div>
 </div>
 </div>
@@ -573,19 +516,19 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">"ab"</span> <span class="o">+</span> <span class="s2">"cd"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ab&quot;</span> <span class="o">+</span> <span class="s2">&quot;cd&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'abcd'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abcd&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">"Hello"</span> <span class="o">==</span> <span class="s1">'Hello'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span> <span class="o">==</span> <span class="s1">&#39;Hello&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -595,10 +538,10 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-
-
-
-<h2 id="variables-and-objects">Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="variables-and-objects">
+<h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">¶</a></h2>
 <p>Everything in memory in Python is an object. Every object has a type such as int (for integer), str (for strings) or ndarray (for numpy arrays). Variables can reference objects of any type and that type can change.</p>
 <p>The equals sign in programming does not mean ‘is equal to’ as in math. It means <strong>‘assign the object on the right to the variable on the left’</strong>.</p>
 <div class="cell docutils container">
@@ -733,7 +676,7 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">"Hello, world!"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -745,7 +688,7 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Hello, world!'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, world!&#39;
 </pre></div>
 </div>
 </div>
@@ -769,7 +712,7 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Hello, world!Hello, world!'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, world!Hello, world!&#39;
 </pre></div>
 </div>
 </div>
@@ -786,17 +729,17 @@ Press return to go into editing mode on selected cell.</p>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="n">a8d4ab2c7f31</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">2</span><span class="o">+</span><span class="n">a</span>
 
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: 'int' and 'str'
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </pre></div>
 </div>
 </div>
 </div>
-
-<h3 id="overloading">Overloading<a class="headerlink" href="#overloading" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="overloading">
+<h3>Overloading<a class="headerlink" href="#overloading" title="Permalink to this headline">¶</a></h3>
 <p>Operators and functions will try to execute no matter what type of objects are passed to them, but they may do different things depending on the type. + adds numbers and concatenates strings.</p>
-
-
-<h3 id="variables-as-references">Variables as References<a class="headerlink" href="#variables-as-references" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="variables-as-references">
+<h3>Variables as References<a class="headerlink" href="#variables-as-references" title="Permalink to this headline">¶</a></h3>
 <p>All variables are <strong>references</strong> to the objects they contain. Assignment does not make copies of objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,12 +792,12 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-
-
-
-<h2 id="types-of-objects">Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="basic-types">Basic Types<a class="headerlink" href="#basic-types" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="types-of-objects">
+<h2>Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-types">
+<h3>Basic Types<a class="headerlink" href="#basic-types" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Numeric, Immutable</p></li>
 <li><p>Integer: -1, 0, 1, 2, …</p></li>
@@ -879,9 +822,9 @@ Press return to go into editing mode on selected cell.</p>
 <li><p>Dictionaries, {‘hi’: 3, 4: 7, ‘key’: ‘value’}</p></li>
 <li><p>Functions, def func()</p></li>
 </ol>
-
-
-<h3 id="common-scientific-types">Common Scientific Types<a class="headerlink" href="#common-scientific-types" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="common-scientific-types">
+<h3>Common Scientific Types<a class="headerlink" href="#common-scientific-types" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>NumPy arrays, array([1,2,3])</p></li>
 </ol>
@@ -892,10 +835,10 @@ Press return to go into editing mode on selected cell.</p>
 <li><p>Sparse arrays, scipy.sparse</p></li>
 <li><p>Pandas DataFrames, high level ‘table’ a bit like an excel spreadsheet</p></li>
 </ol>
-
-
-
-<h2 id="basic-types-numeric">Basic Types: Numeric<a class="headerlink" href="#basic-types-numeric" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="basic-types-numeric">
+<h2>Basic Types: Numeric<a class="headerlink" href="#basic-types-numeric" title="Permalink to this headline">¶</a></h2>
 <p>There are 4 numeric types:</p>
 <ul class="simple">
 <li><p>int: positive or negative integer</p></li>
@@ -1016,8 +959,8 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-
-<h3 id="careful-with-integer-division">Careful with integer division!<a class="headerlink" href="#careful-with-integer-division" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="careful-with-integer-division">
+<h3>Careful with integer division!<a class="headerlink" href="#careful-with-integer-division" title="Permalink to this headline">¶</a></h3>
 <p>In Python 3, dividing integers promotes to a float. Use // for integer division.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1056,15 +999,15 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-
-
-
-<h2 id="basic-types-strings">Basic Types: Strings<a class="headerlink" href="#basic-types-strings" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="basic-types-strings">
+<h2>Basic Types: Strings<a class="headerlink" href="#basic-types-strings" title="Permalink to this headline">¶</a></h2>
 <p>Strings are <strong>immutable</strong> sequences of characters. This means you can’t change a character in the middle of a string, you have to create a new string.</p>
 <p>Literal strings can be written with single or double-quotes. Multi-line strings with triple quotes. ‘Raw’ strings are useful for embedding LaTeX because they treat backslashes differently.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">'Hello'</span> <span class="o">==</span> <span class="s2">"Hello"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello&#39;</span> <span class="o">==</span> <span class="s2">&quot;Hello&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1076,8 +1019,8 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">"""This is a multiline string.</span>
-<span class="s2">Nifty, huh?"""</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;This is a multiline string.</span>
+<span class="s2">Nifty, huh?&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1089,14 +1032,14 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'This is a multiline string.\nNifty, huh?'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a multiline string.\nNifty, huh?&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">u"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">u&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1051,7 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\nu"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\nu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1128,12 +1071,12 @@ Press return to go into editing mode on selected cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple formatting (type convert to string)</span>
-<span class="s2">"Blah "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="s2">&quot;Blah &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Blah 3.1415'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Blah 3.1415&#39;
 </pre></div>
 </div>
 </div>
@@ -1141,12 +1084,12 @@ Press return to go into editing mode on selected cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Old style string formatting (ala sprintf in C)</span>
-<span class="s2">"Blah </span><span class="si">%1.2f</span><span class="s2">, </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">"hi"</span><span class="p">)</span>
+<span class="s2">&quot;Blah </span><span class="si">%1.2f</span><span class="s2">, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Blah 3.14, hi'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Blah 3.14, hi&#39;
 </pre></div>
 </div>
 </div>
@@ -1154,19 +1097,19 @@ Press return to go into editing mode on selected cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># New style string formatting </span>
-<span class="s2">"Blah </span><span class="si">{:1.2f}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">"hi"</span><span class="p">)</span>
+<span class="s2">&quot;Blah </span><span class="si">{:1.2f}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Blah 3.14, hi'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Blah 3.14, hi&#39;
 </pre></div>
 </div>
 </div>
 </div>
-
-
-<h2 id="basic-types-lists">Basic Types: Lists<a class="headerlink" href="#basic-types-lists" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basic-types-lists">
+<h2>Basic Types: Lists<a class="headerlink" href="#basic-types-lists" title="Permalink to this headline">¶</a></h2>
 <p>Python lists store <strong>ordered</strong> collections of arbitrary objects. They are efficient maps <strong>from index to values</strong>. Lists are represented by square brackets [ ].</p>
 <p>Lists are <strong>mutable</strong>: their contents can be changed after they are created.</p>
 <p>It takes time O(1) to:</p>
@@ -1185,8 +1128,8 @@ Press return to go into editing mode on selected cell.</p>
 last item is at position N-1 where N is the length of the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sunday"</span><span class="p">,</span><span class="s2">"Monday"</span><span class="p">,</span><span class="s2">"Tuesday"</span><span class="p">,</span>
-                    <span class="s2">"Wednesday"</span><span class="p">,</span><span class="s2">"Thursday"</span><span class="p">,</span><span class="s2">"Friday"</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sunday&quot;</span><span class="p">,</span><span class="s2">&quot;Monday&quot;</span><span class="p">,</span><span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span><span class="s2">&quot;Thursday&quot;</span><span class="p">,</span><span class="s2">&quot;Friday&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1198,7 +1141,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Sunday'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Sunday&#39;
 </pre></div>
 </div>
 </div>
@@ -1211,7 +1154,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Tuesday', 'Wednesday', 'Thursday']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;]
 </pre></div>
 </div>
 </div>
@@ -1223,7 +1166,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Friday'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Friday&#39;
 </pre></div>
 </div>
 </div>
@@ -1236,7 +1179,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Sunday', 'Tuesday', 'Thursday']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Sunday&#39;, &#39;Tuesday&#39;, &#39;Thursday&#39;]
 </pre></div>
 </div>
 </div>
@@ -1249,7 +1192,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Sunday', 'Tuesday', 'Thursday']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Sunday&#39;, &#39;Tuesday&#39;, &#39;Thursday&#39;]
 </pre></div>
 </div>
 </div>
@@ -1257,7 +1200,7 @@ last item is at position N-1 where N is the length of the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Oops!</span>
-<span class="n">days_of_the_week</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Saturday"</span><span class="p">)</span>
+<span class="n">days_of_the_week</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1269,14 +1212,14 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Saturday'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Saturday&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Casual Friday"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Casual Friday&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1288,13 +1231,13 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Sunday',
- 'Monday',
- 'Tuesday',
- 'Wednesday',
- 'Thursday',
- 'Casual Friday',
- 'Saturday']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Sunday&#39;,
+ &#39;Monday&#39;,
+ &#39;Tuesday&#39;,
+ &#39;Wednesday&#39;,
+ &#39;Thursday&#39;,
+ &#39;Casual Friday&#39;,
+ &#39;Saturday&#39;]
 </pre></div>
 </div>
 </div>
@@ -1327,18 +1270,18 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Casual Friday',
- 'Monday',
- 'Saturday',
- 'Sunday',
- 'Thursday',
- 'Tuesday',
- 'Wednesday']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Casual Friday&#39;,
+ &#39;Monday&#39;,
+ &#39;Saturday&#39;,
+ &#39;Sunday&#39;,
+ &#39;Thursday&#39;,
+ &#39;Tuesday&#39;,
+ &#39;Wednesday&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Remember tab completion</strong> Every thing in Python (even the number 10) is an object. Objects can have methods which can be accessed by the notation a.method(). Typing a.<tab> allows you to see what methods an object a supports. Try it now with days_of_the_week:</tab></p>
+<p><strong>Remember tab completion</strong> Every thing in Python (even the number 10) is an object. Objects can have methods which can be accessed by the notation a.method(). Typing a.<TAB> allows you to see what methods an object a supports. Try it now with days_of_the_week:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="o">.</span>
@@ -1346,7 +1289,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> "&lt;ipython-input-64-56fb3f712b66&gt;"</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-64-56fb3f712b66&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">days_of_the_week</span><span class="o">.</span>
                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -1357,20 +1300,20 @@ last item is at position N-1 where N is the length of the list.</p>
 <p><strong>Each item is arbitrary</strong>: You can have lists of lists or lists of different types of objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"zero"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;zero&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="o">+</span><span class="mi">0</span><span class="n">j</span><span class="p">]</span>
 <span class="n">aList</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['zero', 1, 'two', 3.0, (4+0j)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;zero&#39;, 1, &#39;two&#39;, 3.0, (4+0j)]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listOfLists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="s1">'Hi'</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listOfLists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="s1">&#39;Hi&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1387,9 +1330,9 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 </div>
-
-
-<h2 id="basic-types-dictionaries">Basic Types: Dictionaries<a class="headerlink" href="#basic-types-dictionaries" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basic-types-dictionaries">
+<h2>Basic Types: Dictionaries<a class="headerlink" href="#basic-types-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>A dictionary is an efficient map <strong>from keys to values</strong>. They are represented by curly brackets {}.</p>
 <p>Dictionaries are <strong>mutable</strong> but all <strong>keys must be immutable</strong>. IE. keys can be strings, numbers, or tuples thereof but not lists or other dictionaries. Values can be anything.</p>
 <p>It is unordered but takes time O(1) to:</p>
@@ -1402,8 +1345,8 @@ last item is at position N-1 where N is the length of the list.</p>
 <p>You can iterate through all the entries efficiently O(N).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'emmanuelle'</span><span class="p">:</span> <span class="mi">5752</span><span class="p">,</span> <span class="s1">'sebastian'</span><span class="p">:</span> <span class="mi">5578</span><span class="p">}</span>
-<span class="n">tel</span><span class="p">[</span><span class="s1">'francis'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5915</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;emmanuelle&#39;</span><span class="p">:</span> <span class="mi">5752</span><span class="p">,</span> <span class="s1">&#39;sebastian&#39;</span><span class="p">:</span> <span class="mi">5578</span><span class="p">}</span>
+<span class="n">tel</span><span class="p">[</span><span class="s1">&#39;francis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5915</span>
 </pre></div>
 </div>
 </div>
@@ -1415,14 +1358,14 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'emmanuelle': 5752, 'sebastian': 5578, 'francis': 5915}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;emmanuelle&#39;: 5752, &#39;sebastian&#39;: 5578, &#39;francis&#39;: 5915}
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tel</span><span class="p">[</span><span class="s1">'sebastian'</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tel</span><span class="p">[</span><span class="s1">&#39;sebastian&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1439,7 +1382,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys(['emmanuelle', 'sebastian', 'francis'])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;emmanuelle&#39;, &#39;sebastian&#39;, &#39;francis&#39;])
 </pre></div>
 </div>
 </div>
@@ -1470,7 +1413,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">'francis'</span> <span class="ow">in</span> <span class="n">tel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;francis&#39;</span> <span class="ow">in</span> <span class="n">tel</span>
 </pre></div>
 </div>
 </div>
@@ -1482,7 +1425,7 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">tel</span><span class="p">[</span><span class="s1">'francis'</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">tel</span><span class="p">[</span><span class="s1">&#39;francis&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1494,25 +1437,25 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'emmanuelle': 5752, 'sebastian': 5578}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;emmanuelle&#39;: 5752, &#39;sebastian&#39;: 5578}
 </pre></div>
 </div>
 </div>
 </div>
-
-
-<h2 id="basic-types-tuples">Basic Types: Tuples<a class="headerlink" href="#basic-types-tuples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basic-types-tuples">
+<h2>Basic Types: Tuples<a class="headerlink" href="#basic-types-tuples" title="Permalink to this headline">¶</a></h2>
 <p>A tuple is an <strong>ordered</strong> collection of objects. They are represented by round parantheses ().</p>
 <p>Tuples are almost like lists but they are <strong>immutable</strong>. This means that they cannot be changed once they are created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">'Hi'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
 <span class="n">t</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 'Hi')
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, &#39;Hi&#39;)
 </pre></div>
 </div>
 </div>
@@ -1531,7 +1474,7 @@ last item is at position N-1 where N is the length of the list.</p>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># IMMUTABLE !</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="ne">TypeError</span>: 'tuple' object does not support item assignment
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
 </pre></div>
 </div>
 </div>
@@ -1552,26 +1495,26 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lengthOne</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'hi'</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lengthOne</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">,)</span>
 <span class="n">lengthOne</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('hi',)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;hi&#39;,)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">notLengthOne</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'hi'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">notLengthOne</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>
 <span class="n">notLengthOne</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'hi'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hi&#39;
 </pre></div>
 </div>
 </div>
@@ -1583,31 +1526,31 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'h'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;h&#39;
 </pre></div>
 </div>
 </div>
 </div>
-
-
-<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="control-flow">
+<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
 <p>The flow of a program is the order in which the computer executes the statements in the code. Typically, this is in order from top to bottom. However, there are many cases where we want to change the flow in some way. For example, we might want to divide two numbers but only if the divisor is not zero. Or we might want to iterate: repeat a block of code many times for each value in some list. The commands which allow these are called control flow commands.</p>
 <p><strong>WARNING</strong>: Python cares about <strong>white space</strong>! You must <strong>INDENT CORRECTLY</strong> because that’s how Python knows when a block of code ends.</p>
 <p>Typically, people indent with 4 spaces per block but 2 spaces or tabs are okay. They must be consistent in any block.</p>
-
-<h3 id="if-elif-else">If/elif/else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="if-elif-else">
+<h3>If/elif/else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">2</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Yep"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"It is"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yep&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">)</span>
 
 <span class="k">elif</span> <span class="mi">3</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Not this one either."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not this one either.&quot;</span><span class="p">)</span>
     
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Not"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"At all"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;At all&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1618,16 +1561,16 @@ At all
 </div>
 </div>
 </div>
-
-
-<h3 id="for-loops">For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="for-loops">
+<h3>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
 <p>For loops <em>iterate</em> through elements in a collection. This can be a list, tuple, dictionary, array or any other such collection.</p>
 <p>These are the most <em>Pythonic</em> way to think about iterations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">**</span><span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"The cube of "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The cube of &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1644,7 +1587,7 @@ The cube of 4 is 64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days_of_the_week</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Today is "</span> <span class="o">+</span> <span class="n">day</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Today is &quot;</span> <span class="o">+</span> <span class="n">day</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1663,13 +1606,13 @@ Today is Wednesday
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">tel</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">"'s telephone number is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tel</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;&#39;s telephone number is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tel</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emmanuelle's telephone number is 5752
-sebastian's telephone number is 5578
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emmanuelle&#39;s telephone number is 5752
+sebastian&#39;s telephone number is 5578
 </pre></div>
 </div>
 </div>
@@ -1677,7 +1620,7 @@ sebastian's telephone number is 5578
 <p><strong>Enumerate</strong> to get index and value of iteration element</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'your'</span><span class="p">,</span> <span class="s1">'face'</span><span class="p">,</span> <span class="s1">'is'</span><span class="p">,</span> <span class="s1">'beautiful'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;your&#39;</span><span class="p">,</span> <span class="s1">&#39;face&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;beautiful&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
@@ -1693,16 +1636,16 @@ sebastian's telephone number is 5578
 </div>
 </div>
 </div>
-
-
-<h3 id="while-loops">While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="while-loops">
+<h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
 <p>Repeats a block of code while a condition holds true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Bark "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bark &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
     <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -1717,15 +1660,15 @@ Bark 1
 </div>
 </div>
 </div>
-
-
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>Any code that you call multiple times with different values should be wrapped up in a function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">"""Return the square of x."""</span>
+    <span class="sd">&quot;&quot;&quot;Return the square of x.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 </div>
@@ -1753,7 +1696,7 @@ Bark 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printAndSquare</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">"""Print the square of x and return it."""</span>
+    <span class="sd">&quot;&quot;&quot;Print the square of x and return it.&quot;&quot;&quot;</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">y</span>
@@ -1783,8 +1726,8 @@ Bark 1
 </div>
 </div>
 </div>
-
-<h3 id="functions-are-objects">Functions are Objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="functions-are-objects">
+<h3>Functions are Objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h3>
 <p>Functions are just like any object in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1822,11 +1765,11 @@ Bark 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"In Test!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In Test!&quot;</span><span class="p">)</span>
     <span class="k">return</span>
 
 <span class="k">def</span> <span class="nf">callIt</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"In callIt!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In callIt!&quot;</span><span class="p">)</span>
     <span class="n">fun</span><span class="p">()</span>
     <span class="k">return</span>
 </pre></div>
@@ -1846,10 +1789,11 @@ In Test!
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 
-
-
-<script type="text/x-thebe-config">
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -1867,63 +1811,29 @@ In Test!
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
+    <script>kernelName = 'python3'</script>
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="numerical_tools.html" title="Numerical tools"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> Numerical tools </span>
-              </div>
-            </a>
-          
-          
-            <a href="Python_tutorial_1.html" title="Basic numerics and plot"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Basic numerics and plot </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2021.
-              
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="numerical_tools.html"
+       title="previous chapter">← Numerical tools</a>
+  </li>
+  <li class="next">
+    <a href="Python_tutorial_1.html"
+       title="next chapter">Basic numerics and plot →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>

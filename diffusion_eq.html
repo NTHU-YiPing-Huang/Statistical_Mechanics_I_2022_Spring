@@ -1,259 +1,268 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>The diffusion equation &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>The diffusion equation</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic concepts in probability theory" href="basic_prob.html" />
-    <link rel="prev" title="Scale invariance and the concept of universality class" href="scale_invariance.html" />
-  
-   
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Basic concepts in probability theory" href="basic_prob.html" />
+  <link rel="prev" title="Scale invariance and the concept of universality class" href="scale_invariance.html" /> 
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#diffusion_eq" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
-           class="md-header-nav__button md-logo">
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-              <img src="_static/logo-wide.svg" height="26"
-                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
-          <span class="md-header-nav__topic"> The diffusion equation </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
   </div>
-</div>
-
-      </div>
-      
-      
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
   
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
 
-    </div>
-  </nav>
-</header>
+            
+          </li>
 
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
-          <li class="md-tabs__item"><a href="random_walk_and_emergent_properties.html" class="md-tabs__link">Random walk and emergent properties</a></li>
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
       </ul>
     </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
-      
-        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="syllabus.html"
-       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
-  </label>
   
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#diffusion-eq--page-root" class="md-nav__link">The diffusion equation</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-microscopic-model" class="md-nav__link">The microscopic model</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-macroscopic-question" class="md-nav__link">The macroscopic question</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-currents-and-the-locally-conserved-particle-number" class="md-nav__link">The currents and the locally conserved particle number</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-effect-of-external-forces" class="md-nav__link">The effect of external forces</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#the-solution-of-the-diffusion-equation" class="md-nav__link">The solution of the diffusion equation</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-equilibrium-solution" class="md-nav__link">The equilibrium solution</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-general-solution-of-the-diffusion-equation" class="md-nav__link">The general solution of the diffusion equation</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-fourier-method" class="md-nav__link">The Fourier method</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#why-the-fourier-method" class="md-nav__link">Why the Fourier method?</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-solution-according-to-the-fourier-method" class="md-nav__link">The solution according to the Fourier method</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#green-s-function" class="md-nav__link">Green’s function</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/diffusion_eq.md">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
         
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+          <li class="toctree-l1 ">
             
-  
-<h1 id="diffusion-eq--page-root">The diffusion equation<a class="headerlink" href="#diffusion-eq--page-root" title="Permalink to this headline">¶</a></h1>
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
 
-<h2 id="the-microscopic-model">The microscopic model<a class="headerlink" href="#the-microscopic-model" title="Permalink to this headline">¶</a></h2>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a> &raquo;</li>
+    
+    <li>The diffusion equation</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="scale_invariance.html"
+       title="previous chapter">← Scale invariance and the concept of universality class</a>
+  </li>
+  <li class="next">
+    <a href="basic_prob.html"
+       title="next chapter">Basic concepts in probability theory →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="the-diffusion-equation">
+<h1>The diffusion equation<a class="headerlink" href="#the-diffusion-equation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-microscopic-model">
+<h2>The microscopic model<a class="headerlink" href="#the-microscopic-model" title="Permalink to this headline">¶</a></h2>
 <p>The above-mentioned microscopic models give us exact results without approximations. We can ask: if we relax the fixed step size condition, what could be changed? Let’s start with the one-dimensional case. We use <span class="math notranslate nohighlight">\(r\)</span> to denote the displacement of the random walk with a random step size. The microscopic model can be described as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -266,16 +275,16 @@
 <li><p><span class="math notranslate nohighlight">\(\langle z\rangle=\int z\chi(z)dz=0\)</span>: expectation value of the random step is zero.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle z^2\rangle=\int z^2\chi(z)dz=a^2\)</span>: The width of the distribution function is characterized by the parameter <span class="math notranslate nohighlight">\(a\)</span>. The requirement that the integral is convergent means the distribution function, <span class="math notranslate nohighlight">\(\chi(z)\)</span> cannot have a slowly decaying tail at large <span class="math notranslate nohighlight">\(|z|\)</span>.</p></li>
 </ol>
-
-
-<h2 id="the-macroscopic-question">The macroscopic question<a class="headerlink" href="#the-macroscopic-question" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-macroscopic-question">
+<h2>The macroscopic question<a class="headerlink" href="#the-macroscopic-question" title="Permalink to this headline">¶</a></h2>
 <p>In the macroscopic world, we rarely keep track of the microscopic motion of the molecules. Instead, it is more convenient to describe the little particles using a function, <span class="math notranslate nohighlight">\(\rho(r,t)\)</span>, that describes the density field.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>Let’s try to think more carefully about how this field is constructed. As we know, the microscopic particles fluctuate at the microscopic length scale. When we define our density field, we evaluate the density at <span class="math notranslate nohighlight">\(r\)</span> by average the particle number over a length scale <span class="math notranslate nohighlight">\(\delta r\)</span>. That is, <span class="math notranslate nohighlight">\(\rho(r,t)=\frac{N_{\delta_r}}{\delta r}\)</span> where <span class="math notranslate nohighlight">\(N_{\delta_r}\)</span> represent the number of particles in <span class="math notranslate nohighlight">\([r-\frac{\delta r}{2},r+\frac{\delta r}{2}]\)</span>. How to choose <span class="math notranslate nohighlight">\(\delta r\)</span>? We hope we can choose <span class="math notranslate nohighlight">\(\delta r\)</span> large enough such that <span class="math notranslate nohighlight">\(\rho(r,t)\)</span> is not fluctuating too much. Why should we expect the fluctuation to become small when <span class="math notranslate nohighlight">\(\delta r\)</span> is large enough? Small compared with what? What happens if <span class="math notranslate nohighlight">\(\delta r\)</span> is too small? What do we mean by “not fluctuating too much”? If we perform a similar analysis in time, what does that mean?</p>
 </div>
 <div class="figure align-default" id="density-evolution">
-<a class="reference internal image-reference" href="_images/diff_den_6.png"><img alt="_images/diff_den_6.png" src="_images/diff_den_6.png" style="width: 750px;"/></a>
+<a class="reference internal image-reference" href="_images/diff_den_6.png"><img alt="_images/diff_den_6.png" src="_images/diff_den_6.png" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Evolution of the density field.</span><a class="headerlink" href="#density-evolution" title="Permalink to this image">¶</a></p>
 </div>
 <p>The question we would like to understand at the macroscopic level is: how does the density field change as a function of time if the microscopic components are doing the random walk we proposed at the microscopic model?</p>
@@ -315,9 +324,9 @@ RHS\approx \rho(x,t)+\frac{a^2}{2}\left.\frac{\partial^2 \rho}{\partial z^2}\rig
 \[
 \frac{\partial \rho}{\partial t}=D\frac{\partial^2 \rho}{\partial x^2}.
 \]</div>
-
-
-<h2 id="the-currents-and-the-locally-conserved-particle-number">The currents and the locally conserved particle number<a class="headerlink" href="#the-currents-and-the-locally-conserved-particle-number" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-currents-and-the-locally-conserved-particle-number">
+<h2>The currents and the locally conserved particle number<a class="headerlink" href="#the-currents-and-the-locally-conserved-particle-number" title="Permalink to this headline">¶</a></h2>
 <p>Consider a one-dimensional system where we pick a segment of length <span class="math notranslate nohighlight">\(\Delta x\)</span>. We can ask: what is the change in the number of particles in this segment? A simple derivation gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -338,9 +347,9 @@ d \rho(x) \Delta x=\left[J(x)-J(x+\Delta x)\right]dt.
 <p class="admonition-title">What?</p>
 <p>Suppose we have a density profile of the Gaussian function; what is the expression of the diffusion current?</p>
 </div>
-
-
-<h2 id="the-effect-of-external-forces">The effect of external forces<a class="headerlink" href="#the-effect-of-external-forces" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-effect-of-external-forces">
+<h2>The effect of external forces<a class="headerlink" href="#the-effect-of-external-forces" title="Permalink to this headline">¶</a></h2>
 <p>When we have external force, we modify our microscopic model as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -367,35 +376,35 @@ With similar arguments, we can derive the diffusion equation and the current und
 \[
 J=\gamma F\rho-D\frac{\partial \rho}{\partial x}\text{.}
 \]</div>
-
-
-
-<h1 id="the-solution-of-the-diffusion-equation">The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this headline">¶</a></h1>
+</div>
+</div>
+<div class="section" id="the-solution-of-the-diffusion-equation">
+<h1>The solution of the diffusion equation<a class="headerlink" href="#the-solution-of-the-diffusion-equation" title="Permalink to this headline">¶</a></h1>
 <p>We would like to understand how the density profile <span class="math notranslate nohighlight">\(\rho(r,t)\)</span> evolve in time and space. It will give us a rough picture of how a system reaches <em>equilibrium</em>. The evolution process toward equilibrium is a complicated process in both classical and quantum systems. The random walk process is the simplest one that can give us a rough picture. We will start from the equilibrium solution, <span class="math notranslate nohighlight">\(\frac{\partial \rho^*(r)}{\partial t}=0\)</span>. Then, we will discuss the general solution <span class="math notranslate nohighlight">\(\rho(r,t)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>We also learn a similar concept, the steady-state. How the idea of equilibrium differs from the idea of steady-state? In this section of the lecture note, I did not distinguish the concept clearly. However, the two ideas are subtlely different.</p>
 </div>
-
-<h2 id="the-equilibrium-solution">The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-equilibrium-solution">
+<h2>The equilibrium solution<a class="headerlink" href="#the-equilibrium-solution" title="Permalink to this headline">¶</a></h2>
 <p>There are two cases for the equilibrium solution–the case without an external field and the case with an external field. I will discuss both cases.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F=0\)</span>: <span class="math notranslate nohighlight">\(\frac{\partial {\rho^*}\,^2}{\partial x^2}=D^{-1}\frac{\partial \rho}{\partial t}=0\rightarrow \rho^*=\rho_0+Bx\)</span>. Here, <span class="math notranslate nohighlight">\(\rho_0\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are the constants to be determined. Suppose we study a system of particles confined by a solid container. At the boundary, the current needs to be 0. This leads to the boundary condition <span class="math notranslate nohighlight">\(J=0=-D\frac{\partial \rho^*}{\partial x_{boundary}}=-DB\)</span>. That is, <span class="math notranslate nohighlight">\(B=0\)</span>. So the equilibrium solution, in this case, is the homogeneous distribution, <span class="math notranslate nohighlight">\(\rho^*=\rho_0\)</span> is constant.</p></li>
 <li><p><span class="math notranslate nohighlight">\(F=-mg\)</span>: Consider the case with gravity. We have <span class="math notranslate nohighlight">\(\frac{\partial \rho^*}{\partial t}=\gamma mg \frac{\partial \rho^*}{\partial x}+D\frac{\partial^2 \rho^*}{\partial x^2}\)</span>. The solution of this equation is <span class="math notranslate nohighlight">\(\rho^*(x)=A e^{-\frac{\gamma mgx}{D}}+B\)</span>. With the boundary condition that the density is zero at the end of the universe, we have <span class="math notranslate nohighlight">\(\rho^*(x\to\infty)=0, B=0\)</span>. We have the solution <span class="math notranslate nohighlight">\(\rho^*(x)=A e^{-\frac{\gamma mgx}{D}}\)</span>.</p></li>
 </ul>
 <p>Now we know the behavior of the equilibrium solution, we will further tackle the evolution of the density profile for arbitrary time <span class="math notranslate nohighlight">\(t\)</span>.</p>
-
-
-<h2 id="the-general-solution-of-the-diffusion-equation">The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-general-solution-of-the-diffusion-equation">
+<h2>The general solution of the diffusion equation<a class="headerlink" href="#the-general-solution-of-the-diffusion-equation" title="Permalink to this headline">¶</a></h2>
 <p>We will introduce two methods to solve the diffusion equation. The “solution” of the diffusion equation means we know the density profile for arbitrary space-time once an initial condition, <span class="math notranslate nohighlight">\(\rho_i(x,t=t_i=0)\)</span>, is given. In general, this process is quite complicated. However, the fact that the diffusion equation is a linear equation simplifies the analysis a lot. The key question we should ask is: are there quantities that are kept fixed during the time evolution? We have learned several conserved quantities in the past. Usually, they are related to the symmetry of the system. The important symmetry for later analysis is the translational symmetry in space. That’s why we will start the analysis from the Fourier method. Once we know how the Fourier method works in general, we will apply that to a special initial condition, the Dirac delta function. We will see the property of Dirac delta function provides a convenient structure to define Green’s function of the diffusion equation. Using the Green’s function, we can construct the evolution of the density profile for arbitrary space-time.</p>
 <div class="tip admonition">
 <p class="admonition-title">What?</p>
 <p>Are the energy and momentum conserved quantities in the microscopic random walk model? In a physical system, should they be conserved?</p>
 </div>
-
-<h3 id="the-fourier-method">The Fourier method<a class="headerlink" href="#the-fourier-method" title="Permalink to this headline">¶</a></h3>
-
-<h4 id="why-the-fourier-method">Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="the-fourier-method">
+<h3>The Fourier method<a class="headerlink" href="#the-fourier-method" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="why-the-fourier-method">
+<h4>Why the Fourier method?<a class="headerlink" href="#why-the-fourier-method" title="Permalink to this headline">¶</a></h4>
 <p>Our system has translation symmetry. We would like to use that property to simplify our analysis. Let <span class="math notranslate nohighlight">\(T_{\Delta}\)</span> denote the translation operator that shifts the system by displacement <span class="math notranslate nohighlight">\(\Delta\)</span>. We want to analyze the time evolution of our system; we can use <span class="math notranslate nohighlight">\(U_t\)</span> to express the time evolution of the density profile formally. By definition, we have <span class="math notranslate nohighlight">\(\rho_{k}(x,t)=U_t[\rho_k(x,0)]\)</span>. Here, <span class="math notranslate nohighlight">\(k\)</span> is the conserved quantity that is invariant under the time evolution. If such <span class="math notranslate nohighlight">\(k\)</span> exist, it will be helpful for us to analyze the problem. The translational symmetry of our system is equivalent to the following formal expression.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -425,9 +434,9 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 <p>Symmetry plays an important role in physics. Especially, the representation of the symmetry operator helps us to formulate and analyze the problem. In this case, the translation operator forms an abelian group(Which means the order of applying the translation operator is not important). The irreducible representation of the abelian group is one-dimensional. So we can use <span class="math notranslate nohighlight">\(e^{-ik\Delta}\)</span> to represent the translational operator. From the representation theory of the group, we can rationalize where this solution came from.
 <span id="id1">[<a class="reference internal" href="biblio.html#id4">Tin03</a>]</span></p>
 </div>
-
-
-<h4 id="the-solution-according-to-the-fourier-method">The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="the-solution-according-to-the-fourier-method">
+<h4>The solution according to the Fourier method<a class="headerlink" href="#the-solution-according-to-the-fourier-method" title="Permalink to this headline">¶</a></h4>
 <p>Now, we know why we want to use the Fourier method to simplify our result. The diffusion equation is a linear equation. In other words, if <span class="math notranslate nohighlight">\(\rho_1\)</span> and <span class="math notranslate nohighlight">\(\rho_2\)</span> are both the solution of the diffusion equation, the linear combination <span class="math notranslate nohighlight">\(c_1\rho_1+c_2\rho_2\)</span> for arbitrary <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> will also be a solution. So if we can use the eigenvectors to expand our general solution, all we need to do is to find the solution for each <span class="math notranslate nohighlight">\(k\)</span> component. The following steps show how the Fourier method works.</p>
 <ul class="simple">
 <li><p>We can expand the density profile as <span class="math notranslate nohighlight">\(\rho(x,t)=\sum_k\widetilde{\rho_k}(t)e^{ikx}\)</span>.</p></li>
@@ -459,10 +468,10 @@ T_{\Delta}\left[\rho_k(x,0)\right]=\lambda_k \rho_k(x,0)=\rho_k(x-\Delta,0).
 \]</div>
 <p>We can see the solution suggests the high wave vector modes will decay exponentially, <span class="math notranslate nohighlight">\(e^{-Dk^2t}\)</span>.</p>
 <p>The above steps suggest that we need to get <span class="math notranslate nohighlight">\(\widetilde{\rho_k}(t=0)\)</span> by performing Fourier analysis of the density profile at <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(\rho(x,t=0)\)</span>. Then, we reconstruct the evolution of the density profile by integration over <span class="math notranslate nohighlight">\(k\)</span>. The process can be carried out. However, it will be better if, for an arbitrary given initial condition, we can derive the density profile at an arbitrary space-time point. We will introduce the idea of Green’s function, which serves this purpose.</p>
-
-
-
-<h3 id="green-s-function">Green’s function<a class="headerlink" href="#green-s-function" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="green-s-function">
+<h3>Green’s function<a class="headerlink" href="#green-s-function" title="Permalink to this headline">¶</a></h3>
 <p>The method of Green’s function is based on a property of Dirac delta function. That is, we can express an arbitrary function using the Dirac delta function.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -482,10 +491,11 @@ F(x)=\int F(x-y)\delta(y)dy\text{.}
 <p>To get the time evolution of a density profile, all we need to do is to input the density profile at time <span class="math notranslate nohighlight">\(t=0\)</span> into the above expression.</p>
 <p>Now let’s look at the Green’s function; we found it is a Gaussian function with standard deviation <span class="math notranslate nohighlight">\(\sigma(t)=\sqrt{2Dt}\)</span>. From our previous simple model, we know <span class="math notranslate nohighlight">\(D=\frac{a^2}{2\Delta t}\)</span>. Then we got <span class="math notranslate nohighlight">\(\sigma(t)=\sqrt{2\frac{a^2}{2\Delta t}t}=a\sqrt{t/\Delta t}=a\sqrt{N}\)</span> which is equivalent with the <span class="math notranslate nohighlight">\(N\)</span>-steps random walk with step size <span class="math notranslate nohighlight">\(a\)</span>. To some extent, Green’s function having a function form of a Gaussian is closely related to the central limit theorem.  The central limit theorem suggests the sum of independent variables has a probability distribution function that converges to a Gaussian. We will prove the central limit theorem in our homework 1.</p>
 <p>Now we know how to solve a diffusion equation and how it reaches equilibrium. However, for generic closed classical or quantum systems, how the system reaches equilibrium is still an open question. We will not elaborate more on this fascinating research problem. Instead, we will refer our readers to other sources that discuss these interesting topics ( see, <em>e.g.</em> Thermalization and many-body localization, see <span id="id2">[<a class="reference internal" href="biblio.html#id7">Sre94</a>]</span> and <span id="id3">[<a class="reference internal" href="biblio.html#id6">NH14</a>]</span> )</p>
+</div>
+</div>
+</div>
 
-
-
-<script type="text/x-thebe-config">
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -503,63 +513,29 @@ F(x)=\int F(x-y)\delta(y)dy\text{.}
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
+    <script>kernelName = 'python3'</script>
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="scale_invariance.html" title="Scale invariance and the concept of universality class"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> Scale invariance and the concept of universality class </span>
-              </div>
-            </a>
-          
-          
-            <a href="basic_prob.html" title="Basic concepts in probability theory"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Basic concepts in probability theory </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2021.
-              
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="scale_invariance.html"
+       title="previous chapter">← Scale invariance and the concept of universality class</a>
+  </li>
+  <li class="next">
+    <a href="basic_prob.html"
+       title="next chapter">Basic concepts in probability theory →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>

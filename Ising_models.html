@@ -1,257 +1,266 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>Ising models and spontaneous symmetry breaking &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Ising models and spontaneous symmetry breaking</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Transfer matrix method" href="Ising_models_2.html" />
-    <link rel="prev" title="Phases and phase diagram" href="phase_diagram.html" />
-  
-   
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Transfer matrix method" href="Ising_models_2.html" />
+  <link rel="prev" title="Phases and phase diagram" href="phase_diagram.html" /> 
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#Ising_models" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
-           class="md-header-nav__button md-logo">
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-              <img src="_static/logo-wide.svg" height="26"
-                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
-          <span class="md-header-nav__topic"> Ising models and spontaneous symmetry breaking </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
   </div>
-</div>
-
-      </div>
-      
-      
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
   
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
 
-    </div>
-  </nav>
-</header>
+            
+          </li>
 
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
-          <li class="md-tabs__item"><a href="phases_transitions.html" class="md-tabs__link">Phases and phase transitions</a></li>
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
       </ul>
     </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
-      
-        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="syllabus.html"
-       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
-  </label>
   
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#ising-models--page-root" class="md-nav__link">Ising models and spontaneous symmetry breaking</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" class="md-nav__link">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#how-can-phase-transition-happened" class="md-nav__link">How can phase transition happened?</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-zero-temperature-phase-diagram" class="md-nav__link">The zero temperature phase diagram</a>
-        </li>
-        <li class="md-nav__item"><a href="#the-finite-temperature-phase-diagram" class="md-nav__link">The finite temperature phase diagram</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#one-dimensional-case" class="md-nav__link">One-dimensional case</a>
-        </li>
-        <li class="md-nav__item"><a href="#two-dimensional-case" class="md-nav__link">Two-dimensional case</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#symmetry-and-symmetry-breaking" class="md-nav__link">Symmetry and symmetry breaking</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#symmetry-of-the-system" class="md-nav__link">Symmetry of the system</a>
-        </li>
-        <li class="md-nav__item"><a href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" class="md-nav__link">Arguments that the spontaneous symmetry breaking is impossible</a>
-        </li>
-        <li class="md-nav__item"><a href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" class="md-nav__link">Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density</a>
-        </li>
-        <li class="md-nav__item"><a href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" class="md-nav__link">Justification of spontaneous symmetry breaking (II)–the ergodicity breaking</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/Ising_models.md">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
         
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+          <li class="toctree-l1 ">
             
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
   
-<h1 id="ising-models--page-root">Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models--page-root" title="Permalink to this headline">¶</a></h1>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="phases_transitions.html">Phases and phase transitions</a> &raquo;</li>
+    
+    <li>Ising models and spontaneous symmetry breaking</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="phase_diagram.html"
+       title="previous chapter">← Phases and phase diagram</a>
+  </li>
+  <li class="next">
+    <a href="Ising_models_2.html"
+       title="next chapter">Transfer matrix method →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="ising-models-and-spontaneous-symmetry-breaking">
+<h1>Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models-and-spontaneous-symmetry-breaking" title="Permalink to this headline">¶</a></h1>
 <p>The notion of spontaneous symmetry breaking is probably the most important non-trivial concept of statistical mechanics (I). It is related to various important phenomena in condensed matter physics, <em>e.g.</em> magnetism, liquid crystal, superconductivity, superfluidity, etc. Also, it plays important rule in the particle physics, <em>e.g.</em> Higgs mechanism, chiral symmetry breaking, etc. Once we grasp the idea of spontaneous symmetry breaking, we can not only understand above-mentioned phenomena but also the important Elitzur’s theorem which states “gauge symmetry” cannot be spontaneously broken.</p>
 <p>The important concepts can be demonstrated by using Ising models, so let’s start from the introduction of the Ising model.
 The formal definition of Ising model is</p>
@@ -277,9 +286,9 @@ H_{Ising,general}=\sum_{i,j} J_{ij} S_iS_j-\sum_i H_iS_i\text{.}
 \[
 H=\sum_{\langle i,j\rangle} J S_iS_j-\sum_i H S_i; J&lt;0 \text{.}
 \]</div>
-
-
-<h1 id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
+<h1>The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this headline">¶</a></h1>
 <p>We want to use the Ising model to study phases and phase transition. Could we argue that the model should show at least two phases?
 We can derive the partition function as</p>
 <div class="math notranslate nohighlight">
@@ -300,8 +309,8 @@ Z[{K,h}]=Tr\left[e^{-\beta H(K,h)}\right]=Tr\left[e^{\sum_{\langle i,j\rangle} K
 <p>When the Hamiltonian of the system has a particular symmetry but the statistical behavior of the system breaks that symmetry. We said the symmetry is broken spontaneously.</p>
 </div>
 <p>How is it possible? How the symmetry is broken? We will address this issue several times later. We will take two approaches to understand this phenomena. First approach is from the analytic behavior of the free energy density at the thermodynamic limit. The second approach is from the non-trivial structure of phase space at the thermodynamic limit. Both approach demonstrate the importance of thermodynamic limit. Before discussing these approach. We will circle back to the question on how phase transition happened in the Ising model.</p>
-
-<h2 id="how-can-phase-transition-happened">How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-can-phase-transition-happened">
+<h2>How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this headline">¶</a></h2>
 <p>The zeroth order question: can we understand why the system decide to change the pattern of their collective behavior in principle?</p>
 <p>When <span class="math notranslate nohighlight">\(h=0\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-isingh">
@@ -310,8 +319,8 @@ Z_{\Omega}[K]=\sum_{i=1}^{2^{N(\Omega)}} e^{-\beta \underbrace{H_{\Omega}(K;\{S_
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(\{E_i(K)\}\)</span> is the spectrum of the Hamiltonian at coupling constant <span class="math notranslate nohighlight">\(K\)</span>.
 For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, every Boltzmann factor is analytic function in <span class="math notranslate nohighlight">\(K\)</span>. Sum over finite analytic functions will give us an analytic function. Therefore, we expect the partition function and the free energy for finite system to be analytic in <span class="math notranslate nohighlight">\(K\)</span>. The collective behavior at different <span class="math notranslate nohighlight">\(K\)</span> should be qualitatively the same, and there is no phase transition at finite system. From this observation, we should conclude that phase transition can only happen when <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>. To get non-analytic function from the sum of analytic functions, the summation must be an infinite series. The argument is almost correct. We will use more detailed calculation to show that later. Before doing the more involved calculation, let’s develop a heuristic argument about the phase diagram of the Ising model.</p>
-
-<h3 id="the-zero-temperature-phase-diagram">The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-zero-temperature-phase-diagram">
+<h3>The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this headline">¶</a></h3>
 <p>There is actually another possibility that we can create non-analytic behavior from the partition function of a finite system. The price we paid is to go to the quite special <span class="math notranslate nohighlight">\(T=0\)</span> limit.</p>
 <p>When <span class="math notranslate nohighlight">\(\beta\to\infty\)</span>, we know only the configuration with minimum energy will dominate the partition function.</p>
 <div class="math notranslate nohighlight">
@@ -325,12 +334,12 @@ For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, ever
 </ol>
 <p>We can therefore construct our understanding of the zero temperature phase diagram along the coupling constant <span class="math notranslate nohighlight">\(h\)</span>. When <span class="math notranslate nohighlight">\(h&gt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&gt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h&lt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h=0\)</span>, the level crossing happens and we have our zero temperature phase transition.</p>
 <p>How the above picture changes when we are at non-zero but low temperature region? We will further discuss the stability of the corresponding <span class="math notranslate nohighlight">\(M&gt;0\)</span> and <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. Withou loosing generality, we will focus on the physics with <span class="math notranslate nohighlight">\(M&gt;0\)</span>.</p>
-
-
-<h3 id="the-finite-temperature-phase-diagram">The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-finite-temperature-phase-diagram">
+<h3>The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this headline">¶</a></h3>
 <p>Now we know the zero temperature phase diagram. We want to ask the effect of finite temperature. Or, sometimes, we refer to the thermal fluctuation. It turns out the strength of thermal fluctuation is closely related to the dimensionality of the system. Here we will use to simple estimation to demonstrate this fact.</p>
-
-<h4 id="one-dimensional-case">One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="one-dimensional-case">
+<h4>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline">¶</a></h4>
 <p>We first notice that the magnetization at the thermodynamic limit is defined as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -353,9 +362,9 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(-2J&gt;0\)</span>. That means we can always find a system that is large enough, <em>i.e.</em> <span class="math notranslate nohighlight">\(N_b&gt;e^{\frac{-2J}{k_BT}}\)</span>, such that <span class="math notranslate nohighlight">\(\Delta F&lt;0\)</span>. This means that a system with a domain wall has lower Helmholtz free energy comparing with a system with no domain wall. This argument implies the system prefer to porliferate the domain walls. Thus, the system should be in a disordered phase for any finite temperature at thermodynamic limit.</p>
 <p>Now we can see the entropy estimation is simple because it is a one-dimensional system. We can try to generalize the argument to the two-dimensional system. Let’s see what will be different.</p>
-
-
-<h4 id="two-dimensional-case">Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="two-dimensional-case">
+<h4>Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this headline">¶</a></h4>
 <p>Similarly, we start from an ordered phase and ask what is the free energy for the system to have a domain wall with length <span class="math notranslate nohighlight">\(n\)</span>. Now we cannot have a exact result, since the domain wall with length <span class="math notranslate nohighlight">\(n\)</span> could have different shape. Here, we try to formulate an approximation that will over count the effect of entropy. But even for such an overcounting scheme, we can see the energy and the entropy scales in a way that the ordered phase could survive under the thermal fluctuation due to the domain walls.</p>
 <p>The free energy for a system with domain wall with circumferences <span class="math notranslate nohighlight">\(n\)</span> is approximately</p>
 <div class="math notranslate nohighlight">
@@ -379,15 +388,15 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>From above information, we can argue the schematic phase diagram should look like <a class="reference internal" href="#ising-phase-diagram"><span class="std std-ref">the figure</span></a>.</p>
 <p>We posponed the discussion of <span class="math notranslate nohighlight">\(h=0\)</span> case, so we still cannot say much about what happened there. We will discuss that more carefully in the next section.</p>
 <div class="figure align-default" id="ising-phase-diagram">
-<a class="reference internal image-reference" href="_images/Ising_phase_diagram.png"><img alt="_images/Ising_phase_diagram.png" src="_images/Ising_phase_diagram.png" style="width: 500px;"/></a>
+<a class="reference internal image-reference" href="_images/Ising_phase_diagram.png"><img alt="_images/Ising_phase_diagram.png" src="_images/Ising_phase_diagram.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Schematic phase diagram of two-dimensional Ising model.</span><a class="headerlink" href="#ising-phase-diagram" title="Permalink to this image">¶</a></p>
 </div>
-
-
-
-<h3 id="symmetry-and-symmetry-breaking">Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this headline">¶</a></h3>
-
-<h4 id="symmetry-of-the-system">Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="symmetry-and-symmetry-breaking">
+<h3>Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="symmetry-of-the-system">
+<h4>Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this headline">¶</a></h4>
 <p>Let’s consider the Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[
@@ -399,9 +408,9 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>Maybe you will feel curious, it seems like the operation <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\}\)</span> is just a mathematical operation of the model. Can we relate that to any physical operation? To answer that question, we need to specify what is the microscopic origin of <span class="math notranslate nohighlight">\(S_i\)</span>. We start the discussion by assuming we are trying to model a magnetic system. Therefore, it is very tempting to identify the theoretical variable <span class="math notranslate nohighlight">\(S_i\)</span> with the atomic magnetic moments. In that case, fliping the spin corresponds to flip the orientation of the magnetic moments. We also have the physical picture that the atmoic magnetic moments came from the microscopic current. To flip its direction, it corresponds to reverse the microscopic current flow. That corresponds to the time-reversal operation. (Note that, it is actually possible to use <span class="math notranslate nohighlight">\(S_i\)</span> to model <em>electronic</em> dipole moments. In that case, the time-reversal operation will not flip the orientation of the <span class="math notranslate nohighlight">\(S_i\)</span>. To describe the physical operation, it is important to have a well-defined meaning for <span class="math notranslate nohighlight">\(S_i\)</span>.)</p>
 <p>In the lab, we cannot really perform the time reversal operation for the microscopic system. However, we can perform the time reversal operation for macroscopic current that induce the external field, <span class="math notranslate nohighlight">\(h\)</span>.</p>
 <p>We can notice there is a operation(a thought experiment) that keep the Hamiltonian invariant, <em>i.e.</em> we can globally perform the time reversal symmetry such that we flip the orientation of the microscopic and the macroscopic current. That leads to <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\},h\to-h\)</span>.</p>
-
-
-<h4 id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
+<h4>Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this headline">¶</a></h4>
 <p>We have already point out the symmetry at <span class="math notranslate nohighlight">\(h=0\)</span> will be spontaneously broken. Let’s try to see if it is possible for a finite system using the following two arguments.</p>
 <p><strong>Argument 1</strong></p>
 <p>Starting from a sample <span class="math notranslate nohighlight">\(\Omega\)</span>, we know the Hamiltonian has the property that <span class="math notranslate nohighlight">\(H_{\Omega}(h,K,\{S_i\})=H_{\Omega}(-h,K,\{-S_i\})\)</span>. So we can derive the following relation</p>
@@ -429,9 +438,9 @@ M_{\Omega}(h) N(\Omega)=\sum_{ \{S_i\} } \left[\left.\left(\sum_j S_j\right)\rig
 \]</div>
 <p>In the last equality, we use the property that the total summation over spin is odd under the Ising symmetry, but the weight is invariant under Ising symmetry. So every possitive contribution is canceled exactly by its Ising partner in the summation.</p>
 <p>Now the idea of spontaneous symmetry looks more and more suspecious. Can symmetry really be broken spontaneously? If yes, what is wrong with the previous arguments?</p>
-
-
-<h4 id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
+<h4>Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this headline">¶</a></h4>
 <p>The problem of the argument 1 is at the “<span class="math notranslate nohighlight">\(\stackrel{?}{=}\)</span>” when we calculate the magnetization. The implicity assumption that is used to get this equality is we assume the free energy is a <strong>smooth</strong> function of <span class="math notranslate nohighlight">\(h\)</span>, which is stronger than requireing the free energy is a <strong>continuous</strong> function of <span class="math notranslate nohighlight">\(h\)</span>. In fact, as we mentioned previously, when we have an infinite series, even though every term is analytic, the series could be non-analytic. Therefore, the additional requirement that the free energy is smooth in <span class="math notranslate nohighlight">\(h\)</span> only holds when the system is finite, not in the thermodynamic limit.</p>
 <p>In the mathematical expression, it means the two limit, <span class="math notranslate nohighlight">\(h\to0\)</span> and <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> does not commute. This is a rare example that the ordering of the limit actually matters.</p>
 <p>We can define the spontaneous magnetization, <span class="math notranslate nohighlight">\(M_s\)</span>, as</p>
@@ -449,9 +458,9 @@ M_s=\lim_{h\to0^+}-\frac{\partial f(h)}{\partial h}=\lim_{h\to0^+}\lim_{N(\Omega
 \[
 M(h=0)=\lim_{N(\Omega)\to\infty}\lim_{h\to0}-\frac{\partial }{\partial h} \frac{F(h)}{N(\Omega)}=0\text{.}
 \]</div>
-
-
-<h4 id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
+<h4>Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this headline">¶</a></h4>
 <p>The problem of the argument 2 is about the ergodicity. We assume the system is ergodic and the system can explore any two symmetry related configurations. Let’s see how this picture breaks down at the thermodynamic limit.</p>
 <p>Suppose we have a finite field <span class="math notranslate nohighlight">\(h\)</span> that breaks the Ising symmetry. Let’s consider a specific spin configuration. The magnetic field induced energy of configuration is <span class="math notranslate nohighlight">\(N(\Omega)\epsilon(h)\)</span>. The Ising partner of this configuration will have the magnetic field induced energy <span class="math notranslate nohighlight">\(-N(\Omega)\epsilon(h)\)</span>. Without loosing generality, we call the configuration with <span class="math notranslate nohighlight">\(\epsilon(h)&gt;0\)</span> the configuration <span class="math notranslate nohighlight">\(A\)</span> and its Ising partner <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
 <p>The ratio of the probabilities of these two configurations is</p>
@@ -469,11 +478,12 @@ M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline
 <p class="admonition-title">What?</p>
 <p>The argument just describe the possibility of spontaneous symmetry breaking. Whether the symmetry breaking phase could survive at finite temperature is another question. For example, the argument has no dimensionality information. So it will suggest spontaneous symmetry could happen at one-dimensional system. However, the previous argument suggest the order is not stable against thermal fluctuation. Therefore, we still cannot observe spontaneous symmetry breaking at finite temperature in one-dimensional Ising model.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-
-
-
-<script type="text/x-thebe-config">
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -491,63 +501,29 @@ M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
+    <script>kernelName = 'python3'</script>
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="phase_diagram.html" title="Phases and phase diagram"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> Phases and phase diagram </span>
-              </div>
-            </a>
-          
-          
-            <a href="Ising_models_2.html" title="Transfer matrix method"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Transfer matrix method </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2021.
-              
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="phase_diagram.html"
+       title="previous chapter">← Phases and phase diagram</a>
+  </li>
+  <li class="next">
+    <a href="Ising_models_2.html"
+       title="next chapter">Transfer matrix method →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>

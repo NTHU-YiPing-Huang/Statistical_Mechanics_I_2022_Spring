@@ -1,255 +1,261 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
-
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>Syllabus for Statistical Mechanics (I) – PHYS521000 &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Syllabus for Statistical Mechanics (I) – PHYS521000</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="introduction.html" />
-  
-   
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Introduction" href="introduction.html" /> 
   </head>
-  <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="#" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#syllabus" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="#" title="2022 Statistical Mechanics (I) - PHYS521000"
-           class="md-header-nav__button md-logo">
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-              <img src="_static/logo-wide.svg" height="26"
-                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
-          <span class="md-header-nav__topic"> Syllabus for Statistical Mechanics (I) – PHYS521000 </span>
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-        
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
   </div>
-</div>
-
-      </div>
-      
-      
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
   
-  <script src="_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = ""versions.json"",
-        target_loc = "../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
 
-    </div>
-  </nav>
-</header>
+            
+          </li>
 
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="#" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
       </ul>
     </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="#" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
-      
-        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="#"
-       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
-  </label>
   
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#syllabus--page-root" class="md-nav__link">Syllabus for Statistical Mechanics (I) – PHYS521000</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#basic-information" class="md-nav__link">Basic information</a>
-        </li>
-        <li class="md-nav__item"><a href="#evaluation" class="md-nav__link">Evaluation:</a>
-        </li>
-        <li class="md-nav__item"><a href="#homework-policies" class="md-nav__link">Homework policies</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#how-to-do-the-homework" class="md-nav__link">How to do the homework</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#textbook" class="md-nav__link">Textbook</a>
-        </li>
-        <li class="md-nav__item"><a href="#course-description" class="md-nav__link">Course Description</a>
-        </li>
-        <li class="md-nav__item"><a href="#references" class="md-nav__link">References</a>
-        </li>
-        <li class="md-nav__item"><a href="#outline-of-the-course" class="md-nav__link">Outline of the course</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#course-plan-2022-spring" class="md-nav__link">Course plan (2022-spring)</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#how-to-benefit-from-the-course" class="md-nav__link">How to benefit from the course?</a>
-        </li>
-        <li class="md-nav__item"><a href="#how-to-use-this-note" class="md-nav__link">How to use this note?</a>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/syllabus.md">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
         
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+          <li class="toctree-l1 ">
             
-  
-<h1 id="syllabus--page-root">Syllabus for Statistical Mechanics (I) – PHYS521000<a class="headerlink" href="#syllabus--page-root" title="Permalink to this headline">¶</a></h1>
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
 
-<h2 id="basic-information">Basic information<a class="headerlink" href="#basic-information" title="Permalink to this headline">¶</a></h2>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+    
+    <li>Syllabus for Statistical Mechanics (I) – PHYS521000</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="next">
+    <a href="introduction.html"
+       title="next chapter">Introduction →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="syllabus-for-statistical-mechanics-i-phys521000">
+<h1>Syllabus for Statistical Mechanics (I) – PHYS521000<a class="headerlink" href="#syllabus-for-statistical-mechanics-i-phys521000" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-information">
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="http://www.phys.nthu.edu.tw/~yphuang">www.phys.nthu.edu.tw/~yphuang</a></strong></p></li>
 <li><p>Time: Thursday 13:20-16:20</p></li>
@@ -274,15 +280,15 @@
 </ul>
 </li>
 </ul>
-
-
-<h2 id="evaluation">Evaluation:<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="evaluation">
+<h2>Evaluation:<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
 <p><s>Homework (50%), Midterm (20%), Final (30%).</s></p>
 <p>Due to the COVID, we update the score weighting as</p>
 <p><strong>Homework (50%), Midterm (20%), Take home project (10%), Final (20%).</strong></p>
-
-
-<h2 id="homework-policies">Homework policies<a class="headerlink" href="#homework-policies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="homework-policies">
+<h2>Homework policies<a class="headerlink" href="#homework-policies" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>It is <strong>encouraged</strong> to discuss homework or the content of the lectures with your classmates. However, the point of discussion is to form one’s own opinion instead of following someone’s idea. <strong>Don’t copy the homework</strong>.</p></li>
 <li><p>Copied homework will get no points. That is, we will use a very one-sided rule. If two homework looks very similar, both of them get zero points.</p></li>
@@ -290,8 +296,8 @@
 <li><p>I will put the pdf file of the homework on google classroom. The pdf file will specify the due date of the homework. One-day delay is allowed (<strong>By Friday 5 pm</strong>). If you need more time to finish the homework, please send an email to me and explain why you need an extension and when you expect to turn in your homework. Late homework(<strong>within a week</strong>) without reasoning gets 70% of the scores. Late homework without reasoning for more than a week will get 0 points.</p></li>
 <li><p><strong>The purpose of homework is to help you learn the subject.</strong> Please give yourself some time to think independently first, then discuss with your classmates or TA. TA has no responsibility to do the homework for you. <strong>Please start doing the homework early.</strong></p></li>
 </ul>
-
-<h3 id="how-to-do-the-homework">How to do the homework<a class="headerlink" href="#how-to-do-the-homework" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="how-to-do-the-homework">
+<h3>How to do the homework<a class="headerlink" href="#how-to-do-the-homework" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Bring your pen, blank paper, and the assignment. Find a place where you can think. Start working on the assignment. Think about the meaning of the problem. If you don’t know what to do, that’s fine. Propose possible ways to yourself first. Develop the logic to solve the problem first, ignore the details of the calculation. Focus on the strategy of your approach.</p></li>
 <li><p>Then, start to carry out your strategy. If you get stuck, found you are confused about some concept. Check the note and see if you can figure out what’s going on.</p></li>
@@ -308,17 +314,17 @@
 </div>
 </li>
 </ul>
-
-
-
-<h2 id="textbook">Textbook<a class="headerlink" href="#textbook" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="textbook">
+<h2>Textbook<a class="headerlink" href="#textbook" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><em>Statistical Mechanics in a Nutshell</em>, Luca Peliti <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span>– Formal approach, might be a little bit boring.</p></li>
 <li><p><em>(2nd Edition)Statistical Mechanics: Entropy, Order Parameters, and Complexity: Second Edition (Oxford Master Series in Physics)</em>, James P. Sethna <span id="id2">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span>– More applications of statistical mechanics. When you have the question: why should we study statistical mechanics? You can find various interesting assignments at the end of each chapter.</p></li>
 </ol>
-
-
-<h2 id="course-description">Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="course-description">
+<h2>Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h2>
 <p>This course will introduce students to one of the pillars of theoretical physics: Statistical Mechanics.
 Statistical mechanics provides a framework to understand and describe all macroscopic systems, from a
 cooling cup of coffee, boiling water to electrons in metals, semiconductors, superconductors, magnets, black
@@ -327,9 +333,9 @@ between microscopic properties and macroscopic properties of the system, which i
 fundamental and application points of view. The course will cover the basic theoretical framework and
 applications(starting from non-interacting systems, classical gas, and quantum gases(fermions and bosons)
 ). After the study of non-interacting systems, we will discuss the techniques related to interacting systems.</p>
-
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><strong>Statistical Mechanics: Volume 5, Landau and Lifshitz</strong> – The classic theoretical physics collection. It’s unfortunate that we cannot discuss with Landau anymore, but his way of thinking is left in the classic textbook series forever. It’s the textbook  we used when I was a graduate student at CU Boulder.</p></li>
 <li><p><strong>Thermodynamics and an introduction to thermostatistics, H. B. Callen</strong> – An excellent textbook that discusses the fundamental principles of thermodynamics.</p></li>
@@ -339,9 +345,9 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 <li><p>Statistical mechanics, K. Huang <a class="reference external" href="http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S112">NTU open course</a></p></li>
 </ol>
 <p>A good reference is the one that you are willing to read.</p>
-
-
-<h2 id="outline-of-the-course">Outline of the course<a class="headerlink" href="#outline-of-the-course" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="outline-of-the-course">
+<h2>Outline of the course<a class="headerlink" href="#outline-of-the-course" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Motivation and basic mathematical tools for statistical mechanics.</p></li>
 <li><p>Random walks and universality classes</p></li>
@@ -356,9 +362,9 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 </li>
 <li><p>Interacting systems and mean-field theory</p></li>
 </ol>
-
-<h3 id="course-plan-2022-spring">Course plan (2022-spring)<a class="headerlink" href="#course-plan-2022-spring" title="Permalink to this headline">¶</a></h3>
-<table>
+<div class="section" id="course-plan-2022-spring">
+<h3>Course plan (2022-spring)<a class="headerlink" href="#course-plan-2022-spring" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Date</p></th>
 <th class="text-align:left head"><p>Contents</p></th>
@@ -369,52 +375,52 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 <td class="text-align:left"><p>Course overview – Basic information, course description, and survey of the background.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>02.24</p></td>
-<td class="text-align:left"><p>Introduction – Thermodynamics, statistical mechanics and the concept of emergence. <br/> (<strong>Random walks</strong>, concept of the <strong>scaling invariance</strong>, and the <strong>universality class</strong>.)</p></td>
+<td class="text-align:left"><p>Introduction – Thermodynamics, statistical mechanics and the concept of emergence. <br /> (<strong>Random walks</strong>, concept of the <strong>scaling invariance</strong>, and the <strong>universality class</strong>.)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>03.03</p></td>
-<td class="text-align:left"><p>Introduction – (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br/> (the <strong>diffusion equation</strong>: microscopic picture and the effective theory.)</p></td>
+<td class="text-align:left"><p>Introduction – (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br /> (the <strong>diffusion equation</strong>: microscopic picture and the effective theory.)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>03.10</p></td>
-<td class="text-align:left"><p>Introduction – (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br/> (Solution of the <strong>diffusion equation</strong> and <strong>basic probability theory</strong>.)</p></td>
+<td class="text-align:left"><p>Introduction – (Continue) Thermodynamics, statistical mechanics and the concept of emergence. <br /> (Solution of the <strong>diffusion equation</strong> and <strong>basic probability theory</strong>.)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>03.17</p></td>
-<td class="text-align:left"><p>Statistical postulates and review of thermodynamics. <br/> (The ideal gas example and the formal structure of thermodynamics.)</p></td>
+<td class="text-align:left"><p>Statistical postulates and review of thermodynamics. <br /> (The ideal gas example and the formal structure of thermodynamics.)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>03.24</p></td>
-<td class="text-align:left"><p>Statistical postulates and review of thermodynamics. <br/> ( (Continue) the formal structure of thermodynamics–Key properties of entropy. <strong>HW1 due</strong>)</p></td>
+<td class="text-align:left"><p>Statistical postulates and review of thermodynamics. <br /> ( (Continue) the formal structure of thermodynamics–Key properties of entropy. <strong>HW1 due</strong>)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>03.31</p></td>
-<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br/> (The idea of phase space, observables, Boltzmann’s entropy formula, the idea of Liouville’s theorem )</p></td>
+<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br /> (The idea of phase space, observables, Boltzmann’s entropy formula, the idea of Liouville’s theorem )</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>04.07</p></td>
-<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br/> (Proof of Liouville’s theorem, variational principle of the entropy, quantum version of the Boltzmann’s postulate, the phase space of ideal gas, the <strong>microcanonical ensemble</strong>. <strong>HW2 due</strong>)</p></td>
+<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br /> (Proof of Liouville’s theorem, variational principle of the entropy, quantum version of the Boltzmann’s postulate, the phase space of ideal gas, the <strong>microcanonical ensemble</strong>. <strong>HW2 due</strong>)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>04.14</p></td>
-<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br/> (The <strong>canonical ensemble</strong>, <strong>generalized ensemble</strong>, <strong>Grand canonical ensemble</strong>.)</p></td>
+<td class="text-align:left"><p>The fundamental postulates of statistical mechanics <br /> (The <strong>canonical ensemble</strong>, <strong>generalized ensemble</strong>, <strong>Grand canonical ensemble</strong>.)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>04.21</p></td>
 <td class="text-align:left"><p><strong>The midterm exam</strong> (<strong>HW3 due</strong>)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>04.28</p></td>
-<td class="text-align:left"><p>The interacting free systems <br/> (Single mode harmonic oscillator, midterm exam discussion)</p></td>
+<td class="text-align:left"><p>The interacting free systems <br /> (Single mode harmonic oscillator, midterm exam discussion)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>05.05</p></td>
-<td class="text-align:left"><p>The interacting free systems <br/> (Concept of Brillouin zone, Phonon and Debye model, photon)</p></td>
+<td class="text-align:left"><p>The interacting free systems <br /> (Concept of Brillouin zone, Phonon and Debye model, photon)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>05.12</p></td>
-<td class="text-align:left"><p>The interacting free systems <br/> (Fermions and bosons, quantum statistics, Hamiltonian and Hilbert space of many-particle systems.  <strong>HW4 due</strong>)</p></td>
+<td class="text-align:left"><p>The interacting free systems <br /> (Fermions and bosons, quantum statistics, Hamiltonian and Hilbert space of many-particle systems.  <strong>HW4 due</strong>)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>05.19</p></td>
-<td class="text-align:left"><p>The interacting free systems <br/> (Fermi sea and Bose-Einstein condensation) <br/> Phases and phase transitions <br/> (Motivation of the study of phases and phase transitions.)</p></td>
+<td class="text-align:left"><p>The interacting free systems <br /> (Fermi sea and Bose-Einstein condensation) <br /> Phases and phase transitions <br /> (Motivation of the study of phases and phase transitions.)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>05.26</p></td>
-<td class="text-align:left"><p>Phases and phase transitions <br/> (Phases and phase diagram, thermodynamic limit, phase transitions, symmetry and spontaneous symmetry braking (I:Introduction), classical Ising model and the phase diagram <strong>HW5 due</strong>)</p></td>
+<td class="text-align:left"><p>Phases and phase transitions <br /> (Phases and phase diagram, thermodynamic limit, phase transitions, symmetry and spontaneous symmetry braking (I:Introduction), classical Ising model and the phase diagram <strong>HW5 due</strong>)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>06.02</p></td>
-<td class="text-align:left"><p>Phases and phase transitions <br/> ( The heuristic arguments of the phase diagram of Ising model, spontaneous symmetry breaking(II: Analytic property of free energy for finite and thermodynamic system).)</p></td>
+<td class="text-align:left"><p>Phases and phase transitions <br /> ( The heuristic arguments of the phase diagram of Ising model, spontaneous symmetry breaking(II: Analytic property of free energy for finite and thermodynamic system).)</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>06.09</p></td>
-<td class="text-align:left"><p>Phases and phase transitions <br/> ( Spontaneous symmetry breaking(III: Ergodicity breaking), the one-dimensional Ising model and the transfer matrix method, The Weiss mean field theory and the universality class, comparing Ising model and Van der Waals gas model, symmetry and the Ginsburg-Landau theory. <strong>HW6 due</strong>)</p></td>
+<td class="text-align:left"><p>Phases and phase transitions <br /> ( Spontaneous symmetry breaking(III: Ergodicity breaking), the one-dimensional Ising model and the transfer matrix method, The Weiss mean field theory and the universality class, comparing Ising model and Van der Waals gas model, symmetry and the Ginsburg-Landau theory. <strong>HW6 due</strong>)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>06.16</p></td>
 <td class="text-align:left"><p><strong>Final exam(online)</strong></p></td>
@@ -424,10 +430,10 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="how-to-benefit-from-the-course">How to benefit from the course?<a class="headerlink" href="#how-to-benefit-from-the-course" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="how-to-benefit-from-the-course">
+<h2>How to benefit from the course?<a class="headerlink" href="#how-to-benefit-from-the-course" title="Permalink to this headline">¶</a></h2>
 <p>The correct mindset: to pass the course is not difficult; to learn something requires hard work!</p>
 <ul class="simple">
 <li><p>For students who want to work in <em>theoretical physics</em>: The bar for theoretical physics is high. It would help if you tried to learn statistical mechanics by self-studying the subject. Try to self-studying the two textbooks and discuss with classmates, TAs, and me during office hours for those important conceptual questions.</p></li>
@@ -435,9 +441,9 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 <li><p>For students who do not belong to above-mentioned categories: The bar is even higher. Try to find out the possible use of statistical mechanics for the subjects that you are interested in. During the lectures, you might have a feeling why statistical mechanics could have a broad range of applications. If you are interested in X, you can try to google “statistical mechanics and X.” I believe you can find something interesting.</p></li>
 <li><p>The bottom line is: <strong>DO NOT LEARN SUBJECTS BY ATTENDING LECTURES ONLY</strong>. You can become better and better by thinking independently, but not by attending more and more lectures.</p></li>
 </ul>
-
-
-<h2 id="how-to-use-this-note">How to use this note?<a class="headerlink" href="#how-to-use-this-note" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="how-to-use-this-note">
+<h2>How to use this note?<a class="headerlink" href="#how-to-use-this-note" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p>I will have a short summary of the key concepts that I hope you learn in each section. After the lecture or reading the section, a simple question is: do I know the meaning of the statement in summary?</p>
 <div class="tip admonition">
@@ -459,15 +465,16 @@ applications(starting from non-interacting systems, classical gas, and quantum g
 </li>
 <li><p>Some of the material will be in the jupyter notebook format. That means you can download the jupyter notebook and run your own simulation.</p></li>
 </ol>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-
-<script type="text/x-thebe-config">
+    <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -485,50 +492,25 @@ applications(starting from non-interacting systems, classical gas, and quantum g
         predefinedOutput: true
     }
     </script>
-<script>kernelName = 'python3'</script>
+    <script>kernelName = 'python3'</script>
 
-          </article>
-        </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-          
-            <a href="introduction.html" title="Introduction"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Introduction </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
-        
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2021.
-              
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="next">
+    <a href="introduction.html"
+       title="next chapter">Introduction →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>
