@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Phases and phase diagram &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ising models and spontaneous symmetry breaking" href="Ising_models.html" />
+    <link rel="prev" title="Phases and phase transitions" href="phases_transitions.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#phase_diagram" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/logo-wide.svg" height="26"
+                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
+          <span class="md-header-nav__topic"> Phases and phase diagram </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
+          <li class="md-tabs__item"><a href="phases_transitions.html" class="md-tabs__link">Phases and phase transitions</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
+      
+        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="syllabus.html"
+       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#phase-diagram--page-root" class="md-nav__link">Phases and phase diagram</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#what-is-a-phase-what-is-a-phase-diagram" class="md-nav__link">What is a phase? What is a phase diagram?</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-spirit-of-model-studying" class="md-nav__link">The spirit of model studying</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-formal-description-of-our-system" class="md-nav__link">The formal description of our system</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-thermodynamic-limit" class="md-nav__link">The thermodynamic limit</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-continuous-and-discontinuous-phase-transition-formal-definition" class="md-nav__link">The continuous and discontinuous phase transition ( formal definition)</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/phase_diagram.md">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="phase-diagram--page-root">Phases and phase diagram<a class="headerlink" href="#phase-diagram--page-root" title="Permalink to this headline">¶</a></h1>
+<p>We start the discussion from the general public understanding of what is a phase and phase transitions. Then, we will discuss why we are doing the model studying from a logical point of view. After that, we will introduce some formal definition of thermodynamic limit that is crucial for our later discussion. In the next section, we will use Ising model as a concrete examples to discuss what is the physical meaning of those concepts.</p>
+
+<h2 id="what-is-a-phase-what-is-a-phase-diagram">What is a phase? What is a phase diagram?<a class="headerlink" href="#what-is-a-phase-what-is-a-phase-diagram" title="Permalink to this headline">¶</a></h2>
+<p>We learn the concept of phases before we enter the university. We were told that there are three phases for water. The solid phase(ice), the liquid phase(water) and the gas phase(vapor).</p>
+<p>Those phases can be achieve via different physical condition. For example, we can have ice when we are below 0<span class="math notranslate nohighlight">\(^\circ\)</span>C. When we are at room temperature, we can observe phase transition from solid to liquid phase–the ice melts. The diagram that tells us what are the stable phase under different physical parameters is the phase diagram. In an abstract sense, the phases are different pattern of collective behavior. The phase diagram is the diagram that describe what are the physical parameters such that specific pattern of collective behavior is stable and how the system changes their collective behavior when the physical parameters are adjusted.</p>
+<p>In fact, there are more than three phases for a many-body system. We could have ferromagnetic for magnetic systems, we could have insulator as plastic, we could have plasma as our sun. There are so many phases out there. How to understand them? How to characterize the transition between different phases? Why the transition between different phases could be an interesting subject to understand? We will try to elaborate this part.</p>
+
+
+<h2 id="the-spirit-of-model-studying">The spirit of model studying<a class="headerlink" href="#the-spirit-of-model-studying" title="Permalink to this headline">¶</a></h2>
+<p>In the study of phases or phase transitions, one will encounter various models. Ising model, Heisnberg model, Potts model, dimer models, height models, etc. They are related to various interesting concepts including topology and gauge theories. However, why should we study those models? What can we learn from studying of those models?</p>
+<p>We will discuss one of the important models – the Ising model. After we study the Ising model, one will soon realize that the model are quite ``simple’’. It is so simple that it is not clear why such a simple model would be relevant to describe our nature. Other above mentioned models also share similar features that they seem to be ad hoc models for special purposes. There should be some physical arguments about why we should study such models and how such ad hoc models could help us understand certain physical phenomena.</p>
+<p>Conceptually, it is tied with the idea that we are looking for a simplest nontrivial model to help us understand specific physical phenomena.
+From this perspective, the Ising model is the simplest non-trivial model to study phase transitions.
+To study phase transitions, at least the model needs to have two phases.
+Ising model host a disordered phase at high temperature and a ordered phase at zero temperature limit.
+Surprisingly, Ising model also demonstrate two types of phase transitions: the first order phase transition and continuous phase transition depends on whether the <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry is explicitly broken.
+However, with only discrete symmetry, we don’t expect Ising model to demonstrate the behavior of phase transition with continuous symmetry.
+To study those phenomena, one needs to find a simplest nontrivial model with continuous symmetry.</p>
+<p>We describe the model as ‘simple’ models in a sense that the physical meaning and the expression of the model can be related clearly. But that does not mean they are easy to study or understand. However, because of the ‘simplicity’, one can go pretty far to understand those models. Sometimes, one can even solve it exactly.</p>
+<p>On the other hand, one could feel studying those models are usually far away from physical reality.
+How could such highly simplified models gives us hints about what happened in nature? The traditional approach is to start from microscopic physics and include different effects one by one.
+If certain phenomena is not captured, we include more parameters into our model.
+Such bottom up approach usually have very strong connection with microscopic details.
+However it usually also leads to a complicated Hamiltonian which can only be solved approximately.
+Comparing with the idealistic models which can be solved exactly, one might reach the conclusion that we should just give up those beautiful structure and use computers to help us solving those complicate but realistic model.</p>
+<p>The problem about this approach is about the generality. Starting from realistic but complicate models, one can make some predictions. Or even fit the experimental data pretty well by tuning parameters. However, what is the general structure for the model is usually hidden behind the complicated competing effects. The simple toy models might not give us quantitatively correct answers. However, the simple structure helps us to identify the universal behavior and the mechanism behind the universal behaviors.</p>
+<p>From this point of view, studying those simple but nontrivial models actually is quite valuable to understand the general behavior without the microscopic details. However, how to get the simplest non-trivial model as a starting point is an art. The theoretical framework that address this question is the concept of renormalization group(RG) and effective theory. One can use RG to identify the relevant ingredients for constructing a simplest non-trivial model. The two approach has their pros and cons, one should keep that in mind and use them according to different purposes.</p>
+
+
+<h2 id="the-formal-description-of-our-system">The formal description of our system<a class="headerlink" href="#the-formal-description-of-our-system" title="Permalink to this headline">¶</a></h2>
+<p>To set the stage, we will formulate our problem formally and use the specific example–Ising model to demonstrate the point of view.</p>
+<p>Consider a sample region <span class="math notranslate nohighlight">\(\Omega\)</span> the Hamiltonian of the system is <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>. The surface and the volume of <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(S(\Omega)\)</span> and <span class="math notranslate nohighlight">\(V(\Omega)\)</span>. For the sample with linear dimension <span class="math notranslate nohighlight">\(L\)</span>. In <span class="math notranslate nohighlight">\(D\)</span> dimensional system, we know <span class="math notranslate nohighlight">\(V(\Omega)\propto L^D\)</span> and <span class="math notranslate nohighlight">\(S(\Omega)\propto L^{D-1}\)</span>.</p>
+<p>We will use <span class="math notranslate nohighlight">\(H_{\Omega}\)</span> to define our system</p>
+<div class="math notranslate nohighlight">
+\[
+-\beta H_{\Omega}[\{K_n\}]=\sum_n K_n\Theta_n\text{.}
+\]</div>
+<p>Here,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(-\beta H_{\Omega}[\{K_n\}]\)</span> is the object that is important for us to construct the partition function.</p></li>
+<li><p>The partition function is parameterized by dimensionless parameters <span class="math notranslate nohighlight">\(K_n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Theta_n\)</span> is the n-body operators for the dynamical degrees of freedom. <em>e.g.</em> two-spin coupling as <span class="math notranslate nohighlight">\(S_iS_j\)</span>, three-spin coupling as <span class="math notranslate nohighlight">\(S_iS_jS_k\)</span>, etc.</p></li>
+</ul>
+<p>The partition function of our system is</p>
+<div class="math notranslate nohighlight">
+\[
+Z[\{K_n\}]=Tr\left[e^{-\beta H_{\Omega}[\{K_n\}]}\right]\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(Tr[]\)</span> means the summation over all possible microscopic configuration. For Ising model with <span class="math notranslate nohighlight">\(N\)</span> spins, the trace corresponds to <span class="math notranslate nohighlight">\(\sum_{S_1}\sum_{S_2}...\sum_{S_N}\)</span>.</p>
+<p>The free energy of our sample <span class="math notranslate nohighlight">\(\Omega\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+F_{\Omega}[\{K_n\}]= \underbrace{V(\Omega)}_{\sim L^D} \underbrace{f_b[\{K_n\}]}_{\text{bulk free energy density}}+\underbrace{S(\Omega)}_{\sim L^{D-1}} \underbrace{f_s[\{K_n\}]}_{\text{surface free energy density}}+O(L^{D-2})\text{.}
+\]</div>
+
+
+<h2 id="the-thermodynamic-limit">The thermodynamic limit<a class="headerlink" href="#the-thermodynamic-limit" title="Permalink to this headline">¶</a></h2>
+<p>The thermodynamic limit of the system is well defined if the bulk free energy density is well defined and is independent of the system size <span class="math notranslate nohighlight">\(\Omega\)</span> at the following limit.</p>
+<div class="math notranslate nohighlight">
+\[
+f_b[\{K_n\}]\equiv \lim_{V(\Omega)\to\infty} \frac{F_{\Omega}[\{K_n\}]}{V(\Omega)}\text{.}
+\]</div>
+<p>Another usually used definition for thermodynamic limit is when the system size and number of degrees of freedom increases, <em>i.e.</em> <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> and <span class="math notranslate nohighlight">\(V(\Omega)\to\infty\)</span>, in a way that the density of the number of degrees of freedom, <span class="math notranslate nohighlight">\(\frac{N(\Omega)}{V(\Omega)}\)</span>, is kept fixed, the bulk free energy density is finite with no dependence on <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>Most of the system we considered has a well defined thermodynamic limit. So let’s take a example which has no well defined thermodynamic limit.</p>
+<p>Consider a ball with uniforml charge density <span class="math notranslate nohighlight">\(\rho\)</span> with radius <span class="math notranslate nohighlight">\(R\)</span>. We can ask what is the energy of the system as a function of <span class="math notranslate nohighlight">\(R\)</span>? Will the system have a well defined thermodynamic limit when <span class="math notranslate nohighlight">\(R\to\infty\)</span>?</p>
+<p>Suppose the potential energy of charge Q and q is <span class="math notranslate nohighlight">\(V(r)=\frac{AQq}{r}\)</span>. The total potential energy of the ball is</p>
+<div class="math notranslate nohighlight">
+\[
+E(R)=\int_0^R \left( \rho \frac{4\pi}{3}r^3 \right)\frac{A}{r}\left(\rho 4\pi r^2\right) dr\propto R^5\text{.}
+\]</div>
+<p>So we have</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{R\to\infty} \frac{E(R)}{V(R)}\sim\lim_{R\to\infty} R^2\text{.}
+\]</div>
+<p>Therefore, we conclude the system does not have a proper thermodynamic limit. We can also see the fact that the system does not have a proper thermodynamic limit is because we consider potential energy due to long range interaction. Because of that, we will only focus on system with short range interaction with a well defined thermodynamic limit.</p>
+</div>
+
+
+<h2 id="the-continuous-and-discontinuous-phase-transition-formal-definition">The continuous and discontinuous phase transition ( formal definition)<a class="headerlink" href="#the-continuous-and-discontinuous-phase-transition-formal-definition" title="Permalink to this headline">¶</a></h2>
+<p>From the expression</p>
+<div class="math notranslate nohighlight">
+\[
+Z[\{K_n\}]=Tr\left[e^{-\beta H_{\Omega}[\{K_n\}]}\right]; -\beta H_{\Omega}[\{K_n\}]=\sum_n K_n\Theta_n\text{.}
+\]</div>
+<p>We know that the system is controlled by the dimensionless coupling constants <span class="math notranslate nohighlight">\(K_n\)</span>. When we change <span class="math notranslate nohighlight">\(K_n\)</span>, we could change the pattern of the collective behavior. Therefore, we can go from one phase to another. So, how to change <span class="math notranslate nohighlight">\(K_n\)</span>? Usually, <span class="math notranslate nohighlight">\(K_n\)</span> is related to the ratio between the microscopic coupling energy scale and the thermal fluctuation controlled by macroscopic temperature <span class="math notranslate nohighlight">\(T\)</span>. For example, for Ising model, the Hamiltonian is <span class="math notranslate nohighlight">\(\sum_{i,j} JS_iS_j\)</span>, the corresponding dimensionless coupling is <span class="math notranslate nohighlight">\(K=-\beta J\)</span>. To change <span class="math notranslate nohighlight">\(K\)</span>, we can either adjust <span class="math notranslate nohighlight">\(J\)</span> or change the temperature <span class="math notranslate nohighlight">\(T\)</span>. In practice, changing how spins coupled with each other is more difficult comparing with changing the temperature of the system. Therefor, the easiest way to drive the system from one phase to the other is by changing temperature.</p>
+<p>The phase diagram is therefore, a diagram described in the coupling constant space. The dimension of this coupling constant space depends on the model. In general, we could have a high dimensional space. However, as we already pointed out, the coupling constants are functions of the inverse temperature <span class="math notranslate nohighlight">\(\beta=(k_BT)^{-1}\)</span>. As we change the temperature <span class="math notranslate nohighlight">\(\{K_n(\beta)\}\)</span>, which controls the partition function, will traverse the phase diagram from one region to the other in the coupling constant space. It is possible that the system will cross the phase boundary and phase transitions happened.</p>
+<p>At the phase boundary, the free energy must be continuous. We can characterize the phase transition as continuous or discontinuous phase transitions according to the following criteria</p>
+<ol class="simple">
+<li><p>Continuous phase transition: <span class="math notranslate nohighlight">\(\frac{\partial f_b[{K_n}]}{\partial K_i}\)</span> are all continuous across the phase boundary. Sometimes it is called second order phase transition. However, this is a bad nomenclature. So we mentioned this term just in case you read it in some old references.</p></li>
+<li><p>Discontinuous phase transition: One or more <span class="math notranslate nohighlight">\(\frac{\partial f_b[{K_n}]}{\partial K_i}\)</span> are discontinuous across the phase boundary. Sometimes it is called first order phase transition. Similarly, we should avoid using this term during our discussion.</p></li>
+</ol>
+
+
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="phases_transitions.html" title="Phases and phase transitions"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Phases and phase transitions </span>
+              </div>
+            </a>
+          
+          
+            <a href="Ising_models.html" title="Ising models and spontaneous symmetry breaking"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Ising models and spontaneous symmetry breaking </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

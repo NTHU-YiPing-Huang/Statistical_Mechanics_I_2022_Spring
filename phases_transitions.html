@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Phases and phase transitions &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Phases and phase diagram" href="phase_diagram.html" />
+    <link rel="prev" title="Free Fermions and Bosons" href="Fermion_Boson.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#phases_transitions" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/logo-wide.svg" height="26"
+                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
+          <span class="md-header-nav__topic"> Phases and phase transitions </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
+      
+        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="syllabus.html"
+       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#phases-transitions--page-root" class="md-nav__link">Phases and phase transitions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#motivation" class="md-nav__link">Motivation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#why-should-we-study-phases-of-matter-and-phase-transitions" class="md-nav__link">Why should we study phases of matter and phase transitions?</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-pattern-of-collective-behavior" class="md-nav__link">The pattern of collective behavior</a>
+        </li>
+        <li class="md-nav__item"><a href="#effective-theory-at-different-scales" class="md-nav__link">Effective theory at different scales</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#ising-model-the-simplest-non-trivial-system" class="md-nav__link">Ising model–The simplest non-trivial system</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/phases_transitions.md">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="phases-transitions--page-root">Phases and phase transitions<a class="headerlink" href="#phases-transitions--page-root" title="Permalink to this headline">¶</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id16">Gol18</a>]</span> Chap. 2,3,5</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Summary</p>
+<ol class="simple">
+<li><p>A phase means a stable pattern of a collective behavior for a many-body system.</p></li>
+<li><p>A phase diagram is the diagram defined in the parameter space of a particular Hamiltonian. Different points on the diagram represent different parameters of the corresponding Hamiltonian. Points in the same regrion are the points in the same phase.</p></li>
+<li><p>Phase transitions occurs when the pattern of the collective behavior of the many-body system changes. The pattern could change adruptly or slowly. The sudden change of collective behavior is called the discontinuous phase transition. The smooth change of collective behavior is called the continuous phase transition.</p></li>
+<li><p>Thermodyanmic limit matters for a well-defined notion of phase transition.</p></li>
+<li><p>Spontaneous symmetry breaking means the Hamiltonian of the system has a symmetry. But the statistical behavior of the system does not respect that symmetry. It is an emergent phenomenon!</p></li>
+<li><p>The phases and phase diagram of Ising model</p>
+<ul class="simple">
+<li><p>The thermal fluctuation at one-dimensional Ising model melts the order. No finite temperature phase transition in one-dimensional Ising model.</p></li>
+<li><p>The thermal fluctuation at two-dimensional Ising model is not so strong, so there is a finite temperature phase transition for the two-dimensional Ising model.</p></li>
+</ul>
+</li>
+<li><p>We can solve one-dimensional Ising model using the transfer matrix method.</p></li>
+<li><p>Mean field theory is a versatile and simple approach for interacting systems.</p>
+<ul class="simple">
+<li><p>It can be directly connected with the physical picture.</p></li>
+<li><p>It does not have the information of dimensionality.</p></li>
+<li><p>It can be qualitative wrong. For example, it predicts a finite temperature phase transition for the one-dimensional Ising model which has no finite temperature phase transition according to the exact result using the transfer matrix approach.</p></li>
+</ul>
+</li>
+<li><p>The mean field theory is closely related to the physical picture of Ginsburg-Landau theory.</p></li>
+</ol>
+</div>
+
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+
+<h3 id="why-should-we-study-phases-of-matter-and-phase-transitions">Why should we study phases of matter and phase transitions?<a class="headerlink" href="#why-should-we-study-phases-of-matter-and-phase-transitions" title="Permalink to this headline">¶</a></h3>
+<p>From the broad scope, why studying phases of matter is important? The simplest reason for this course is: we would like to extend our understandings beyond interacting free systems, since most of the systems in nature are interacting systems. The non-interacting limit is just a pedagogical limit. We have learned the fundamental structure of statistical mechanics and use it to study several interacting free systems. It is about time to explore the more challenging interacting systems.</p>
+<p>The interacting free systems are nice since we can reduce the many-body problem into a single body problem. Why it is so? When the degrees of freedom are not interacting with each other, we can effectively consider the physics for any one of the “free modes”. Since the “free modes” does not talk with each other, understanding one of them is equivalent to understand all of them. (Like the Debye model, <span class="math notranslate nohighlight">\(\omega(k_1)\)</span> and <span class="math notranslate nohighlight">\(\omega(k_2)\)</span> mode has no fundamental difference.) That behavior is also demonstrated in the fact that we can factorize our partition function easily.</p>
+<p>We can try to imagine what will be different if we include interactions. At the non-interacting limit, the collective modes does not couple with each other. When those modes interact with each other in some way, there are at least two possibilities. The first possibility is the interaction between those modes does not change the behavior of the system qualitatively. Some minor detail is modified, we can adjust the description and, again, describe the system formally as a non-interacting system (interaction is an irrelevant coupling, in renormalization group language). The other possibility which is more interesting. The coupling between these modes might be modified dramatically by the interaction such that the new collective mode cannot be approximated by the non-interacting modes we start with (interaction is a relevant coupling, in renormalization group language). The pattern of collective behavior could be changed qualitatively and new phenomena emerge. The new phenomena  might be difficult to be understood using the non-interacting variables, we might need to develop new theories to describe the essence of them.</p>
+
+
+<h3 id="the-pattern-of-collective-behavior">The pattern of collective behavior<a class="headerlink" href="#the-pattern-of-collective-behavior" title="Permalink to this headline">¶</a></h3>
+<p><strong>Studying phases is studying the patterns of collective behavior. Studying phase transitions is exploring how patterns of collective behavior changes under distinct circumstances.</strong> It is tempting to ask: if we change the form of the interaction (from non-interacting to interacting) or if we change the constraints of the interaction (interaction can happen only when certain condition is satisfied), how the pattern of collective behavior changes? This is the type of questions we address on the research of phase transitions. For example, the transition from the paramagnetic phase to the ferromagnetic phase of the Ising model. The paramagnetic phase is a phase where the spins are arranged randomly. We can ask: if we turn on a “weak”(weak comparing with what?) coupling between the spins, will that modify the behavior of the spin once an infinite small interaction is turned on? Intuition tells us that it should not be the case, the paramagnetic phase should survive until the interaction between the spins are too strong such that they can overcome the thermal fluctuation. Therefore, the paramagnetic phase for non-interacting spins and the paramagnetic phase of weakly interacting spins should be considered as qualitatively similar pattern of collective behavior. We will discuss related phenomena deeper during the lectures.</p>
+<p>The simple phenomena described above already raises an important question: how to describe a phase? What is a scientific sound definition of a phase? What can we say about the corresponding phase transition according to this definition? That leads to a deeper question we would like to answer during the study of phases and phase transitions. <em>i.e.</em> What is the theoretical framework to describe the pattern of collective behavior such that it is coarse enough to identify those patterns without qualitative difference and sharp enough to signal the subtle difference between those patterns with quantitative distinct physical properties? Different levels of answers of this question will be the stepping stones to the important concept of effective theories.</p>
+
+
+<h3 id="effective-theory-at-different-scales">Effective theory at different scales<a class="headerlink" href="#effective-theory-at-different-scales" title="Permalink to this headline">¶</a></h3>
+<p>To be more concrete, once we understand more or less what is a phase and how phase transition happen in principle, it is very tempting to ask: when one goes from phase A to phase B via a phase transition, are there any relation between the two phases, <em>i.e.</em>, phase A and phase B? The question is strongly related to <strong>HOW</strong> the many-body system changes the pattern of collective behavior? If there is a specific mechanism behind the phase transition, maybe we can bridge the relation between phase A and phase B. Maybe in the other phases, phase C and phase D could also go from one to the other using similar mechanism. If so, can we build some kind of equivalence relation saying the phase transition from phase A to phase B is similar with the phase transition from phase C to phase D? If it is possible, can we find a unified framework to understand or to categorize those transitions? Also, what is the relation between the theory describe phase A and the theory describe phase C, are they also related in some way? It turns out, it is related to the concept of renormalization group which also leads to the <a class="reference external" href="https://www.nobelprize.org/prizes/physics/1982/wilson/lecture/">Nobel prize of K. G. Wilson</a>. Basically, <strong>the concept of renormalization group provides a framework to categorize theories, therefore, the concept provides “a theory of theories”. It is the foundation of the effective theory approach.</strong></p>
+<p>The line of thought is not emphasized in the undergraduate courses. The four “mechanics” of physics department are: classical mechanics, quantum mechanics, electromagnetic dynamics and statistical mechanics. Statistical mechanics is the only one that focuses on systems with many-degrees of freedom and does not have a specific “applicable region”. (Classical mechanics works in the “classical world”, quantum mechanics works in “atomic world”, electromagnetic dynamics discussed charged system in the “classical world” or the “atomic world”.) At the first glance, it seems like it is not as fundamental with the others. We consider the microscopic physics being governed by classical mechanics, quantum mechanics and electrodynamics. Then we study those system via statistical mechanics. It seems like we just apply the more “fundamental” physics laws to the many-body system. Why it is a required course for the physics department?</p>
+<p>One of the reason that it is not obvious to appreciate this subject is because we need to start from something simple: we usually start with interacting free system. It is difficult to unleash the full potential of statistical mechanics. The study of phases, phase transitions and critical phenomena provides a very nice platform to introduce those fantastic ideas. Especially when interacting effect is included. However, due to the time limit, we will not be able to cover those amazing concepts this semester. We will discuss those ideas in more detail in the Statistical Mechanics (II).</p>
+
+
+
+<h2 id="ising-model-the-simplest-non-trivial-system">Ising model–The simplest non-trivial system<a class="headerlink" href="#ising-model-the-simplest-non-trivial-system" title="Permalink to this headline">¶</a></h2>
+<p>It is amazing that Ising model teaches us so many things including the physics of phases and phase transitions. It is crucial to build a physical picture about what is a phase and what are the corresponding phase diagram from a simple system that we can grasp the key concepts. Therefore, we will focus on the phases and phase diagram of the ferromagnetic Ising model with nearest-neighbor interaction on hypercubic lattices.</p>
+<p>We will start with heuristic physical arguments to understand the phases and phase diagram. During the argument, we can observe the close relation between dimensionality and the strength of fluctuation. Then, we will switch to the more formal approach to derive the partition function of Ising models. In one-dimensional Ising model with external field, we will introduce the transfer matrix method which can give us the exact expression of the partition function. Unfortunately, the approach cannot be generalize to higher dimension. Therefore, we will introduce the mean-field approach which is more versatile but still with its own limitation. Hopefully, in the last lecture, we could introduce the Ginsburg-Landau theory and leave it as a teaser for the more advanced concept such as renormalization group and its connection with critical phenomena and universality class. Those interesting topics will be discussed in the next semester course of statistical mechanics (II).</p>
+
+<div class="toctree-wrapper compound">
+</div>
+
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="Fermion_Boson.html" title="Free Fermions and Bosons"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Free Fermions and Bosons </span>
+              </div>
+            </a>
+          
+          
+            <a href="phase_diagram.html" title="Phases and phase diagram"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Phases and phase diagram </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Mean-field theory &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Teaser of the Ginsburg-Landau theory" href="GL.html" />
+    <link rel="prev" title="Transfer matrix method" href="Ising_models_2.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#MFT" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/logo-wide.svg" height="26"
+                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
+          <span class="md-header-nav__topic"> Mean-field theory </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
+          <li class="md-tabs__item"><a href="phases_transitions.html" class="md-tabs__link">Phases and phase transitions</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
+      
+        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="syllabus.html"
+       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#mft--page-root" class="md-nav__link">Mean-field theory</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#why-mean-field-theory" class="md-nav__link">Why mean field theory?</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-weiss-mean-field-theory" class="md-nav__link">The Weiss mean field theory</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-variational-mean-field-theory" class="md-nav__link">The variational mean field theory</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/MFT.md">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="mft--page-root">Mean-field theory<a class="headerlink" href="#mft--page-root" title="Permalink to this headline">¶</a></h1>
+
+<h2 id="why-mean-field-theory">Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this headline">¶</a></h2>
+<p>Unfortunately, the transfer matrix method does not work beyond one-dimensional system. We will need some other methods to study the interacting systems. Here, we are going to introduce a versatile and simple approach – mean field theory. Mean field theory is probably the simplest self-consistent way to study interacting problems. It is also a powerful tool to describe ones “guess” about the physics. However, due to its generality and the simplicity, the result from this approach might not be robust or it may be <strong>qualitatively</strong> wrong. We will introduce the ideal of mean field theory first via a concrete example using the direct approach and the more formal variational approach. After that, we will discuss the structure of it and understand why it could give us qualitatively wrong answers. At the end of the section, we will discuss the relation between mean field theory and the Landau theory.</p>
+<p>We will focus on the <span class="math notranslate nohighlight">\(D\)</span> dimensional Ising model on hypercubic lattice. The coordinate number <span class="math notranslate nohighlight">\(z=2D\)</span> since we can move forward or backward on the lattice in any of the orthogonal directions.</p>
+
+
+<h2 id="the-weiss-mean-field-theory">The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this headline">¶</a></h2>
+<p>From the previous study of Ising model, we know how to solve the <span class="math notranslate nohighlight">\(J=0\)</span> model where the spins are non-interacting two-level systems under external field, <span class="math notranslate nohighlight">\(H\)</span>, described by <span class="math notranslate nohighlight">\(H_0=-H\sum_{i}S_i\)</span> on hypercubic lattice sites <span class="math notranslate nohighlight">\(i\)</span>. The corresponding magnetization density <span class="math notranslate nohighlight">\(M=\tanh\left(\beta H\right)\)</span>.</p>
+<p>The question we are facing is: how to solve the interacting case <span class="math notranslate nohighlight">\(H_{\Omega}=-J\sum_{\langle i,j\rangle} S_iS_j-H\sum_i S_i\)</span> with <span class="math notranslate nohighlight">\(J&gt;0\)</span>? If we stare at the trouble maker term, we might see it is actually kind of similar to the effect introduced by magnetic field term. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+-J\sum_{\langle i,j\rangle} S_iS_j\stackrel{?}{\to}-\sum_{\langle i,j\rangle} \underbrace{(JS_i)}_{H_i ?}S_j\text{.}
+\]</div>
+<p>If we make this analogy, we encounter a problem, the induced magnetic field <span class="math notranslate nohighlight">\(H_i\)</span> depends on the behavior of the spin on site <span class="math notranslate nohighlight">\(i\)</span>. The final solution of the system will describe the system’s behavior using the exact probability distribution function <span class="math notranslate nohighlight">\(P_E(\{S_i\})\)</span>. Even though we don’t know the answer yet. But we expect the distribution function describes the statistical behavior of <span class="math notranslate nohighlight">\(S_i\)</span> for each site <span class="math notranslate nohighlight">\(i\)</span>. In principle the distribution function could be anything, but our physical picture suggest the distribution should prefer to align all the spins and effective provide a non-zero expectation value of <span class="math notranslate nohighlight">\(S_i\)</span>. That is, we expect <span class="math notranslate nohighlight">\(\langle S_i\rangle_E=M_i\neq0\)</span> at the low temperature limit. At this moment, we don’t know whether the expectation value will depends on <span class="math notranslate nohighlight">\(i\)</span> or not. So we will leave the index <span class="math notranslate nohighlight">\(i\)</span> for now.</p>
+<p>The idea sounds very promising. How should we formulate the idea in equations? One can express the Hamiltonian in the following way</p>
+<div class="math notranslate nohighlight">
+\[
+-J\sum_{\langle i,j\rangle} S_iS_j\stackrel{?}{\to}-\sum_{\langle i,j\rangle} \underbrace{J\left[\left( S_i-\langle S_i\rangle_t \right)+\langle S_i\rangle_t \right]}_{H_i ?}S_j\text{.}
+\]</div>
+<p>At this moment, we don’t know what is the expectation value, it is simply a do nothing expression. The trial distribution function, <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> that is used to evaluate the expectation value is also not determined yet. (We use <span class="math notranslate nohighlight">\(\langle\rangle_t\)</span> to denote the expectation value evaluated by the trial distribution function.)</p>
+<p>The Weiss mean field theory makes the assumption that <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span> and is negligible. Then we use this assumption to see if we can find a self-consistent solution <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> that satisfy <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span>. To simplify our notation, we set <span class="math notranslate nohighlight">\(\langle S_i\rangle_t=m_i\)</span>. (If we are lucky to find the self consistent solution is the exact solution, <span class="math notranslate nohighlight">\(P_t(\{S_i\})=P_E(\{S_i\})\)</span> we can see <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E=0\)</span>.) This bold assumption leads to the fact that we have a mean-field Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+H_{MFT}=-\sum_{\langle i,j\rangle} (H+J\langle S_i\rangle_t)S_j\xrightarrow{m_i=m}-\underbrace{(H+zJ m)}_{H_{eff}}\sum_jS_j\text{.}
+\]</div>
+<p>In the last expression, we made a further assumption that <span class="math notranslate nohighlight">\(m_i\)</span> is site independent and describe it using <span class="math notranslate nohighlight">\(m\)</span>. If we stare at the final expression again, it is just the non-interacting spin system with “external” magnetic field again.</p>
+<p>At this moment, the implicit condition we imposed on the trial distribution function is: it must create the desired magnetization value <span class="math notranslate nohighlight">\(m\)</span>. However, from the fact that it looks like a non-interacting spin system with “external” field. We also know the corresponding distribution function of that system is parameterized by the effective magnetic field, <span class="math notranslate nohighlight">\((H+zJm)\)</span>. So we have the self-consistency check! We are effectively asking: at what value of <span class="math notranslate nohighlight">\(m\)</span>, the trial distribution function <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> parameterized by <span class="math notranslate nohighlight">\(H+zJm\)</span> can give the expectation value of single spin to be <span class="math notranslate nohighlight">\(m\)</span> also? We know how to evaluate the expectation value of single spin for the system, it is simply <span class="math notranslate nohighlight">\(\tanh\left[\beta(H+zJm\right]\)</span>. So the self-consistency equation is</p>
+<div class="math notranslate nohighlight">
+\[
+m=\tanh\left[\beta(H+zJm)\right]\text{.}
+\]</div>
+<p>The qualitative behavior of this equation is a simple calculation problem. So I will leave it as an exercise.</p>
+<p>Logically, we have made several assumptions here.</p>
+<ol class="simple">
+<li><p>The “fluctuation” is small: <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span></p></li>
+<li><p>The mean field parameter <span class="math notranslate nohighlight">\(m_i\)</span> is homogeneous in <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>We can self-consistently solve the equation.</p></li>
+</ol>
+<p><em>In this simple problem, we can also see the mean-field theory implicitly makes the distribution function factorizable, i.e. <span class="math notranslate nohighlight">\(P_t(\{S_i\})=\prod_iP_{t,i}(S_i)\)</span></em></p>
+<p>Fulfill the self-consistency equation is necessary, but not sufficient for the mean-field theory to work. The problem is, even if we have a trial distribution function that satisfy the self-consistency equation, it does not mean the fluctuation is small. A more important logical question is: even if the self-consistent trial distribution function can be derived, it does not guarantee the trial distribution function capture the qualitative physical picture of the exact distribution function.</p>
+<p>So the mean-field theory is a versatile and simple approach to formulate the physical picture. However, it also is limited by above mentioned reasons.</p>
+
+
+<h2 id="the-variational-mean-field-theory">The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this headline">¶</a></h2>
+<p>The physical picture of the Weiss mean field theory is clear. However, the general structure behind the mean field theory might not be so clear. Here, I will discuss another approach to formulate the mean field theory, the variational mean field theory approach.</p>
+<p>The approach relies on the following inequality</p>
+<div class="math notranslate nohighlight" id="equation-exp-convex">
+<span class="eqno">(2)<a class="headerlink" href="#equation-exp-convex" title="Permalink to this equation">¶</a></span>\[
+\langle e^{f(x)}\rangle\ge e^{\langle f(x)\rangle}\text{.}
+\]</div>
+<p>The proof is not difficult, so I will leave it as an exercise.</p>
+<p>Now, let’s start from the partition function.</p>
+<div class="math notranslate nohighlight">
+\[
+Z=\sum_{\{S_i\}} e^{-\beta \left\{\left[H_{\Omega}(\{S_i\})-H_0(\{S_i\})\right]+H_0(\{S_i\})\right\}}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(H_{\Omega}\)</span> is the interacting Hamiltonian we want to solve. <span class="math notranslate nohighlight">\(H_0\)</span> is the non-interacting trial Hamiltonian that we know what will happen. Again, this is a do nothing expression. Now, we can rewrite the expression as</p>
+<div class="math notranslate nohighlight">
+\[
+Z=Z_0\sum_{\{S_i\}} e^{-\beta \left\{\left[H_{\Omega}(\{S_i\})-H_0(\{S_i\})\right]\right\}} \left[\frac{e^{-\beta H_0(\{S_i\})}}{Z_0}\right]=\langle e^{-\beta(H_{\Omega}-H_0)}\rangle_0
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[
+Z_0=\sum_{\{S_i\}}e^{-\beta H_0(\{S_i\})}=e^{-\beta F_0}=e^{-\beta(\langle H_0\rangle_0-TS_0)}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\langle \rangle_0\)</span> represent the average over the distribution function generated by the canonical ensemble of the non-interacting trial Hamiltonian, <span class="math notranslate nohighlight">\(H_0\)</span>. Using <a class="reference internal" href="#equation-exp-convex">(2)</a>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+Z\ge Z_0 e^{-\beta\langle H_{\Omega}-H_0\rangle_0}\equiv Z_{MFT}
+\]</div>
+<p>The idea is, we want to find <span class="math notranslate nohighlight">\(H_0\)</span> such that <span class="math notranslate nohighlight">\(Z_{MFT}\)</span> is maximized. Eauivalently, we want to minimize <span class="math notranslate nohighlight">\(F_{MFT}\equiv -k_BT \ln Z_{MFT}\)</span>.</p>
+<p>By definition, we can show</p>
+<div class="math notranslate nohighlight">
+\[
+f_{MFT}=N(\Omega)^{-1}F_{MFT}=N(\Omega)^{-1}(\langle H_{\Omega}\rangle_0-TS_0)\text{.}
+\]</div>
+<p>Notice the expectation value of the interacting Hamiltonian, <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>, is evaluated using the non-interacting trial distribution function formed by <span class="math notranslate nohighlight">\(H_0\)</span>. Once we express the free energy of the mean field theory using the variation parameter of the non-interacting Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span>, we can minimize the free energy with respect to this variation parameter and derive the self-consistent equation.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>The method we use here is to perform variation in terms of the “order parameter”, m. However, there is a more general method that we can perform to find the variational minima by regarding the probability distribution of the trail Hamiltonian as a variational function. The second approach is more general, however, due to the limit of time, I will not introduce it here. For reader who wants to explore the method further, please check <span id="id1">[<a class="reference internal" href="biblio.html#id17">CL00</a>]</span>.</p>
+</div>
+<p>Let’s use the simple Ising model to see how it works.</p>
+<p>We pick the trial Hamiltonian with variational parameter <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+H_0(\lambda)=-\lambda\sum_iS_i\text{.}
+\]</div>
+<p>From our knowledge to this system, we know the magnetization <span class="math notranslate nohighlight">\(m\)</span> can have one-to-one mapping with the varaition parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. So later, we will perform the variation with respect to <span class="math notranslate nohighlight">\(m\)</span> directly.</p>
+<p>By definition</p>
+<div class="math notranslate nohighlight">
+\[
+\langle S_i\rangle_0\equiv m=\frac{N_{\uparrow}-N_{\downarrow}}{N(\Omega)}\text{.}
+\]</div>
+<p>And we know the probability distribution function of <span class="math notranslate nohighlight">\(H_0\)</span> is factorizable.</p>
+<p>With this information, we can express <span class="math notranslate nohighlight">\(\langle H_{\Omega}\rangle_0\)</span> easily.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle H_{\Omega}\rangle_0=-J\sum_{\langle i,j\rangle_0 } \langle S_iS_j\rangle_0-H\sum_i\langle S_i\rangle_0=-J\sum_{\langle i,j\rangle} \langle S_i\rangle_0\langle S_j\rangle_0-H\sum_i\langle S_i\rangle_0\\
+=N(\Omega)\left[-Jm^2\frac{z}{2}-Hm\right]
+\end{split}\]</div>
+<p>The entropy when <span class="math notranslate nohighlight">\(\langle S_i\rangle_0=m\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+S_0=k_B\ln C^N_{N_{\uparrow}}\xrightarrow{\text{Stirling's approximation}}=N(\Omega)k_B\left\{\ln 2-\frac{1}{2}\left[(1+m)\ln(1+m)+(1-m)\ln(1-m)\right]\right\}\text{.}
+\]</div>
+<p>Using the above expressions, we can construct the free energy density <span class="math notranslate nohighlight">\(f(T,m)\)</span>. We can minimize the free energy density with respect to <span class="math notranslate nohighlight">\(m\)</span> by requiring <span class="math notranslate nohighlight">\(\frac{df}{dm}=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dm}=-Jzm-H +k_BT\underbrace{\left[\frac{1}{2}\ln\left(\frac{1+m}{1-m}\right)\right]}_{\tanh^{-1} m}=0\text{.}
+\]</div>
+<p>We can therefore have the self-consistency equation</p>
+<div class="math notranslate nohighlight">
+\[
+m=\tanh\left[\beta(Jzm+H)\right]\text{.}
+\]</div>
+
+
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="Ising_models_2.html" title="Transfer matrix method"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Transfer matrix method </span>
+              </div>
+            </a>
+          
+          
+            <a href="GL.html" title="Teaser of the Ginsburg-Landau theory"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Teaser of the Ginsburg-Landau theory </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Epilogue &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Teaser of the Ginsburg-Landau theory" href="GL.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#biblio" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/logo-wide.svg" height="26"
+                   alt="2022 Statistical Mechanics (I) - PHYS521000 logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">2022 Statistical Mechanics (I) - PHYS521000</span>
+          <span class="md-header-nav__topic"> Epilogue </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="syllabus.html" class="md-tabs__link">2022 Statistical Mechanics (I) - PHYS521000</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="syllabus.html" title="2022 Statistical Mechanics (I) - PHYS521000" class="md-nav__button md-logo">
+      
+        <img src="_static/logo-wide.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="syllabus.html"
+       title="2022 Statistical Mechanics (I) - PHYS521000">2022 Statistical Mechanics (I) - PHYS521000</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/biblio.md">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="biblio--page-root">Epilogue<a class="headerlink" href="#biblio--page-root" title="Permalink to this headline">¶</a></h1>
+<p>We have introduce the subject of statistical mechanics in the 18 weeks semester. During the lecture, we introduce the basic framework of statistical mechanics (also, I smuggle some references about the related interesting research subjects ;) ). Let’s take an over view of what we have achieved from the logical point of view.</p>
+<ol class="simple">
+<li><p>We ask: what is thermodynamics? We answer this question on a conceptual level.</p>
+<ul class="simple">
+<li><p>We start our introduction by pointing out the phenomenological nature of thermodynamics. Because of that, thermodynamics is applied to various different fields.</p></li>
+<li><p>We emphasis the point of view that thermodynamics is an <strong>effective theory</strong> of the many-body system.</p></li>
+<li><p>At this point, we don’t know what is the theoretical framework for effective theories. But, let’s move on.</p></li>
+</ul>
+</li>
+<li><p>We have a warm up chapter about basic understanding of statistics and use it to explore some of the key ideas we mentioned previously. We study the random walks and picture what effective theory means.</p>
+<ul class="simple">
+<li><p>We introduce the idea of <strong>scale invariance</strong> and the idea of <strong>universality class</strong> using the exact solvable random walk model.</p></li>
+<li><p>From the <strong>microscopic model</strong> we build an <strong>effective macroscopic description</strong> of the physics, <em>i.e.</em> the <strong>diffusion equation</strong>. This is our first exposure of the example of <strong>effective theory</strong>.</p></li>
+<li><p>We make a mathematical connection of the random walk model with the <strong>central limit theorem</strong> which is a mathematical application of the universality class.</p></li>
+<li><p>The solution of the diffusion equation is connect to the central limit theorem.</p></li>
+</ul>
+</li>
+<li><p>We ask again : what is thermodynamics? We answer this question from the formal structure of thermodynamics. We formulate what is thermodynamics by picturing the formal framework of thermodynamics using the function entropy. With several postulated properties of entropy, one can recover the whole thermodynamics. This is just a mathematical concise way to describe thermodynamic. However, the physical picture is not the point we want to emphasis here. The key point of this approach is to emphasis the fundamental importance to have the microscopic interpretation of the core concept – entropy.</p></li>
+<li><p>What is thermodynamics? The effective theory of statistical mechanics.</p>
+<ul class="simple">
+<li><p>The great answer provided by Boltzmann herald the new era of statistical mechanics. Boltzmann’s postulate, <span class="math notranslate nohighlight">\(S=k_B\ln(\vert\Gamma\vert)\)</span>, concisely encapsulate the implicit assumption of statistical independence and the connection between macroscopic and microscopic physics.</p></li>
+<li><p>We reasoned the importance of phase space volume <span class="math notranslate nohighlight">\(\vert \Gamma \vert\)</span> via the Liouville’s theorem. And reasoned why Liouville’s theorem suggest a possible static statistical description of the many-body system.</p></li>
+<li><p>From the Boltzmann’s postulate, we reason one of the very first ensemble–microcanonical ensemble and develop the corresponding ensembles under different constraints.</p></li>
+</ul>
+</li>
+<li><p>We learn how to apply the idea of statistical mechanics to non-interacting systems. We found several generic behavior for those non-interacting systems. Especially, the quantum effect of many-body systems leads to two distinct statistics: Fermi-Dirac and Bose-Einstein statistics. The distinct statistical behavior leads to dramatically different phenomena.</p></li>
+<li><p>We try to extend our understanding to interacting systems by studying the phases and phase transitions of the simplest non-trivial model–Ising model. We use physical reasoning, exact solution and mean field theory to explore the possible physics. What we have learned actually leads to bigger questions: how to systematically understand different phases of matter? Especially, we are using the simple Ising model which cannot be the full story of the possible theory behind phases and phase transitions. It turns out, the theory standing behind the study of phases and phase transitions is “the theory of theories”, the renormalization group framework. In the take-home project, I hope the astonishing similarity of the critical exponents triggers your curiosity that how come the two very distinct systems, with distinct theoretical descriptions, could have very similarly behavior under suitable conditions.</p></li>
+<li><p>We answer most questions for non-interacting systems. However, we only discuss the effect of interacting systems using naive mean field theory and leave the phenomena and various approaches for interacting systems for statistical mechanics (II).</p></li>
+</ol>
+<p>After walking you through the statistical mechanics (I) this semester, I hope the materials not only extend your tool box to think about many-body system (or complex systems) but also motivate you to explore emergent many-body effects beyond non-interacting limits. Our semester ends here and hope you have a wonderful 2022 summer.</p>
+<p id="id1"><dl class="citation">
+<dt class="label" id="id5"><span class="brackets">BO99</span></dt>
+<dd><p>Carl M Bender and Steven A Orszag. <em>Advanced mathematical methods for scientists and engineers I: Asymptotic methods and perturbation theory</em>. Volume 1. Springer Science &amp; Business Media, 1999.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">CL00</span></dt>
+<dd><p>Paul M Chaikin and Tom C Lubensky. <em>Principles of condensed matter physics</em>. Cambridge University Press, 2000.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">Ein07</span></dt>
+<dd><p>Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. <em>Annalen der Physik</em>, 327(1):180–190, 1907.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">Gol18</span></dt>
+<dd><p>Nigel Goldenfeld. <em>Lectures on phase transitions and the renormalization group</em>. CRC Press, 2018.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">Ma85</span></dt>
+<dd><p>Shang-Keng Ma. <em>Statistical mechanics</em>. World Scientific Publishing Company, 1985.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">NH14</span></dt>
+<dd><p>Rahul Nandkishore and David A Huse. Many body localization and thermalization in quantum statistical mechanics. <em>arXiv preprint arXiv:1404.0686</em>, 2014.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">Pel11</span></dt>
+<dd><p>Luca Peliti. <em>Statistical mechanics in a nutshell</em>. Princeton University Press, 2011.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">SLS+21</span></dt>
+<dd><p>KJ Satzinger, Y-J Liu, A Smith, C Knapp, M Newman, C Jones, Z Chen, C Quintana, X Mi, A Dunsworth, and others. Realizing topologically ordered states on a quantum processor. <em>Science</em>, 374(6572):1237–1241, 2021.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">SLK+21</span></dt>
+<dd><p>Giulia Semeghini, Harry Levine, Alexander Keesling, Sepehr Ebadi, Tout T Wang, Dolev Bluvstein, Ruben Verresen, Hannes Pichler, Marcin Kalinowski, Rhine Samajdar, and others. Probing topological spin liquids on a programmable quantum simulator. <em>Science</em>, 374(6572):1242–1247, 2021.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">Set21</span></dt>
+<dd><p>James Sethna. <em>Statistical mechanics: entropy, order parameters, and complexity</em>. Volume 14. Oxford University Press, USA, 2021.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">Sha12</span></dt>
+<dd><p>Ramamurti Shankar. <em>Principles of quantum mechanics</em>. Springer Science &amp; Business Media, 2012.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">Sha94</span></dt>
+<dd><p>Rev Shankar. Renormalization-group approach to interacting fermions. <em>Reviews of Modern Physics</em>, 66(1):129, 1994.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">Sim13</span></dt>
+<dd><p>Steven H Simon. <em>The Oxford solid state basics</em>. OUP Oxford, 2013.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">Sre94</span></dt>
+<dd><p>Mark Srednicki. Chaos and quantum thermalization. <em>arXiv preprint cond-mat/9403051</em>, 1994.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">Tin03</span></dt>
+<dd><p>Michael Tinkham. <em>Group theory and quantum mechanics</em>. Courier Corporation, 2003.</p>
+</dd>
+</dl>
+</p>
+
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="GL.html" title="Teaser of the Ginsburg-Landau theory"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Teaser of the Ginsburg-Landau theory </span>
+              </div>
+            </a>
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
