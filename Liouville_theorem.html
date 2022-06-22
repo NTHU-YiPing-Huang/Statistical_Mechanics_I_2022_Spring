@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liouville’s theorem &mdash; 2022 Statistical Mechanics (I) - PHYS521000</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ergodicity" href="ergodicity.html" />
+    <link rel="prev" title="The fundamental postulate" href="entropy_exp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="syllabus.html" class="icon icon-home"> Python<img src="_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="free_systems.html">Interacting free systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="syllabus.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Postulates_SM.html">Postulates of statistical mechanics</a> &raquo;</li>
+      <li>Liouville’s theorem</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Liouville_theorem.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="liouville-s-theorem">
+<h1>Liouville’s theorem<a class="headerlink" href="#liouville-s-theorem" title="Permalink to this headline">¶</a></h1>
+<p>The Liouville’s theorem tells us why phase space is special and how it helps us to develop a statistical description from the time-evolution of many-body systems.</p>
+<p>The Liouville’s theorem is a theorem based on canonical time-evolution. The time-evolution satisfies the Hamilton’s equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{d \textbf{R}}{dt}= \frac{\partial H}{\partial \textbf{P}}\\
+\frac{d \textbf{P}}{dt}= -\frac{\partial H}{\partial \textbf{R}}\text{.}
+\end{split}\]</div>
+<p>We want to understand the evolution of the probability density in phase space. The probability density in phase space is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+dP(\xi(t))=\rho(\xi(t)) d\xi(t)\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(dP(\xi(t))\)</span> is the probability of the system to be near <span class="math notranslate nohighlight">\(\xi(t)\)</span>.</p>
+<p>There are three conclusions we can derived from Liouville’s theorem</p>
+<ol>
+<li><p>The local probability density <span class="math notranslate nohighlight">\(\rho(\xi(t),t)\)</span> is invariant under the time-evolution.</p>
+<p>The idea of the proof is the local conservation of probability. The probability in phase space is conserved. The continuity equation combined with Hamiltonian evolution proves the statement. One can check the details from <span id="id1">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span>.</p>
+</li>
+<li><p>The phase space volume is invariant under the time-evolution.</p>
+<p>One can follow the proof from <span id="id2">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span>. The idea is simple. We can express the area element of a pair of conjugate variables. Then we try to express the area element after a infinite small time evolution <span class="math notranslate nohighlight">\(dt\)</span>. We will find the area is invariant up to higher order correction.</p>
+</li>
+<li><p>Let’s define <span class="math notranslate nohighlight">\(\xi_0=\xi(t=0)\)</span>. If <span class="math notranslate nohighlight">\(\rho(\xi_0)\)</span> depends only on the extensive variables <span class="math notranslate nohighlight">\(\{X_i(\xi_0)\}\)</span>, <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+   \rho(\xi_0)=\Phi(X_1(\xi_0),X_2(\xi_0),\cdots, X_r(\xi_0))\text{,}
+   \]</div>
+<p>then <span class="math notranslate nohighlight">\(\frac{\partial \rho}{\partial t}=0\)</span>. The detail of the derivation can be found in <span id="id3">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span>.</p>
+</li>
+</ol>
+<ul class="simple">
+<li><p>1 and 2 are equivalent statement with each other because the conservation of phase space volume and the point in phase space will not disappear suggest the density is invariant.</p></li>
+<li><p>Since we postulate the macroscopic system can be specified by the extensive variables. 3 implies that we can have a probability density distribution that has no dependence on time. If it is so, the remaining question is: how to describe the probability density as a function of <span class="math notranslate nohighlight">\(\xi\)</span>.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="entropy_exp.html" class="btn btn-neutral float-left" title="The fundamental postulate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ergodicity.html" class="btn btn-neutral float-right" title="Ergodicity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

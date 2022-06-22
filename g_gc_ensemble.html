@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generalized ensemble and grand canonical ensemble &mdash; 2022 Statistical Mechanics (I) - PHYS521000</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Interacting free systems" href="free_systems.html" />
+    <link rel="prev" title="Canonical ensemble" href="c_ensemble.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="syllabus.html" class="icon icon-home"> Python<img src="_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="free_systems.html">Interacting free systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="syllabus.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="Postulates_SM.html">Postulates of statistical mechanics</a> &raquo;</li>
+      <li>Generalized ensemble and grand canonical ensemble</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/g_gc_ensemble.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="generalized-ensemble-and-grand-canonical-ensemble">
+<h1>Generalized ensemble and grand canonical ensemble<a class="headerlink" href="#generalized-ensemble-and-grand-canonical-ensemble" title="Permalink to this headline">¶</a></h1>
+<p>We can dial back to the derivation of canonical ensemble from micro canonical ensemble. We follow the logical structure below.</p>
+<ol class="simple">
+<li><p>We start by consider the system and the reservoir as a composite system. And we assume this composite system is isolated from the rest of the world. So we can use the micro canonical ensemble to describe this composite system.</p></li>
+<li><p>We consider the two sub-systems can exchange an extensive quantity, energy, between the system we are interested in and the reservoir that is in contact with our system. When the extensive quantity, energy, is exchanged within the system and the reservoir, the total extensive quantity is conserved because the composite system is assumed to be isolated. This allows us to write down the expectation value of any observable defined on the system to be restricted by the conservation of the extensive quantity, energy. We should consider the microscopic configuration of the system and the reservoir.</p></li>
+<li><p>We convert the phase space of the reservoir that is restricted by the conservation of energy to the expression of entropy of the reservoir using the Boltzmann’s postulate. With this trick, we get rid of the integration over the microscopic configurations of the reservoir.</p></li>
+<li><p>By definition, the reservoir is huge comparing with the system such that the intensive variable, temperature, can be considered to be fixed. Because of that, we can expand the exponent, which is the entropy of the reservoir, as a function of the extensive quantity, energy, near the total energy using the ratio of the extensive quantity between the system and the reservoir as the small parameter.</p></li>
+<li><p>Then, we got the probability of the microscopic configuration <span class="math notranslate nohighlight">\(\xi_s\)</span> is proportional with the exponential function. The argument of the exponential function is related to the first derivative of the entropy of the reservoir with respect to the extensive quantity and the corresponding extensive quantity, energy, for the microscopic configuration <span class="math notranslate nohighlight">\(\xi_s\)</span>. This is the Boltzmann factor. The derivative is related to a fix quantity, temperature.</p></li>
+<li><p>So we can argue the probability of the microscopic configurations is proportional with Boltzmann factor and the rest of the calculation just follows.</p></li>
+</ol>
+<p>At this point, we found we can generalize this procedure easily by substitute the extensive quantity, energy, by any possible extensive quantity <span class="math notranslate nohighlight">\(X_i\)</span>. The reservoir can be defined to be a reservoir such that the corresponding first derivative of the entropy of the reservoir with respect to the extensive quantity <span class="math notranslate nohighlight">\(X_i\)</span> to be fixed. Just like the temperature in the canonical ensemble. Then we can run through identical arguments we used in canonical ensemble to derive the corresponding ensemble theory. This is the idea of the <em>generalized ensemble</em>.</p>
+<p>To be more specific, the reservoir has the property that <span class="math notranslate nohighlight">\(f_i\)</span> is fixed. Where we define <span class="math notranslate nohighlight">\(f_i\)</span> via</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial S^{(R)}}{\partial X_i^{(R)}}\right|_E=-\frac{f_i}{T}
+\]</div>
+<p>The additional factor we need to include in the probability description is simply <span class="math notranslate nohighlight">\(\exp\left[\beta \sum_i f_i X_i^{(s)}(\xi_s)\right]\)</span>. Here, sum over <span class="math notranslate nohighlight">\(i\)</span> indicates all the possible extensive quantities that is allowed to exchange when the system and the reservoir is in contact and the corresponding intensive variables that is kept fixed during the process of reaching equilibrium.</p>
+<p>From thermodynamics, we know the pairs of <span class="math notranslate nohighlight">\((X_i,f_i)\)</span> includes <span class="math notranslate nohighlight">\((E,-1),(V,-p),(N,\mu),...\)</span></p>
+<p>The corresponding thermodynamic potential is</p>
+<div class="math notranslate nohighlight">
+\[
+-(TS+\sum_i f_i \langle X_i\rangle)\text{.}
+\]</div>
+<p>The generalized fluctuation-dissipation theorem is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle X_i^2\rangle-\langle X_i\rangle^2=\frac{\partial \langle X_i\rangle}{\partial (\beta f_i)}\text{.}
+\]</div>
+<div class="section" id="the-grand-canonical-ensemble">
+<h2>The grand canonical ensemble<a class="headerlink" href="#the-grand-canonical-ensemble" title="Permalink to this headline">¶</a></h2>
+<p>The system is allowed to exchange particle with the reservoir. That also implicitly suggest the system can exchange energy with the system.</p>
+<p>Therefore, we have the probability of microscopic state,</p>
+<div class="math notranslate nohighlight">
+\[
+P(\xi_s)\propto \exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_s)\right]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Z_{GC}=\sum_{N_s=0}^{\infty}\int d\xi_s\exp\left[\beta((-1)H^{(s)}(\xi_s)+\mu N_s)\right] \approx \exp\left[-\beta(\langle H^{(s)}\rangle -TS-\mu\langle N\rangle)\right]=\exp\left[-\beta \Omega\right]\text{.}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle H\rangle=E=-\frac{\partial \ln Z_{GC}}{\partial \beta}\\
+\langle \hat{N}\rangle=N=\frac{\partial \ln Z_{GC}}{\partial \beta \mu}\text{.}
+\end{split}\]</div>
+<p>Here, we use <span class="math notranslate nohighlight">\(\hat{N}\)</span> to represent the observable of number of particle and distinguish this observable with the average of the number of particle which is represented by <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="section" id="the-ideal-gas-model-grand-canonical-ensemble">
+<h3>The ideal gas model (Grand canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-grand-canonical-ensemble" title="Permalink to this headline">¶</a></h3>
+<p>For the ideal gas model, we usually have fixed <span class="math notranslate nohighlight">\(N\)</span>. If we want to use the grand canonical formalism to describe the system, we can use the following steps to get reid of the chemical potential.</p>
+<ol class="simple">
+<li><p>Construct <span class="math notranslate nohighlight">\(Z_{GC}(T,\mu,V)\)</span>.</p></li>
+<li><p>Calculate the average number of particles by <span class="math notranslate nohighlight">\(\langle N\rangle=N=\frac{\partial \ln Z_{GC}}{\partial \beta \mu}\)</span> and invert this relation to get <span class="math notranslate nohighlight">\(\mu(N,T,V)\)</span>.</p></li>
+<li><p>Insert <span class="math notranslate nohighlight">\(\mu(N,T,V)\)</span> into <span class="math notranslate nohighlight">\(\ln Z_{GC}\)</span> so we can calculate all the thermodynamic quantity and express them using <span class="math notranslate nohighlight">\(N,T,V\)</span>.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+Z_{GC}=\sum_{N=0}^{\infty} e^{\beta\mu N}\left\{\frac{1}{N!}\int \left(\prod_{i=1}^{N}\frac{d \textbf{R}d\textbf{P}}{h^3}\right) \exp\left[-\beta \sum_{j=1}^N\frac{\textbf{P}_j^2}{2m}\right]\right\}=\sum_{N=0}^{\infty} z^NZ_N=\sum_{N=0}^{\infty}\frac{1}{N!}\left(\frac{zV}{\lambda^3}\right)^N=\exp[\frac{zV}{\lambda^3}]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\langle \hat{N}\rangle=N=\frac{\partial \ln Z_{GC}}{\partial (\beta \mu)}=e^{\beta \mu}\frac{V}{\lambda^3}=\frac{zV}{\lambda^3}
+\]</div>
+<p>Using this relation, we can have the state equation</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega=-k_BT \ln Z_{GC}=-Nk_BT=-PV\text{.}
+\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="c_ensemble.html" class="btn btn-neutral float-left" title="Canonical ensemble" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="free_systems.html" class="btn btn-neutral float-right" title="Interacting free systems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

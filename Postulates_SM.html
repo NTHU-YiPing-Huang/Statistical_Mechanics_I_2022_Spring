@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postulates of statistical mechanics &mdash; 2022 Statistical Mechanics (I) - PHYS521000</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Phase space and Observables" href="phase_space_observables.html" />
+    <link rel="prev" title="Review of thermodynamics" href="rev_thermodyn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="syllabus.html" class="icon icon-home"> Python<img src="_static/logo-wide.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numerical_tools.html">Numerical tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Postulates of statistical mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="free_systems.html">Interacting free systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="syllabus.html">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="syllabus.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Postulates of statistical mechanics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Postulates_SM.md" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="postulates-of-statistical-mechanics">
+<h1>Postulates of statistical mechanics<a class="headerlink" href="#postulates-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span> Chap. 3, <span id="id2">[<a class="reference internal" href="biblio.html#id15">Ma85</a>]</span> Chap. 26</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Summary</p>
+<ul>
+<li><p>The Boltzmann’s postulate of entropy</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[ S=k_B\ln(|\Gamma|)\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(S\sim \mathcal{O}(N)\)</span> and <span class="math notranslate nohighlight">\(|\Gamma|\sim\mathcal{O}(e^{N})\)</span> <span class="math notranslate nohighlight">\(\to\)</span> Implicit assumption of statistical independence.</p></li>
+<li><p>Connecting the microscopic physics with the macroscopic physics.</p></li>
+<li><p>Reproduce the key properties of thermodynamic entropy</p></li>
+</ul>
+</li>
+<li><p>What is (Why) phase space?</p>
+<ul class="simple">
+<li><p>A high-dimensional space</p></li>
+<li><p>Observables and the extensive quantities</p></li>
+<li><p>Canonical evolution and Livioulle theorem <span class="math notranslate nohighlight">\(\to\)</span> Possible to have statistical description <span class="math notranslate nohighlight">\(\to\)</span> Turning time average into  the ensemble average!</p></li>
+</ul>
+</li>
+<li><p>The ensemble theory</p>
+<ul class="simple">
+<li><p>micro canonical ensemble</p></li>
+<li><p>canonical ensemble</p></li>
+<li><p>generalized ensemble</p></li>
+<li><p>grand canonical ensemble</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>After we have introduce the simple example of ideal gas and review the structure of thermodynamics in the last chapter. It is tempting to develop the microscopic interpretation for macroscopic observables based on statistical description. The idea however is not so straight forward. The challenge is: how to go from the time evolution to statistics?</p>
+<p>Or, one can ask: what is the general structure behind the time evolution? The question is interesting. However, it is too broad for us to explore. We will try to narrow the scope in the following course and ask a simpler question: what is the general structure for the time evolution without dissipation?</p>
+<p>Even for this more specific question, it is still quite challenging. It is because the microscopic components in a generic system interacts with each other. Therefore, it is not clear how one can make a general conclusion since the microscopic components can interact with each other in various different ways.</p>
+<p>Boltzmann’s postulate suggests an interesting way to think about the problem: the microscopic components might interact with each other in various fashion; however, it is possible to have a phase that even though the microscopic components interacts with each other, the microscopic components can be considered to be statistical independent within the observation space and time scale. When the system reaches such phase, its correlation in space and time are lost. We might have a simpler system to understand.</p>
+<p>For such a system, the microscopic configurations can be considered statistically independent. Boltzmann postulates to encapsulate the information neatly in the expression <span class="math notranslate nohighlight">\(S=k_B\ln (|\Gamma|)\)</span> where the possible configurations can be considered as the product of configurations in the subsystems and the corresponding information is related to the thermodynamic entropy. Here <span class="math notranslate nohighlight">\(S\)</span> is the thermodynamic entropy and <span class="math notranslate nohighlight">\(|\Gamma|\)</span> is the accessible phase space volume.</p>
+<p>We are going to introduce this idea in this chapter. After we went though the related concept, the related probability description, ensemble theory, is introduced. We will use some simplest non-trivial examples to demonstrate related ideas.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rev_thermodyn.html" class="btn btn-neutral float-left" title="Review of thermodynamics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="phase_space_observables.html" class="btn btn-neutral float-right" title="Phase space and Observables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
