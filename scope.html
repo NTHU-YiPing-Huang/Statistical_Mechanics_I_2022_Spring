@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>The applications of statistical mechanics</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Numerical tools" href="numerical_tools.html" />
+  <link rel="prev" title="Motivation: Why learn statistical mechanics?" href="motivation.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="introduction.html">Introduction</a> &raquo;</li>
+    
+    <li>The applications of statistical mechanics</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="motivation.html"
+       title="previous chapter">← Motivation: Why learn statistical mechanics?</a>
+  </li>
+  <li class="next">
+    <a href="numerical_tools.html"
+       title="next chapter">Numerical tools →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="the-applications-of-statistical-mechanics">
+<h1>The applications of statistical mechanics<a class="headerlink" href="#the-applications-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="difference-between-statistical-mechanics-with-classical-mechanics-electrodynamics-and-quantum-mechanics">
+<h2>Difference between statistical mechanics with classical mechanics, electrodynamics, and quantum mechanics<a class="headerlink" href="#difference-between-statistical-mechanics-with-classical-mechanics-electrodynamics-and-quantum-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>Here, we are going to make a comparison between statistical mechanics and other fundamental subjects that we encountered in physics.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Subject</p></th>
+<th class="text-align:left head"><p>Status of the system</p></th>
+<th class="text-align:left head"><p>Evolution in time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Classical mechanics</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\{\textbf{x}_{j}(t)\}, \left\{\frac{d \textbf{x}_{j}(t)}{d t}\right\}\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\mathcal{L\left(\{\textbf{x}_{j}(t)\}, \{\frac{d \textbf{x}_{j}(t)}{d t}\},t\right)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Electrodynamics</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\textbf{A}(\textbf{x},t), V(\textbf{x},t)\)</span></p></td>
+<td class="text-align:left"><p>Maxwell’s equations</p></td>
+</tr>
+<tr class="row-even"><td><p>Quantum mechanics</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(\vert \psi(t)\rangle\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i\hbar\frac{\partial \vert \psi(t)\rangle}{\partial t}=\widehat{H}\vert \psi(t)\rangle\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In the above table, we found the structure of the theory of classical mechanics, electrodynamics, and quantum mechanics all describes the system’s status by some functions and determines the evolution of the system in time through the equation of motion.</p>
+<p>Statistical mechanics is different. It is a theory for a large number of degrees of freedom. We don’t have the full information on the status of the system. Therefore, it is impossible and impractical to track the full evolution of our system. To make progress, we need to adjust the approach. Instead of the precise initial information, we focus on the <strong>statistical properties</strong> of the initial conditions. We will be satisfied if we can make predictions about the system’s statistical properties.</p>
+</div>
+<div class="section" id="effective-theory-beyond-the-microscopic-understanding-of-thermodynamics">
+<h2>Effective theory beyond the microscopic understanding of thermodynamics<a class="headerlink" href="#effective-theory-beyond-the-microscopic-understanding-of-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<p>As we stressed in the previous discussions, the idea of effective theory and emergent phenomena is beyond the connection between microscopic physics and macroscopic physics. Also, since the framework is not tied with microscopic physics, the application of statistical mechanics covers a huge range of physics. Here, we just show some exciting applications and leave our readers to explore the beautiful connection between statistical mechanics and X!</p>
+<ul class="simple">
+<li><p>Machine learning:<a class="reference external" href="https://arxiv.org/abs/2106.10165?fbclid=IwAR1yLJrpo-XZKgfGpmtXwnQVDCiqj6-FCUi58YfzsLjwwEqcotLcUGmGLns">Deep learning theory</a></p></li>
+<li><p>Complex systems</p>
+<ul>
+<li><p>Forest fires: <a class="reference external" href="https://www.pnas.org/content/pnas/112/3/669.full.pdf">percolation problems</a></p></li>
+<li><p>Spin glasses and optimization problems of complex systems: <a class="reference external" href="http://wexler.free.fr/library/files/kirkpatrick%20(1983)%20optimization%20by%20simulated%20annealing.pdf">Simulated annealing</a></p></li>
+</ul>
+</li>
+<li><p>black hole</p>
+<ul>
+<li><p><a class="reference external" href="https://physicstoday.scitation.org/doi/pdf/10.1063/1.2913906">Black hole thermodynamics</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="motivation.html"
+       title="previous chapter">← Motivation: Why learn statistical mechanics?</a>
+  </li>
+  <li class="next">
+    <a href="numerical_tools.html"
+       title="next chapter">Numerical tools →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

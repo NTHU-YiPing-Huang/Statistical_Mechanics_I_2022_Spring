@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Ergodicity</title>
+    
+          <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+          <link rel="stylesheet" href="_static/mystnb.css" type="text/css" />
+          <link rel="stylesheet" href="_static/sphinx-thebe.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+          <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/togglebutton.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+        <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+        <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+        <script async="async" src="_static/sphinx-thebe.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Microcanonical ensemble" href="mc_ensemble.html" />
+  <link rel="prev" title="Liouville’s theorem" href="Liouville_theorem.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="syllabus.html" class="home-link">
+    
+      <img class="logo" src="_static/logo-wide.svg" alt="logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         fundamentals
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Statistical Mechanics
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000"
+         class="nav-link ">
+         Application of statistical mechanics
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">fundamentals</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="introduction.html" class="reference internal ">Introduction</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="numerical_tools.html" class="reference internal ">Numerical tools</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="random_walk_and_emergent_properties.html" class="reference internal ">Random walk and emergent properties</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Statistical Mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Rev_thermodynamics.html" class="reference internal ">Thermodynamics and statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="Postulates_SM.html" class="reference internal ">Postulates of statistical mechanics</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="syllabus.html#syllabus-for-statistical-mechanics-i-phys521000">Application of statistical mechanics</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="free_systems.html" class="reference internal ">Interacting free systems</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="phases_transitions.html" class="reference internal ">Phases and phase transitions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="biblio.html" class="reference internal ">Epilogue</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="syllabus.html">Docs</a> &raquo;</li>
+    
+      <li><a href="Postulates_SM.html">Postulates of statistical mechanics</a> &raquo;</li>
+    
+    <li>Ergodicity</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="Liouville_theorem.html"
+       title="previous chapter">← Liouville’s theorem</a>
+  </li>
+  <li class="next">
+    <a href="mc_ensemble.html"
+       title="next chapter">Microcanonical ensemble →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <div class="section" id="ergodicity">
+<h1>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this headline">¶</a></h1>
+<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. We will discuss the concept of ergodicity here and the concept of <strong>micro canonical ensemble</strong> later.</p>
+<p>In the study of statistical mechanics, we are trying to describe the observables of many-body system under time-evolution using statistical description. The bottleneck that we are trying to pass is how to go from time-evolution to statistics? The Liouville’s theorem suggest that understanding the time-evolution in phase space is a good approach as it has the nice properties 3 that we discussed in the last section, <em>i.e.</em> it is possible to have a probability density function <span class="math notranslate nohighlight">\(\rho\)</span> does not depends on <span class="math notranslate nohighlight">\(t\)</span> explicitly. But it does not tell us how to derive the probability density function.</p>
+<p>The time average starting at initial condition <span class="math notranslate nohighlight">\(\xi(t=0)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\text{.}
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(O\)</span> is well behaved, we expect <span class="math notranslate nohighlight">\(\overline{O(t=0)}=\overline{O(t=t')}\)</span>. That is, the long time average should not depends on the value of <span class="math notranslate nohighlight">\(O\)</span> during the time interval <span class="math notranslate nohighlight">\((0,t')\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\\
+\overline{O(t=t')}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{t'}^{T} dt O(\xi(t))\text{.}
+\end{split}\]</div>
+<p>Therefore, we found the long time averages are constant on trajectories.</p>
+<p>Since <span class="math notranslate nohighlight">\(\overline{O}\)</span> is constant on trajectories. The microcanonical ensemble average of a constant is still a constant. <em>i.e.</em></p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\overline{O}=a^*=\langle \overline{O} \rangle}_{\text{long time average is constant}}=\langle  \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\rangle=\lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt \langle  O(\xi(t))\rangle=\langle  O \rangle
+\]</div>
+<p>Because of the nice properties 3 from Liouville’s theorem, the micro canonical ensemble  was time independent and the ensemble average equals to the time average.</p>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>The microcanonical ensemble that we are going to discuss later means we average over all apossible phase space configuration with equal weight.</p>
+<div class="math notranslate nohighlight">
+\[
+\langle O\rangle\equiv \frac{1}{|\Gamma|}\sum_{\xi\in\Gamma} O(\xi)\text{.}
+\]</div>
+</div>
+<p>The ergodicity support that</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{O}=\langle O\rangle\text{.}
+\]</div>
+<p>We will discuss the idea of micro canonical ensemble in the next section such that we will establish</p>
+<div class="math notranslate nohighlight">
+\[
+\langle O\rangle=O_{eq}\text{.}
+\]</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="Liouville_theorem.html"
+       title="previous chapter">← Liouville’s theorem</a>
+  </li>
+  <li class="next">
+    <a href="mc_ensemble.html"
+       title="next chapter">Microcanonical ensemble →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
