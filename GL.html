@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teaser of the Ginsburg-Landau theory &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +28,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,6 +48,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,36 +62,161 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Epilogue" href="biblio.html" />
     <link rel="prev" title="Mean-field theory" href="MFT.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Yi-Ping Huang" />
+<meta name="keywords" content="" />
+<meta name="description" content=Teaser of the Ginsburg-Landau theory  The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two ph />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Teaser of the Ginsburg-Landau theory"/>
+<meta name="twitter:description" content="Teaser of the Ginsburg-Landau theory  The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two ph">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image" content="">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Teaser of the Ginsburg-Landau theory" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="" />
+<meta property="og:description" content="Teaser of the Ginsburg-Landau theory  The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two ph" />
+<meta property="og:site_name" content="2022 Statistical Mechanics (I) - PHYS521000" />
+<meta name="theme-color" content="#ffffff" />
+
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+<body>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo-wide.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">2022 Statistical Mechanics (I) - PHYS521000</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=GL>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            
+                            <p class="logo">
+                                
+                                    
+                                    <a href="syllabus.html"><img src="_static/logo-wide.svg" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="syllabus.html">2022 Statistical Mechanics (I) - PHYS521000</a></p>
+
+                        <p class="qe-page__header-subheading">Teaser of the Ginsburg-Landau theory</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Yi-Ping Huang</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div class="section" id="teaser-of-the-ginsburg-landau-theory">
+<h1>Teaser of the Ginsburg-Landau theory<a class="headerlink" href="#teaser-of-the-ginsburg-landau-theory" title="Permalink to this headline">¶</a></h1>
+<p>The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two phases deep in the domain of the phase diagram, not near the phase boundary. If we assume the expression we derived from the mean field theory is valid in the whole phase diagram, we anticipate the order will become weaker and weaker across the phase boundary.</p>
+<p>In our simple Ising model with <span class="math notranslate nohighlight">\(h=0\)</span>, we want to explore the physics when <span class="math notranslate nohighlight">\(m\approx0\)</span>.
+Let’s take the free energy density of the mean field theory and expand it around <span class="math notranslate nohighlight">\(m\approx0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f(T,m)\approx -k_BT \ln2+\frac{1}{2}(k_BT-\underbrace{Jz}_{k_BT_c})m^2+\frac{k_BT}{12}m^4+\cdots
+\]</div>
+<p>We can observe three different behaviors. When <span class="math notranslate nohighlight">\(T&gt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has only one minimum, <span class="math notranslate nohighlight">\(m=0\)</span>. When <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has two minimum at <span class="math notranslate nohighlight">\(m=m_{\pm}\)</span>. At <span class="math notranslate nohighlight">\(T=T_c\)</span> the system is about to develop the two minimum.</p>
+<p>So we observe the fact that we can use <span class="math notranslate nohighlight">\(m\)</span> as an indicator of the phase and phase transition in this simple example. That raises an interesting question: Can we skip the microscopic detail of the lattice model and directly guess the form of the free energy by physical arguments? If we can do that, what information we need to make related arguments? The answer to this question is the Ginsburg-Landau theory. The important information to make the argument is the symmetry of the system. The Landau theory propose the order that breaks the symmetry is described by the order parameter <span class="math notranslate nohighlight">\(\phi\)</span>. However, to form a distribution function respect that symmetry, we argue the Ginsburg-Landau free energy also respect that symmetry. In order to do that, we use the order parameter and try to form symmetric combinations. In the simple Ising model with <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry, we expect to have the free energy density as</p>
+<div class="math notranslate nohighlight">
+\[
+f(\phi,T)\sim a+b(T)\phi^2+c\phi^4+\cdots
+\]</div>
+<p>This is roughly the form we got from the expansion! Phenomenologically, we want the system to have a phase transition as the temperature is lowed. So we argue the coefficient <span class="math notranslate nohighlight">\(b(T)\)</span> will change sign cross the phase boundary. How to bridge the phenomenological Landau theory with our microscopic understanding of the system in a general way? If we use the Landau theory to predict the transition, how will the critical exponents look like? How does the critical exponents derived theoretically compares with the critical exponents measured experimentally? Those interesting question will be the topics for statistical mechanics (II).</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="syllabus.html">
    Syllabus for Statistical Mechanics (I) – PHYS521000
@@ -96,7 +228,7 @@
   fundamentals
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="introduction.html">
    Introduction
@@ -189,7 +321,7 @@
   Statistical Mechanics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Rev_thermodynamics.html">
    Thermodynamics and statistical mechanics
@@ -265,7 +397,7 @@
   Application of statistical mechanics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="free_systems.html">
    Interacting free systems
@@ -293,7 +425,7 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active has-children active">
   <a class="reference internal" href="phases_transitions.html">
    Phases and phase transitions
   </a>
@@ -323,7 +455,7 @@
      Mean-field theory
     </a>
    </li>
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active active">
     <a class="current reference internal" href="#">
      Teaser of the Ginsburg-Landau theory
     </a>
@@ -337,162 +469,162 @@
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
+                </nav>
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
+                <div class="qe-sidebar__footer">
 
-</div>
+                </div>
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+            </div> <!-- .sidebar -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+        </div> <!-- .main -->
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/GL.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
+        <div class="qe-toolbar">
 
-            <!-- Source interaction buttons -->
+            <div class="qe-toolbar__inner">
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGL.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="syllabus.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="" title=""><span class="show-for-sr"></span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/executablebooks/jupyter-book/GL.md" download><i data-feather="github"></i></a></li>
+                </ul>
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            </div>
 
-            <!-- Launch buttons -->
-
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
         </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-        </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
                 
-  <div class="section" id="teaser-of-the-ginsburg-landau-theory">
-<h1>Teaser of the Ginsburg-Landau theory<a class="headerlink" href="#teaser-of-the-ginsburg-landau-theory" title="Permalink to this headline">¶</a></h1>
-<p>The mean field theory should work when the fluctuation is small. That is, mean field theory should characterize the two phases deep in the domain of the phase diagram, not near the phase boundary. If we assume the expression we derived from the mean field theory is valid in the whole phase diagram, we anticipate the order will become weaker and weaker across the phase boundary.</p>
-<p>In our simple Ising model with <span class="math notranslate nohighlight">\(h=0\)</span>, we want to explore the physics when <span class="math notranslate nohighlight">\(m\approx0\)</span>.
-Let’s take the free energy density of the mean field theory and expand it around <span class="math notranslate nohighlight">\(m\approx0\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-f(T,m)\approx -k_BT \ln2+\frac{1}{2}(k_BT-\underbrace{Jz}_{k_BT_c})m^2+\frac{k_BT}{12}m^4+\cdots
-\]</div>
-<p>We can observe three different behaviors. When <span class="math notranslate nohighlight">\(T&gt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has only one minimum, <span class="math notranslate nohighlight">\(m=0\)</span>. When <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>, the free energy as a function of <span class="math notranslate nohighlight">\(m\)</span> has two minimum at <span class="math notranslate nohighlight">\(m=m_{\pm}\)</span>. At <span class="math notranslate nohighlight">\(T=T_c\)</span> the system is about to develop the two minimum.</p>
-<p>So we observe the fact that we can use <span class="math notranslate nohighlight">\(m\)</span> as an indicator of the phase and phase transition in this simple example. That raises an interesting question: Can we skip the microscopic detail of the lattice model and directly guess the form of the free energy by physical arguments? If we can do that, what information we need to make related arguments? The answer to this question is the Ginsburg-Landau theory. The important information to make the argument is the symmetry of the system. The Landau theory propose the order that breaks the symmetry is described by the order parameter <span class="math notranslate nohighlight">\(\phi\)</span>. However, to form a distribution function respect that symmetry, we argue the Ginsburg-Landau free energy also respect that symmetry. In order to do that, we use the order parameter and try to form symmetric combinations. In the simple Ising model with <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry, we expect to have the free energy density as</p>
-<div class="math notranslate nohighlight">
-\[
-f(\phi,T)\sim a+b(T)\phi^2+c\phi^4+\cdots
-\]</div>
-<p>This is roughly the form we got from the expansion! Phenomenologically, we want the system to have a phase transition as the temperature is lowed. So we argue the coefficient <span class="math notranslate nohighlight">\(b(T)\)</span> will change sign cross the phase boundary. How to bridge the phenomenological Landau theory with our microscopic understanding of the system in a general way? If we use the Landau theory to predict the transition, how will the critical exponents look like? How does the critical exponents derived theoretically compares with the critical exponents measured experimentally? Those interesting question will be the topics for statistical mechanics (II).</p>
-</div>
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="" data-urlpath="" data-branch=>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "GL";
+                const repoURL = "";
+                const urlPath = "";
+                const branch = ""
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
 
-              </div>
-              
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="MFT.html" title="previous page">Mean-field theory</a>
-    <a class='right-next' id="next-link" href="biblio.html" title="next page">Epilogue</a>
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
 
         </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Yi-Ping Huang<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
 
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
+    </div> <!-- .wrapper-->
+    
   </body>
 </html>

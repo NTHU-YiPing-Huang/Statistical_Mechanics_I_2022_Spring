@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phases and phase transitions &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +28,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,6 +48,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,36 +62,232 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Phases and phase diagram" href="phase_diagram.html" />
     <link rel="prev" title="Free Fermions and Bosons" href="Fermion_Boson.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Yi-Ping Huang" />
+<meta name="keywords" content="" />
+<meta name="description" content=Phases and phase transitions  Reference: [Gol18] Chap. 2,3,5  Summary  A phase means a stable pattern of a collective behavior for a many-body system.  A phase  />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Phases and phase transitions"/>
+<meta name="twitter:description" content="Phases and phase transitions  Reference: [Gol18] Chap. 2,3,5  Summary  A phase means a stable pattern of a collective behavior for a many-body system.  A phase ">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image" content="">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Phases and phase transitions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="" />
+<meta property="og:description" content="Phases and phase transitions  Reference: [Gol18] Chap. 2,3,5  Summary  A phase means a stable pattern of a collective behavior for a many-body system.  A phase " />
+<meta property="og:site_name" content="2022 Statistical Mechanics (I) - PHYS521000" />
+<meta name="theme-color" content="#ffffff" />
+
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+<body>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo-wide.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">2022 Statistical Mechanics (I) - PHYS521000</h1>
-      
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=phases_transitions>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-should-we-study-phases-of-matter-and-phase-transitions">
+     Why should we study phases of matter and phase transitions?
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-pattern-of-collective-behavior">
+     The pattern of collective behavior
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effective-theory-at-different-scales">
+     Effective theory at different scales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ising-model-the-simplest-non-trivial-system">
+   Ising model–The simplest non-trivial system
+  </a>
+ </li>
+</ul>
+
+                            <p class="logo">
+                                
+                                    
+                                    <a href="syllabus.html"><img src="_static/logo-wide.svg" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="syllabus.html">2022 Statistical Mechanics (I) - PHYS521000</a></p>
+
+                        <p class="qe-page__header-subheading">Phases and phase transitions</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Yi-Ping Huang</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div class="section" id="phases-and-phase-transitions">
+<h1>Phases and phase transitions<a class="headerlink" href="#phases-and-phase-transitions" title="Permalink to this headline">¶</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id16">Gol18</a>]</span> Chap. 2,3,5</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Summary</p>
+<ol class="simple">
+<li><p>A phase means a stable pattern of a collective behavior for a many-body system.</p></li>
+<li><p>A phase diagram is the diagram defined in the parameter space of a particular Hamiltonian. Different points on the diagram represent different parameters of the corresponding Hamiltonian. Points in the same regrion are the points in the same phase.</p></li>
+<li><p>Phase transitions occurs when the pattern of the collective behavior of the many-body system changes. The pattern could change adruptly or slowly. The sudden change of collective behavior is called the discontinuous phase transition. The smooth change of collective behavior is called the continuous phase transition.</p></li>
+<li><p>Thermodyanmic limit matters for a well-defined notion of phase transition.</p></li>
+<li><p>Spontaneous symmetry breaking means the Hamiltonian of the system has a symmetry. But the statistical behavior of the system does not respect that symmetry. It is an emergent phenomenon!</p></li>
+<li><p>The phases and phase diagram of Ising model</p>
+<ul class="simple">
+<li><p>The thermal fluctuation at one-dimensional Ising model melts the order. No finite temperature phase transition in one-dimensional Ising model.</p></li>
+<li><p>The thermal fluctuation at two-dimensional Ising model is not so strong, so there is a finite temperature phase transition for the two-dimensional Ising model.</p></li>
+</ul>
+</li>
+<li><p>We can solve one-dimensional Ising model using the transfer matrix method.</p></li>
+<li><p>Mean field theory is a versatile and simple approach for interacting systems.</p>
+<ul class="simple">
+<li><p>It can be directly connected with the physical picture.</p></li>
+<li><p>It does not have the information of dimensionality.</p></li>
+<li><p>It can be qualitative wrong. For example, it predicts a finite temperature phase transition for the one-dimensional Ising model which has no finite temperature phase transition according to the exact result using the transfer matrix approach.</p></li>
+</ul>
+</li>
+<li><p>The mean field theory is closely related to the physical picture of Ginsburg-Landau theory.</p></li>
+</ol>
+</div>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-should-we-study-phases-of-matter-and-phase-transitions">
+<h3>Why should we study phases of matter and phase transitions?<a class="headerlink" href="#why-should-we-study-phases-of-matter-and-phase-transitions" title="Permalink to this headline">¶</a></h3>
+<p>From the broad scope, why studying phases of matter is important? The simplest reason for this course is: we would like to extend our understandings beyond interacting free systems, since most of the systems in nature are interacting systems. The non-interacting limit is just a pedagogical limit. We have learned the fundamental structure of statistical mechanics and use it to study several interacting free systems. It is about time to explore the more challenging interacting systems.</p>
+<p>The interacting free systems are nice since we can reduce the many-body problem into a single body problem. Why it is so? When the degrees of freedom are not interacting with each other, we can effectively consider the physics for any one of the “free modes”. Since the “free modes” does not talk with each other, understanding one of them is equivalent to understand all of them. (Like the Debye model, <span class="math notranslate nohighlight">\(\omega(k_1)\)</span> and <span class="math notranslate nohighlight">\(\omega(k_2)\)</span> mode has no fundamental difference.) That behavior is also demonstrated in the fact that we can factorize our partition function easily.</p>
+<p>We can try to imagine what will be different if we include interactions. At the non-interacting limit, the collective modes does not couple with each other. When those modes interact with each other in some way, there are at least two possibilities. The first possibility is the interaction between those modes does not change the behavior of the system qualitatively. Some minor detail is modified, we can adjust the description and, again, describe the system formally as a non-interacting system (interaction is an irrelevant coupling, in renormalization group language). The other possibility which is more interesting. The coupling between these modes might be modified dramatically by the interaction such that the new collective mode cannot be approximated by the non-interacting modes we start with (interaction is a relevant coupling, in renormalization group language). The pattern of collective behavior could be changed qualitatively and new phenomena emerge. The new phenomena  might be difficult to be understood using the non-interacting variables, we might need to develop new theories to describe the essence of them.</p>
+</div>
+<div class="section" id="the-pattern-of-collective-behavior">
+<h3>The pattern of collective behavior<a class="headerlink" href="#the-pattern-of-collective-behavior" title="Permalink to this headline">¶</a></h3>
+<p><strong>Studying phases is studying the patterns of collective behavior. Studying phase transitions is exploring how patterns of collective behavior changes under distinct circumstances.</strong> It is tempting to ask: if we change the form of the interaction (from non-interacting to interacting) or if we change the constraints of the interaction (interaction can happen only when certain condition is satisfied), how the pattern of collective behavior changes? This is the type of questions we address on the research of phase transitions. For example, the transition from the paramagnetic phase to the ferromagnetic phase of the Ising model. The paramagnetic phase is a phase where the spins are arranged randomly. We can ask: if we turn on a “weak”(weak comparing with what?) coupling between the spins, will that modify the behavior of the spin once an infinite small interaction is turned on? Intuition tells us that it should not be the case, the paramagnetic phase should survive until the interaction between the spins are too strong such that they can overcome the thermal fluctuation. Therefore, the paramagnetic phase for non-interacting spins and the paramagnetic phase of weakly interacting spins should be considered as qualitatively similar pattern of collective behavior. We will discuss related phenomena deeper during the lectures.</p>
+<p>The simple phenomena described above already raises an important question: how to describe a phase? What is a scientific sound definition of a phase? What can we say about the corresponding phase transition according to this definition? That leads to a deeper question we would like to answer during the study of phases and phase transitions. <em>i.e.</em> What is the theoretical framework to describe the pattern of collective behavior such that it is coarse enough to identify those patterns without qualitative difference and sharp enough to signal the subtle difference between those patterns with quantitative distinct physical properties? Different levels of answers of this question will be the stepping stones to the important concept of effective theories.</p>
+</div>
+<div class="section" id="effective-theory-at-different-scales">
+<h3>Effective theory at different scales<a class="headerlink" href="#effective-theory-at-different-scales" title="Permalink to this headline">¶</a></h3>
+<p>To be more concrete, once we understand more or less what is a phase and how phase transition happen in principle, it is very tempting to ask: when one goes from phase A to phase B via a phase transition, are there any relation between the two phases, <em>i.e.</em>, phase A and phase B? The question is strongly related to <strong>HOW</strong> the many-body system changes the pattern of collective behavior? If there is a specific mechanism behind the phase transition, maybe we can bridge the relation between phase A and phase B. Maybe in the other phases, phase C and phase D could also go from one to the other using similar mechanism. If so, can we build some kind of equivalence relation saying the phase transition from phase A to phase B is similar with the phase transition from phase C to phase D? If it is possible, can we find a unified framework to understand or to categorize those transitions? Also, what is the relation between the theory describe phase A and the theory describe phase C, are they also related in some way? It turns out, it is related to the concept of renormalization group which also leads to the <a class="reference external" href="https://www.nobelprize.org/prizes/physics/1982/wilson/lecture/">Nobel prize of K. G. Wilson</a>. Basically, <strong>the concept of renormalization group provides a framework to categorize theories, therefore, the concept provides “a theory of theories”. It is the foundation of the effective theory approach.</strong></p>
+<p>The line of thought is not emphasized in the undergraduate courses. The four “mechanics” of physics department are: classical mechanics, quantum mechanics, electromagnetic dynamics and statistical mechanics. Statistical mechanics is the only one that focuses on systems with many-degrees of freedom and does not have a specific “applicable region”. (Classical mechanics works in the “classical world”, quantum mechanics works in “atomic world”, electromagnetic dynamics discussed charged system in the “classical world” or the “atomic world”.) At the first glance, it seems like it is not as fundamental with the others. We consider the microscopic physics being governed by classical mechanics, quantum mechanics and electrodynamics. Then we study those system via statistical mechanics. It seems like we just apply the more “fundamental” physics laws to the many-body system. Why it is a required course for the physics department?</p>
+<p>One of the reason that it is not obvious to appreciate this subject is because we need to start from something simple: we usually start with interacting free system. It is difficult to unleash the full potential of statistical mechanics. The study of phases, phase transitions and critical phenomena provides a very nice platform to introduce those fantastic ideas. Especially when interacting effect is included. However, due to the time limit, we will not be able to cover those amazing concepts this semester. We will discuss those ideas in more detail in the Statistical Mechanics (II).</p>
+</div>
+</div>
+<div class="section" id="ising-model-the-simplest-non-trivial-system">
+<h2>Ising model–The simplest non-trivial system<a class="headerlink" href="#ising-model-the-simplest-non-trivial-system" title="Permalink to this headline">¶</a></h2>
+<p>It is amazing that Ising model teaches us so many things including the physics of phases and phase transitions. It is crucial to build a physical picture about what is a phase and what are the corresponding phase diagram from a simple system that we can grasp the key concepts. Therefore, we will focus on the phases and phase diagram of the ferromagnetic Ising model with nearest-neighbor interaction on hypercubic lattices.</p>
+<p>We will start with heuristic physical arguments to understand the phases and phase diagram. During the argument, we can observe the close relation between dimensionality and the strength of fluctuation. Then, we will switch to the more formal approach to derive the partition function of Ising models. In one-dimensional Ising model with external field, we will introduce the transfer matrix method which can give us the exact expression of the partition function. Unfortunately, the approach cannot be generalize to higher dimension. Therefore, we will introduce the mean-field approach which is more versatile but still with its own limitation. Hopefully, in the last lecture, we could introduce the Ginsburg-Landau theory and leave it as a teaser for the more advanced concept such as renormalization group and its connection with critical phenomena and universality class. Those interesting topics will be discussed in the next semester course of statistical mechanics (II).</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="syllabus.html">
    Syllabus for Statistical Mechanics (I) – PHYS521000
@@ -96,7 +299,7 @@
   fundamentals
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="introduction.html">
    Introduction
@@ -189,7 +392,7 @@
   Statistical Mechanics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Rev_thermodynamics.html">
    Thermodynamics and statistical mechanics
@@ -265,7 +468,7 @@
   Application of statistical mechanics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="free_systems.html">
    Interacting free systems
@@ -293,7 +496,7 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active has-children active">
   <a class="current reference internal" href="#">
    Phases and phase transitions
   </a>
@@ -337,236 +540,162 @@
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
+                </nav>
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
+                <div class="qe-sidebar__footer">
 
-</div>
+                </div>
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+            </div> <!-- .sidebar -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+        </div> <!-- .main -->
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/phases_transitions.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
+        <div class="qe-toolbar">
 
-            <!-- Source interaction buttons -->
+            <div class="qe-toolbar__inner">
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fphases_transitions.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="syllabus.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="" title=""><span class="show-for-sr"></span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/executablebooks/jupyter-book/phases_transitions.md" download><i data-feather="github"></i></a></li>
+                </ul>
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-should-we-study-phases-of-matter-and-phase-transitions">
-     Why should we study phases of matter and phase transitions?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-pattern-of-collective-behavior">
-     The pattern of collective behavior
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effective-theory-at-different-scales">
-     Effective theory at different scales
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ising-model-the-simplest-non-trivial-system">
-   Ising model–The simplest non-trivial system
-  </a>
- </li>
-</ul>
 
-            </nav>
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
                 
-  <div class="section" id="phases-and-phase-transitions">
-<h1>Phases and phase transitions<a class="headerlink" href="#phases-and-phase-transitions" title="Permalink to this headline">¶</a></h1>
-<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id16">Gol18</a>]</span> Chap. 2,3,5</em></p>
-<div class="tip admonition">
-<p class="admonition-title">Summary</p>
-<ol class="simple">
-<li><p>A phase means a stable pattern of a collective behavior for a many-body system.</p></li>
-<li><p>A phase diagram is the diagram defined in the parameter space of a particular Hamiltonian. Different points on the diagram represent different parameters of the corresponding Hamiltonian. Points in the same regrion are the points in the same phase.</p></li>
-<li><p>Phase transitions occurs when the pattern of the collective behavior of the many-body system changes. The pattern could change adruptly or slowly. The sudden change of collective behavior is called the discontinuous phase transition. The smooth change of collective behavior is called the continuous phase transition.</p></li>
-<li><p>Thermodyanmic limit matters for a well-defined notion of phase transition.</p></li>
-<li><p>Spontaneous symmetry breaking means the Hamiltonian of the system has a symmetry. But the statistical behavior of the system does not respect that symmetry. It is an emergent phenomenon!</p></li>
-<li><p>The phases and phase diagram of Ising model</p>
-<ul class="simple">
-<li><p>The thermal fluctuation at one-dimensional Ising model melts the order. No finite temperature phase transition in one-dimensional Ising model.</p></li>
-<li><p>The thermal fluctuation at two-dimensional Ising model is not so strong, so there is a finite temperature phase transition for the two-dimensional Ising model.</p></li>
-</ul>
-</li>
-<li><p>We can solve one-dimensional Ising model using the transfer matrix method.</p></li>
-<li><p>Mean field theory is a versatile and simple approach for interacting systems.</p>
-<ul class="simple">
-<li><p>It can be directly connected with the physical picture.</p></li>
-<li><p>It does not have the information of dimensionality.</p></li>
-<li><p>It can be qualitative wrong. For example, it predicts a finite temperature phase transition for the one-dimensional Ising model which has no finite temperature phase transition according to the exact result using the transfer matrix approach.</p></li>
-</ul>
-</li>
-<li><p>The mean field theory is closely related to the physical picture of Ginsburg-Landau theory.</p></li>
-</ol>
-</div>
-<div class="section" id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="why-should-we-study-phases-of-matter-and-phase-transitions">
-<h3>Why should we study phases of matter and phase transitions?<a class="headerlink" href="#why-should-we-study-phases-of-matter-and-phase-transitions" title="Permalink to this headline">¶</a></h3>
-<p>From the broad scope, why studying phases of matter is important? The simplest reason for this course is: we would like to extend our understandings beyond interacting free systems, since most of the systems in nature are interacting systems. The non-interacting limit is just a pedagogical limit. We have learned the fundamental structure of statistical mechanics and use it to study several interacting free systems. It is about time to explore the more challenging interacting systems.</p>
-<p>The interacting free systems are nice since we can reduce the many-body problem into a single body problem. Why it is so? When the degrees of freedom are not interacting with each other, we can effectively consider the physics for any one of the “free modes”. Since the “free modes” does not talk with each other, understanding one of them is equivalent to understand all of them. (Like the Debye model, <span class="math notranslate nohighlight">\(\omega(k_1)\)</span> and <span class="math notranslate nohighlight">\(\omega(k_2)\)</span> mode has no fundamental difference.) That behavior is also demonstrated in the fact that we can factorize our partition function easily.</p>
-<p>We can try to imagine what will be different if we include interactions. At the non-interacting limit, the collective modes does not couple with each other. When those modes interact with each other in some way, there are at least two possibilities. The first possibility is the interaction between those modes does not change the behavior of the system qualitatively. Some minor detail is modified, we can adjust the description and, again, describe the system formally as a non-interacting system (interaction is an irrelevant coupling, in renormalization group language). The other possibility which is more interesting. The coupling between these modes might be modified dramatically by the interaction such that the new collective mode cannot be approximated by the non-interacting modes we start with (interaction is a relevant coupling, in renormalization group language). The pattern of collective behavior could be changed qualitatively and new phenomena emerge. The new phenomena  might be difficult to be understood using the non-interacting variables, we might need to develop new theories to describe the essence of them.</p>
-</div>
-<div class="section" id="the-pattern-of-collective-behavior">
-<h3>The pattern of collective behavior<a class="headerlink" href="#the-pattern-of-collective-behavior" title="Permalink to this headline">¶</a></h3>
-<p><strong>Studying phases is studying the patterns of collective behavior. Studying phase transitions is exploring how patterns of collective behavior changes under distinct circumstances.</strong> It is tempting to ask: if we change the form of the interaction (from non-interacting to interacting) or if we change the constraints of the interaction (interaction can happen only when certain condition is satisfied), how the pattern of collective behavior changes? This is the type of questions we address on the research of phase transitions. For example, the transition from the paramagnetic phase to the ferromagnetic phase of the Ising model. The paramagnetic phase is a phase where the spins are arranged randomly. We can ask: if we turn on a “weak”(weak comparing with what?) coupling between the spins, will that modify the behavior of the spin once an infinite small interaction is turned on? Intuition tells us that it should not be the case, the paramagnetic phase should survive until the interaction between the spins are too strong such that they can overcome the thermal fluctuation. Therefore, the paramagnetic phase for non-interacting spins and the paramagnetic phase of weakly interacting spins should be considered as qualitatively similar pattern of collective behavior. We will discuss related phenomena deeper during the lectures.</p>
-<p>The simple phenomena described above already raises an important question: how to describe a phase? What is a scientific sound definition of a phase? What can we say about the corresponding phase transition according to this definition? That leads to a deeper question we would like to answer during the study of phases and phase transitions. <em>i.e.</em> What is the theoretical framework to describe the pattern of collective behavior such that it is coarse enough to identify those patterns without qualitative difference and sharp enough to signal the subtle difference between those patterns with quantitative distinct physical properties? Different levels of answers of this question will be the stepping stones to the important concept of effective theories.</p>
-</div>
-<div class="section" id="effective-theory-at-different-scales">
-<h3>Effective theory at different scales<a class="headerlink" href="#effective-theory-at-different-scales" title="Permalink to this headline">¶</a></h3>
-<p>To be more concrete, once we understand more or less what is a phase and how phase transition happen in principle, it is very tempting to ask: when one goes from phase A to phase B via a phase transition, are there any relation between the two phases, <em>i.e.</em>, phase A and phase B? The question is strongly related to <strong>HOW</strong> the many-body system changes the pattern of collective behavior? If there is a specific mechanism behind the phase transition, maybe we can bridge the relation between phase A and phase B. Maybe in the other phases, phase C and phase D could also go from one to the other using similar mechanism. If so, can we build some kind of equivalence relation saying the phase transition from phase A to phase B is similar with the phase transition from phase C to phase D? If it is possible, can we find a unified framework to understand or to categorize those transitions? Also, what is the relation between the theory describe phase A and the theory describe phase C, are they also related in some way? It turns out, it is related to the concept of renormalization group which also leads to the <a class="reference external" href="https://www.nobelprize.org/prizes/physics/1982/wilson/lecture/">Nobel prize of K. G. Wilson</a>. Basically, <strong>the concept of renormalization group provides a framework to categorize theories, therefore, the concept provides “a theory of theories”. It is the foundation of the effective theory approach.</strong></p>
-<p>The line of thought is not emphasized in the undergraduate courses. The four “mechanics” of physics department are: classical mechanics, quantum mechanics, electromagnetic dynamics and statistical mechanics. Statistical mechanics is the only one that focuses on systems with many-degrees of freedom and does not have a specific “applicable region”. (Classical mechanics works in the “classical world”, quantum mechanics works in “atomic world”, electromagnetic dynamics discussed charged system in the “classical world” or the “atomic world”.) At the first glance, it seems like it is not as fundamental with the others. We consider the microscopic physics being governed by classical mechanics, quantum mechanics and electrodynamics. Then we study those system via statistical mechanics. It seems like we just apply the more “fundamental” physics laws to the many-body system. Why it is a required course for the physics department?</p>
-<p>One of the reason that it is not obvious to appreciate this subject is because we need to start from something simple: we usually start with interacting free system. It is difficult to unleash the full potential of statistical mechanics. The study of phases, phase transitions and critical phenomena provides a very nice platform to introduce those fantastic ideas. Especially when interacting effect is included. However, due to the time limit, we will not be able to cover those amazing concepts this semester. We will discuss those ideas in more detail in the Statistical Mechanics (II).</p>
-</div>
-</div>
-<div class="section" id="ising-model-the-simplest-non-trivial-system">
-<h2>Ising model–The simplest non-trivial system<a class="headerlink" href="#ising-model-the-simplest-non-trivial-system" title="Permalink to this headline">¶</a></h2>
-<p>It is amazing that Ising model teaches us so many things including the physics of phases and phase transitions. It is crucial to build a physical picture about what is a phase and what are the corresponding phase diagram from a simple system that we can grasp the key concepts. Therefore, we will focus on the phases and phase diagram of the ferromagnetic Ising model with nearest-neighbor interaction on hypercubic lattices.</p>
-<p>We will start with heuristic physical arguments to understand the phases and phase diagram. During the argument, we can observe the close relation between dimensionality and the strength of fluctuation. Then, we will switch to the more formal approach to derive the partition function of Ising models. In one-dimensional Ising model with external field, we will introduce the transfer matrix method which can give us the exact expression of the partition function. Unfortunately, the approach cannot be generalize to higher dimension. Therefore, we will introduce the mean-field approach which is more versatile but still with its own limitation. Hopefully, in the last lecture, we could introduce the Ginsburg-Landau theory and leave it as a teaser for the more advanced concept such as renormalization group and its connection with critical phenomena and universality class. Those interesting topics will be discussed in the next semester course of statistical mechanics (II).</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="" data-urlpath="" data-branch=>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "phases_transitions";
+                const repoURL = "";
+                const urlPath = "";
+                const branch = ""
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
 
-              </div>
-              
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="Fermion_Boson.html" title="previous page">Free Fermions and Bosons</a>
-    <a class='right-next' id="next-link" href="phase_diagram.html" title="next page">Phases and phase diagram</a>
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
 
         </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Yi-Ping Huang<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
 
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
+    </div> <!-- .wrapper-->
+    
   </body>
 </html>

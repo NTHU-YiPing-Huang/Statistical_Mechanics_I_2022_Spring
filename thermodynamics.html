@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thermodynamics as an effective theory &#8212; 2022 Statistical Mechanics (I) - PHYS521000</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +28,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,6 +48,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,36 +62,208 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Motivation: Why learn statistical mechanics?" href="motivation.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Yi-Ping Huang" />
+<meta name="keywords" content="" />
+<meta name="description" content=Thermodynamics as an effective theory  Reference: [Pel11] Chapter 2 and [Set21] 6.4  What is thermodynamics?  Thermodynamics is a phenomenological theory. Pheno />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:title" content="Thermodynamics as an effective theory"/>
+<meta name="twitter:description" content="Thermodynamics as an effective theory  Reference: [Pel11] Chapter 2 and [Set21] 6.4  What is thermodynamics?  Thermodynamics is a phenomenological theory. Pheno">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image" content="">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Thermodynamics as an effective theory" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="" />
+<meta property="og:description" content="Thermodynamics as an effective theory  Reference: [Pel11] Chapter 2 and [Set21] 6.4  What is thermodynamics?  Thermodynamics is a phenomenological theory. Pheno" />
+<meta property="og:site_name" content="2022 Statistical Mechanics (I) - PHYS521000" />
+<meta name="theme-color" content="#ffffff" />
+
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+<body>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo-wide.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">2022 Statistical Mechanics (I) - PHYS521000</h1>
-      
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=thermodynamics>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-thermodynamics">
+   What is thermodynamics?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-go-from-microscopic-to-macroscopic">
+   How to go from microscopic to macroscopic?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables">
+     Microscopic theory, statistical mechanics and macroscopic observables
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                            <p class="logo">
+                                
+                                    
+                                    <a href="syllabus.html"><img src="_static/logo-wide.svg" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="syllabus.html">2022 Statistical Mechanics (I) - PHYS521000</a></p>
+
+                        <p class="qe-page__header-subheading">Thermodynamics as an effective theory</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Yi-Ping Huang</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div class="section" id="thermodynamics-as-an-effective-theory">
+<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline">¶</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span> 6.4</em></p>
+<div class="section" id="what-is-thermodynamics">
+<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">¶</a></h2>
+<p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
+<p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
+<p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
+<div class="figure align-default" id="micro-macro-1">
+<a class="reference internal image-reference" href="_images/micro_macro_1.png"><img alt="_images/micro_macro_1.png" src="_images/micro_macro_1.png" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The microscopic physics and connection with macroscopic physics.</span><a class="headerlink" href="#micro-macro-1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="how-to-go-from-microscopic-to-macroscopic">
+<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">¶</a></h2>
+<p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
+<p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
+<p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
+<p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
+<div class="section" id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
+<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">¶</a></h3>
+<p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
+<p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
+<p>There are at least two routes:</p>
+<ol class="simple">
+<li><p>Find a good computer and try to use the computational power to understand the complicated behavior of the system.</p></li>
+<li><p>Make some approximation. When we drop some information, maybe we will be able to analyze the problem. Then we compare with experiments to see if the approximation we made at the very beginning makes sense.</p></li>
+</ol>
+<p>How to proceed using different routes is related to condensed matter physics, so I am not going to elaborate on them further. The point is, no matter which route we take, we will eventually get the information of the energy spectrum if the approach works. Depending on our approach, the spectrum might be discrete, or it might be continuous. The energy spectrum we derived will depend on the microscopic parameters that characterize the system. With the information of the spectrum(derived with various routes), statistical mechanics provides a protocol to convert that information into the macroscopic measurable quantities such as specific heat, magnetization, <em>etc.</em> Then one can compare our calculations with the real experiments and see if we can learn something from the experiments to construct what happened at the microscopic scale. The result will not be identical to the experiments since we usually need to make certain approximations to proceed. The difference between our calculation and the experiments provides hints on improving our approximation or abandon the theoretically proposed microscopic picture. By iterating this process and comparing the experiments and theoretical predictions back and forth, we will eventually reach some conclusion, if we are lucky.</p>
+<div class="figure align-default" id="micro-macro-logic-2">
+<a class="reference internal image-reference" href="_images/micro_macro_logic_2.png"><img alt="_images/micro_macro_logic_2.png" src="_images/micro_macro_logic_2.png" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">How statistical mechanics helps us understanding the physics at microscopic level.</span><a class="headerlink" href="#micro-macro-logic-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.</p>
+<p>The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with <span class="math notranslate nohighlight">\(10^{23}\)</span> degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the <strong>effective theory</strong> of our complex system. It means we can understand the complex system effectively using our effective theory. <strong>Effective theory</strong> and the concept of <strong>emergent phenomena</strong> form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.</p>
+<div class="figure align-default" id="directive-fig">
+<a class="reference internal image-reference" href="_images/StatMech_roadmap.png"><img alt="_images/StatMech_roadmap.png" src="_images/StatMech_roadmap.png" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The roadmap of the course!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="syllabus.html">
    Syllabus for Statistical Mechanics (I) – PHYS521000
@@ -96,8 +275,8 @@
   fundamentals
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1 current active has-children active">
   <a class="reference internal" href="introduction.html">
    Introduction
   </a>
@@ -107,7 +286,7 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active active">
     <a class="current reference internal" href="#">
      Thermodynamics as an effective theory
     </a>
@@ -189,7 +368,7 @@
   Statistical Mechanics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Rev_thermodynamics.html">
    Thermodynamics and statistical mechanics
@@ -265,7 +444,7 @@
   Application of statistical mechanics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="free_systems.html">
    Interacting free systems
@@ -337,212 +516,162 @@
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
+                </nav>
 
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
+                <div class="qe-sidebar__footer">
 
-</div>
+                </div>
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+            </div> <!-- .sidebar -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
+        </div> <!-- .main -->
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/thermodynamics.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
+        <div class="qe-toolbar">
 
-            <!-- Source interaction buttons -->
+            <div class="qe-toolbar__inner">
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fthermodynamics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="syllabus.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="" title=""><span class="show-for-sr"></span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/executablebooks/jupyter-book/thermodynamics.md" download><i data-feather="github"></i></a></li>
+                </ul>
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-thermodynamics">
-   What is thermodynamics?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-go-from-microscopic-to-macroscopic">
-   How to go from microscopic to macroscopic?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables">
-     Microscopic theory, statistical mechanics and macroscopic observables
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-            </nav>
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
                 
-  <div class="section" id="thermodynamics-as-an-effective-theory">
-<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline">¶</a></h1>
-<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3">Set21</a>]</span> 6.4</em></p>
-<div class="section" id="what-is-thermodynamics">
-<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">¶</a></h2>
-<p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
-<p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
-<p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
-<div class="figure align-default" id="micro-macro-1">
-<a class="reference internal image-reference" href="_images/micro_macro_1.png"><img alt="_images/micro_macro_1.png" src="_images/micro_macro_1.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The microscopic physics and connection with macroscopic physics.</span><a class="headerlink" href="#micro-macro-1" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="how-to-go-from-microscopic-to-macroscopic">
-<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">¶</a></h2>
-<p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
-<p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
-<p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
-<p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
-<div class="section" id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
-<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">¶</a></h3>
-<p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
-<p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
-<p>There are at least two routes:</p>
-<ol class="simple">
-<li><p>Find a good computer and try to use the computational power to understand the complicated behavior of the system.</p></li>
-<li><p>Make some approximation. When we drop some information, maybe we will be able to analyze the problem. Then we compare with experiments to see if the approximation we made at the very beginning makes sense.</p></li>
-</ol>
-<p>How to proceed using different routes is related to condensed matter physics, so I am not going to elaborate on them further. The point is, no matter which route we take, we will eventually get the information of the energy spectrum if the approach works. Depending on our approach, the spectrum might be discrete, or it might be continuous. The energy spectrum we derived will depend on the microscopic parameters that characterize the system. With the information of the spectrum(derived with various routes), statistical mechanics provides a protocol to convert that information into the macroscopic measurable quantities such as specific heat, magnetization, <em>etc.</em> Then one can compare our calculations with the real experiments and see if we can learn something from the experiments to construct what happened at the microscopic scale. The result will not be identical to the experiments since we usually need to make certain approximations to proceed. The difference between our calculation and the experiments provides hints on improving our approximation or abandon the theoretically proposed microscopic picture. By iterating this process and comparing the experiments and theoretical predictions back and forth, we will eventually reach some conclusion, if we are lucky.</p>
-<div class="figure align-default" id="micro-macro-logic-2">
-<a class="reference internal image-reference" href="_images/micro_macro_logic_2.png"><img alt="_images/micro_macro_logic_2.png" src="_images/micro_macro_logic_2.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">How statistical mechanics helps us understanding the physics at microscopic level.</span><a class="headerlink" href="#micro-macro-logic-2" title="Permalink to this image">¶</a></p>
-</div>
-<p>That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.</p>
-<p>The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with <span class="math notranslate nohighlight">\(10^{23}\)</span> degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the <strong>effective theory</strong> of our complex system. It means we can understand the complex system effectively using our effective theory. <strong>Effective theory</strong> and the concept of <strong>emergent phenomena</strong> form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.</p>
-<div class="figure align-default" id="directive-fig">
-<a class="reference internal image-reference" href="_images/StatMech_roadmap.png"><img alt="_images/StatMech_roadmap.png" src="_images/StatMech_roadmap.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">The roadmap of the course!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-</div>
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="" data-urlpath="" data-branch=>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "thermodynamics";
+                const repoURL = "";
+                const urlPath = "";
+                const branch = ""
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
 
-              </div>
-              
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="motivation.html" title="next page">Motivation: Why learn statistical mechanics?</a>
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
 
         </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Yi-Ping Huang<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
 
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
+    </div> <!-- .wrapper-->
+    
   </body>
 </html>
