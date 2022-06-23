@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Ising models and spontaneous symmetry breaking" href="Ising_models.html" /><link rel="prev" title="Phases and phase transitions" href="phases_transitions.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Phases and phase diagram - 2022 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="syllabus.html"><div class="brand">2022 Statistical Mechanics (I) - PHYS521000</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale_invariance.html">Scale invariance and the concept of universality class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="phases-and-phase-diagram">
+<h1>Phases and phase diagram<a class="headerlink" href="#phases-and-phase-diagram" title="Permalink to this headline">#</a></h1>
+<p>We start the discussion from the general public understanding of what is a phase and phase transitions. Then, we will discuss why we are doing the model studying from a logical point of view. After that, we will introduce some formal definition of thermodynamic limit that is crucial for our later discussion. In the next section, we will use Ising model as a concrete examples to discuss what is the physical meaning of those concepts.</p>
+<section id="what-is-a-phase-what-is-a-phase-diagram">
+<h2>What is a phase? What is a phase diagram?<a class="headerlink" href="#what-is-a-phase-what-is-a-phase-diagram" title="Permalink to this headline">#</a></h2>
+<p>We learn the concept of phases before we enter the university. We were told that there are three phases for water. The solid phase(ice), the liquid phase(water) and the gas phase(vapor).</p>
+<p>Those phases can be achieve via different physical condition. For example, we can have ice when we are below 0<span class="math notranslate nohighlight">\(^\circ\)</span>C. When we are at room temperature, we can observe phase transition from solid to liquid phase–the ice melts. The diagram that tells us what are the stable phase under different physical parameters is the phase diagram. In an abstract sense, the phases are different pattern of collective behavior. The phase diagram is the diagram that describe what are the physical parameters such that specific pattern of collective behavior is stable and how the system changes their collective behavior when the physical parameters are adjusted.</p>
+<p>In fact, there are more than three phases for a many-body system. We could have ferromagnetic for magnetic systems, we could have insulator as plastic, we could have plasma as our sun. There are so many phases out there. How to understand them? How to characterize the transition between different phases? Why the transition between different phases could be an interesting subject to understand? We will try to elaborate this part.</p>
+</section>
+<section id="the-spirit-of-model-studying">
+<h2>The spirit of model studying<a class="headerlink" href="#the-spirit-of-model-studying" title="Permalink to this headline">#</a></h2>
+<p>In the study of phases or phase transitions, one will encounter various models. Ising model, Heisnberg model, Potts model, dimer models, height models, etc. They are related to various interesting concepts including topology and gauge theories. However, why should we study those models? What can we learn from studying of those models?</p>
+<p>We will discuss one of the important models – the Ising model. After we study the Ising model, one will soon realize that the model are quite ``simple’’. It is so simple that it is not clear why such a simple model would be relevant to describe our nature. Other above mentioned models also share similar features that they seem to be ad hoc models for special purposes. There should be some physical arguments about why we should study such models and how such ad hoc models could help us understand certain physical phenomena.</p>
+<p>Conceptually, it is tied with the idea that we are looking for a simplest nontrivial model to help us understand specific physical phenomena.
+From this perspective, the Ising model is the simplest non-trivial model to study phase transitions.
+To study phase transitions, at least the model needs to have two phases.
+Ising model host a disordered phase at high temperature and a ordered phase at zero temperature limit.
+Surprisingly, Ising model also demonstrate two types of phase transitions: the first order phase transition and continuous phase transition depends on whether the <span class="math notranslate nohighlight">\(Z_2\)</span> symmetry is explicitly broken.
+However, with only discrete symmetry, we don’t expect Ising model to demonstrate the behavior of phase transition with continuous symmetry.
+To study those phenomena, one needs to find a simplest nontrivial model with continuous symmetry.</p>
+<p>We describe the model as ‘simple’ models in a sense that the physical meaning and the expression of the model can be related clearly. But that does not mean they are easy to study or understand. However, because of the ‘simplicity’, one can go pretty far to understand those models. Sometimes, one can even solve it exactly.</p>
+<p>On the other hand, one could feel studying those models are usually far away from physical reality.
+How could such highly simplified models gives us hints about what happened in nature? The traditional approach is to start from microscopic physics and include different effects one by one.
+If certain phenomena is not captured, we include more parameters into our model.
+Such bottom up approach usually have very strong connection with microscopic details.
+However it usually also leads to a complicated Hamiltonian which can only be solved approximately.
+Comparing with the idealistic models which can be solved exactly, one might reach the conclusion that we should just give up those beautiful structure and use computers to help us solving those complicate but realistic model.</p>
+<p>The problem about this approach is about the generality. Starting from realistic but complicate models, one can make some predictions. Or even fit the experimental data pretty well by tuning parameters. However, what is the general structure for the model is usually hidden behind the complicated competing effects. The simple toy models might not give us quantitatively correct answers. However, the simple structure helps us to identify the universal behavior and the mechanism behind the universal behaviors.</p>
+<p>From this point of view, studying those simple but nontrivial models actually is quite valuable to understand the general behavior without the microscopic details. However, how to get the simplest non-trivial model as a starting point is an art. The theoretical framework that address this question is the concept of renormalization group(RG) and effective theory. One can use RG to identify the relevant ingredients for constructing a simplest non-trivial model. The two approach has their pros and cons, one should keep that in mind and use them according to different purposes.</p>
+</section>
+<section id="the-formal-description-of-our-system">
+<h2>The formal description of our system<a class="headerlink" href="#the-formal-description-of-our-system" title="Permalink to this headline">#</a></h2>
+<p>To set the stage, we will formulate our problem formally and use the specific example–Ising model to demonstrate the point of view.</p>
+<p>Consider a sample region <span class="math notranslate nohighlight">\(\Omega\)</span> the Hamiltonian of the system is <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>. The surface and the volume of <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(S(\Omega)\)</span> and <span class="math notranslate nohighlight">\(V(\Omega)\)</span>. For the sample with linear dimension <span class="math notranslate nohighlight">\(L\)</span>. In <span class="math notranslate nohighlight">\(D\)</span> dimensional system, we know <span class="math notranslate nohighlight">\(V(\Omega)\propto L^D\)</span> and <span class="math notranslate nohighlight">\(S(\Omega)\propto L^{D-1}\)</span>.</p>
+<p>We will use <span class="math notranslate nohighlight">\(H_{\Omega}\)</span> to define our system</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+-\beta H_{\Omega}[\{K_n\}]=\sum_n K_n\Theta_n\text{.}
+\]</div>
+</div>
+<p>Here,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(-\beta H_{\Omega}[\{K_n\}]\)</span> is the object that is important for us to construct the partition function.</p></li>
+<li><p>The partition function is parameterized by dimensionless parameters <span class="math notranslate nohighlight">\(K_n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Theta_n\)</span> is the n-body operators for the dynamical degrees of freedom. <em>e.g.</em> two-spin coupling as <span class="math notranslate nohighlight">\(S_iS_j\)</span>, three-spin coupling as <span class="math notranslate nohighlight">\(S_iS_jS_k\)</span>, etc.</p></li>
+</ul>
+<p>The partition function of our system is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z[\{K_n\}]=Tr\left[e^{-\beta H_{\Omega}[\{K_n\}]}\right]\text{.}
+\]</div>
+</div>
+<p>Here <span class="math notranslate nohighlight">\(Tr[]\)</span> means the summation over all possible microscopic configuration. For Ising model with <span class="math notranslate nohighlight">\(N\)</span> spins, the trace corresponds to <span class="math notranslate nohighlight">\(\sum_{S_1}\sum_{S_2}...\sum_{S_N}\)</span>.</p>
+<p>The free energy of our sample <span class="math notranslate nohighlight">\(\Omega\)</span> is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+F_{\Omega}[\{K_n\}]= \underbrace{V(\Omega)}_{\sim L^D} \underbrace{f_b[\{K_n\}]}_{\text{bulk free energy density}}+\underbrace{S(\Omega)}_{\sim L^{D-1}} \underbrace{f_s[\{K_n\}]}_{\text{surface free energy density}}+O(L^{D-2})\text{.}
+\]</div>
+</div>
+</section>
+<section id="the-thermodynamic-limit">
+<h2>The thermodynamic limit<a class="headerlink" href="#the-thermodynamic-limit" title="Permalink to this headline">#</a></h2>
+<p>The thermodynamic limit of the system is well defined if the bulk free energy density is well defined and is independent of the system size <span class="math notranslate nohighlight">\(\Omega\)</span> at the following limit.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+f_b[\{K_n\}]\equiv \lim_{V(\Omega)\to\infty} \frac{F_{\Omega}[\{K_n\}]}{V(\Omega)}\text{.}
+\]</div>
+</div>
+<p>Another usually used definition for thermodynamic limit is when the system size and number of degrees of freedom increases, <em>i.e.</em> <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> and <span class="math notranslate nohighlight">\(V(\Omega)\to\infty\)</span>, in a way that the density of the number of degrees of freedom, <span class="math notranslate nohighlight">\(\frac{N(\Omega)}{V(\Omega)}\)</span>, is kept fixed, the bulk free energy density is finite with no dependence on <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>Most of the system we considered has a well defined thermodynamic limit. So let’s take a example which has no well defined thermodynamic limit.</p>
+<p>Consider a ball with uniforml charge density <span class="math notranslate nohighlight">\(\rho\)</span> with radius <span class="math notranslate nohighlight">\(R\)</span>. We can ask what is the energy of the system as a function of <span class="math notranslate nohighlight">\(R\)</span>? Will the system have a well defined thermodynamic limit when <span class="math notranslate nohighlight">\(R\to\infty\)</span>?</p>
+<p>Suppose the potential energy of charge Q and q is <span class="math notranslate nohighlight">\(V(r)=\frac{AQq}{r}\)</span>. The total potential energy of the ball is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+E(R)=\int_0^R \left( \rho \frac{4\pi}{3}r^3 \right)\frac{A}{r}\left(\rho 4\pi r^2\right) dr\propto R^5\text{.}
+\]</div>
+</div>
+<p>So we have</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\lim_{R\to\infty} \frac{E(R)}{V(R)}\sim\lim_{R\to\infty} R^2\text{.}
+\]</div>
+</div>
+<p>Therefore, we conclude the system does not have a proper thermodynamic limit. We can also see the fact that the system does not have a proper thermodynamic limit is because we consider potential energy due to long range interaction. Because of that, we will only focus on system with short range interaction with a well defined thermodynamic limit.</p>
+</div>
+</section>
+<section id="the-continuous-and-discontinuous-phase-transition-formal-definition">
+<h2>The continuous and discontinuous phase transition ( formal definition)<a class="headerlink" href="#the-continuous-and-discontinuous-phase-transition-formal-definition" title="Permalink to this headline">#</a></h2>
+<p>From the expression</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z[\{K_n\}]=Tr\left[e^{-\beta H_{\Omega}[\{K_n\}]}\right]; -\beta H_{\Omega}[\{K_n\}]=\sum_n K_n\Theta_n\text{.}
+\]</div>
+</div>
+<p>We know that the system is controlled by the dimensionless coupling constants <span class="math notranslate nohighlight">\(K_n\)</span>. When we change <span class="math notranslate nohighlight">\(K_n\)</span>, we could change the pattern of the collective behavior. Therefore, we can go from one phase to another. So, how to change <span class="math notranslate nohighlight">\(K_n\)</span>? Usually, <span class="math notranslate nohighlight">\(K_n\)</span> is related to the ratio between the microscopic coupling energy scale and the thermal fluctuation controlled by macroscopic temperature <span class="math notranslate nohighlight">\(T\)</span>. For example, for Ising model, the Hamiltonian is <span class="math notranslate nohighlight">\(\sum_{i,j} JS_iS_j\)</span>, the corresponding dimensionless coupling is <span class="math notranslate nohighlight">\(K=-\beta J\)</span>. To change <span class="math notranslate nohighlight">\(K\)</span>, we can either adjust <span class="math notranslate nohighlight">\(J\)</span> or change the temperature <span class="math notranslate nohighlight">\(T\)</span>. In practice, changing how spins coupled with each other is more difficult comparing with changing the temperature of the system. Therefor, the easiest way to drive the system from one phase to the other is by changing temperature.</p>
+<p>The phase diagram is therefore, a diagram described in the coupling constant space. The dimension of this coupling constant space depends on the model. In general, we could have a high dimensional space. However, as we already pointed out, the coupling constants are functions of the inverse temperature <span class="math notranslate nohighlight">\(\beta=(k_BT)^{-1}\)</span>. As we change the temperature <span class="math notranslate nohighlight">\(\{K_n(\beta)\}\)</span>, which controls the partition function, will traverse the phase diagram from one region to the other in the coupling constant space. It is possible that the system will cross the phase boundary and phase transitions happened.</p>
+<p>At the phase boundary, the free energy must be continuous. We can characterize the phase transition as continuous or discontinuous phase transitions according to the following criteria</p>
+<ol class="simple">
+<li><p>Continuous phase transition: <span class="math notranslate nohighlight">\(\frac{\partial f_b[{K_n}]}{\partial K_i}\)</span> are all continuous across the phase boundary. Sometimes it is called second order phase transition. However, this is a bad nomenclature. So we mentioned this term just in case you read it in some old references.</p></li>
+<li><p>Discontinuous phase transition: One or more <span class="math notranslate nohighlight">\(\frac{\partial f_b[{K_n}]}{\partial K_i}\)</span> are discontinuous across the phase boundary. Sometimes it is called first order phase transition. Similarly, we should avoid using this term during our discussion.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="Ising_models.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Ising models and spontaneous symmetry breaking</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="phases_transitions.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Phases and phase transitions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Phases and phase diagram</a><ul>
+<li><a class="reference internal" href="#what-is-a-phase-what-is-a-phase-diagram">What is a phase? What is a phase diagram?</a></li>
+<li><a class="reference internal" href="#the-spirit-of-model-studying">The spirit of model studying</a></li>
+<li><a class="reference internal" href="#the-formal-description-of-our-system">The formal description of our system</a></li>
+<li><a class="reference internal" href="#the-thermodynamic-limit">The thermodynamic limit</a></li>
+<li><a class="reference internal" href="#the-continuous-and-discontinuous-phase-transition-formal-definition">The continuous and discontinuous phase transition ( formal definition)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

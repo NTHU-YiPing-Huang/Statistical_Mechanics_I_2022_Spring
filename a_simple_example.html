@@ -1,0 +1,463 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Review of thermodynamics" href="rev_thermodyn.html" /><link rel="prev" title="Thermodynamics and statistical mechanics" href="Rev_thermodynamics.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>A simple example - 2022 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="syllabus.html"><div class="brand">2022 Statistical Mechanics (I) - PHYS521000</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale_invariance.html">Scale invariance and the concept of universality class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="a-simple-example">
+<h1>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">#</a></h1>
+<p>Let’s start from the ideal gas model and comparing the deterministic approach and the statistical approach explicitly.</p>
+<section id="deterministic-approach">
+<h2>Deterministic approach<a class="headerlink" href="#deterministic-approach" title="Permalink to this headline">#</a></h2>
+<p>To describe the system in a deterministic fashion, we need to specify the initial condition and the equation of motion.</p>
+<p>To specify the initial configuration of the system of <span class="math notranslate nohighlight">\(N\)</span> particles. We need to specify the case with one particle first. We know we need a three component position vector, <span class="math notranslate nohighlight">\(\textbf{R}\)</span>, and a three component velocity vector, <span class="math notranslate nohighlight">\(\textbf{V}\)</span>, to describe the initial condition for a single particle. When we have <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> such vectors for the position and <span class="math notranslate nohighlight">\(N\)</span> such vectors for the velocity. That is, the initial condition of the system is specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\equiv\{\textbf{R}_1,\cdots,\textbf{R}_N;\textbf{V}_1,\cdots,\textbf{V}_N\}\)</span>. Here <span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are vectors of length <span class="math notranslate nohighlight">\(3N\)</span>.</p>
+<p>With the initial condition specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\)</span>, we still need to construct the equation of motion. In general, they are described by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\sum_{i\neq j}\textbf{F}_{ij}=m_j \frac{\partial^2}{\partial t^2} \textbf{R}_j\text{ for the $j$-th particle.}
+\]</div>
+</div>
+<p>In practice, we usually do not have the detailed information of the system with <span class="math notranslate nohighlight">\(N\sim \mathcal{O}(10^{23})\)</span>. Also, the coupled equation of motion is very complicated. Even if we manage to have the solution, it is impossible to make sense out of this complicated deterministic result.</p>
+</section>
+<section id="statistical-description">
+<h2>Statistical description<a class="headerlink" href="#statistical-description" title="Permalink to this headline">#</a></h2>
+<p>Now we understand the challenge from the deterministic approach. We known we have a huge space that describes the possible initial condition of our macroscopic system. Are all the initial condition equivalent? Suppose we have a <span class="math notranslate nohighlight">\(1m^3\)</span> box, it is possible that we have a “homogeneous” distribution of or particle as our initial condition. The initial condition that all the particles are concentrated at the top left corner of <span class="math notranslate nohighlight">\(1cm^3\)</span> volume of our box is also valid. However, from the intuition, we know it is more likely that the gas molecules will distribute evenly, instead of choosing to sit at one corner.</p>
+<p>This intuition motivates us to make some postulation about the initial conditions. Following is the Maxwell’s postulates:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{\textbf{R}_i,\textbf{V}_i\}\)</span> and <span class="math notranslate nohighlight">\(\{\textbf{R}_j,\textbf{V}_j\}\)</span> are independent variables for different <span class="math notranslate nohighlight">\(i,j\)</span>. Let’s use <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})\)</span> to denote the density of particles in the space at <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>. The number of particles in this volume is <span class="math notranslate nohighlight">\(dN=f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are independent variables. So we expect <span class="math notranslate nohighlight">\(f(\textbf{r},\textbf{v})=f_r(\textbf{r})f_v(\textbf{v})\)</span>.</p></li>
+<li><p>The density is unifor in the space. So we know <span class="math notranslate nohighlight">\(f_r(\textbf{r})=N/V\)</span>.</p></li>
+<li><p>The velocity components, the <span class="math notranslate nohighlight">\(x,y,z\)</span> components, are mutually independent. So we have <span class="math notranslate nohighlight">\(f_v(\textbf{v}=f_x(v_x)f_y(v_y)f_z(v_z)\)</span></p></li>
+<li><p>The distribution of the velocity only depends on the magnitude of the velocity. That is, <span class="math notranslate nohighlight">\(f_v(\textbf{v})=f_v(|\textbf{v}|)=f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})\)</span>.</p></li>
+</ol>
+<p>From 4 and 5, we have</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\ln f_v(\textbf{v})=\ln f_v((v_x^2+v_y^2+v_z^2)^{\frac{1}{2}})= \ln f_x(v_x)+\ln f_y(v_y)+\ln f_z(v_z)\text{.}
+\]</div>
+</div>
+<p>Since the system is isotropic, there is no reason that <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)\)</span> has different expression, we can simply assume <span class="math notranslate nohighlight">\(f_x(u), f_y(u), f_z(u)=g(u)\)</span>. Similar argument suggests <span class="math notranslate nohighlight">\(f_v(u)=g(u)\)</span> also. So we are looking for a functional from of <span class="math notranslate nohighlight">\(g(u)\)</span> such that</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\ln\left[ g(v_x)g(v_y)g(v_z)\right]=\ln\left[ g\left( (v_x^2+v_y^2+v_z^2)^{\frac{1}{2}}\right)\right]\text{.}
+\]</div>
+</div>
+<p>We can try some form of the <span class="math notranslate nohighlight">\(g(u)\)</span>. Say <span class="math notranslate nohighlight">\(g(u)\propto u^m\)</span>, <span class="math notranslate nohighlight">\(g(u)\propto e^{B u}\)</span>, … After some trial functions, we can convince ourselves that the function <span class="math notranslate nohighlight">\(g(u)\propto e^{-\lambda u^2}\)</span> with <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. (<span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> since it should be a distribution function that is normalizable).</p>
+<p>Once we figure out the form of the density function, we know the normalization condition is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+N=\int f(\textbf{r},\textbf{v})d\textbf{r}d\textbf{v}=\int f_r(\textbf{r})d\textbf{r}\int f_x(v_x)f_y(v_y)f_z(v_z) dv_xdv_ydv_z\text{.}
+\]</div>
+</div>
+<p>So we have the normalization condition</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\int du g(u)=1\text{.}
+\]</div>
+</div>
+<p>Performing the Gaussian integral, we have <span class="math notranslate nohighlight">\(g(u)=\sqrt{\frac{\lambda}{\pi}}\exp[-\lambda u^2]\)</span>.</p>
+<p>At this point, we don’t know what is <span class="math notranslate nohighlight">\(\lambda\)</span>. But we can already evaluate the expectation value, <span class="math notranslate nohighlight">\(\langle v^2\rangle=\langle v_x^2+v_y^2+v_z^2\rangle=3\int v_x^2 g(v_x)dv_x=\frac{3}{2\lambda}\)</span>.</p>
+<p>To figure out the expression of <span class="math notranslate nohighlight">\(\lambda\)</span> using the microscopic modeling, we can consider the ideal gas equation <span class="math notranslate nohighlight">\(PV=Nk_BT\)</span> and the microscopic expression of the concept of pressure, <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>Consider the surface expand in the <span class="math notranslate nohighlight">\(y-z\)</span> plan, the particles collide with the container without energy lost, so we have the momentum transfer to be</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Delta P=\underbrace{\int_0^\infty dv_x f_x(v_x)}_{v_x&gt;0 \text{ particles collide with the right wall} }\underbrace{\rho S v_x\Delta t}_{\text{number of collision in time }\Delta t} \underbrace{(-2mv_x)}_{\text{momentum transfer per particle}}\\ \times \int_{-\infty}^{\infty} dv_y\int_{-\infty}^{\infty} dv_z f_y(v_y)f_z(v_z)
+\end{split}\]</div>
+</div>
+<p>We also know the magnitude of pressure is defined as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{\rho m}{2\lambda}=\rho k_BT\text{.}
+\]</div>
+</div>
+<p>So we have <span class="math notranslate nohighlight">\(\lambda=\frac{m}{2k_BT}\)</span>.</p>
+</section>
+<section id="what-do-we-achieve">
+<h2>What do we achieve?<a class="headerlink" href="#what-do-we-achieve" title="Permalink to this headline">#</a></h2>
+<p>Let’s review what we have done here.</p>
+<ol class="simple">
+<li><p>We assume the initial condition satisfy some statistical properties. Here, it is the statistical independence between particles, statistical independence between <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span> and the statistical independence of the projection of <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>  on the <span class="math notranslate nohighlight">\(x,y,z\)</span> axes.</p></li>
+<li><p>We then can argue the form of the distribution function with <span class="math notranslate nohighlight">\(\lambda\)</span> undetermined.</p></li>
+<li><p>We use the microscopic picture and the ideal gas equation <span class="math notranslate nohighlight">\(PV=Nk_BT\)</span> to derive the expression of <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Then we find the corresponding distribution function.</p></li>
+</ol>
+<p>However, it is not clear that this distribution function is compatible with the deterministic approach. That is, even if we assume the initial condition satisfied this distribution function, it does not mean the distribution function will be satisfied for arbitrary time after we evolve the particles using the deterministic equation of motion!</p>
+<p>To rationalize this picture, we postulate that the statistical independence assumption captures the most relevant initial conditions. Even if the deterministic evolution of the system might drive the system outside of this statistical independence assumption, the chance that the system evolved into such status is small and measure zero when the system is at the macroscopic scale.</p>
+<p>So one can imagine that if we start from this particular distribution function as our initial condition. As the system evolved in a deterministic way, we expect the distribution function to fluctuates in time. The statistical independence picture we derived previously suggest the fluctuation to be estimated by the relative standard deviation we discussed in the random walk section. At the limit <span class="math notranslate nohighlight">\(N\to\infty\)</span>, our distribution function will play dominant role and will be a very good approximation for our system. This is the spirit of the statistical description.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="rev_thermodyn.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Review of thermodynamics</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Rev_thermodynamics.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Thermodynamics and statistical mechanics</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">A simple example</a><ul>
+<li><a class="reference internal" href="#deterministic-approach">Deterministic approach</a></li>
+<li><a class="reference internal" href="#statistical-description">Statistical description</a></li>
+<li><a class="reference internal" href="#what-do-we-achieve">What do we achieve?</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

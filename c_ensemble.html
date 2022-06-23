@@ -1,0 +1,501 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Generalized ensemble and grand canonical ensemble" href="g_gc_ensemble.html" /><link rel="prev" title="Microcanonical ensemble" href="mc_ensemble.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Canonical ensemble - 2022 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="syllabus.html"><div class="brand">2022 Statistical Mechanics (I) - PHYS521000</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale_invariance.html">Scale invariance and the concept of universality class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="canonical-ensemble">
+<h1>Canonical ensemble<a class="headerlink" href="#canonical-ensemble" title="Permalink to this headline">#</a></h1>
+<p>We have introduce the micro canonical ensemble which has fixed total energy. However, we usually did not have control over the energy. Instead, we can control the temperature of the system. One question is: can we form ensemble theory under the fixed temperature constraint instead of the fixed energy constraint? It turns out the corresponding ensemble with fixed temperature is the canonical ensemble. To go from the micro canonical ensemble where the probability of microscopic state <span class="math notranslate nohighlight">\(\xi\)</span> is <span class="math notranslate nohighlight">\(P(\xi)=\frac{1}{|\Gamma_E|}\)</span>, to canonical ensemble, the modification we need to make is to modify the probability such that it is proportional with the Boltzmann factor, <em>i.e.</em>, <span class="math notranslate nohighlight">\(P(\xi)\propto \exp\left[-\frac{H(\xi)}{k_BT}\right]\)</span>.</p>
+<p>To derive this conclusion, we put our system into thermal contact with a reservoir at fixed temperature <span class="math notranslate nohighlight">\(T\)</span>. Now our composite system (contains the system that we are interested in and the reservoir) is considered as an isolated system with fixed total energy, <span class="math notranslate nohighlight">\(E_t\)</span>, so we can use the micro canonical ensemble to describe the composite system. Let’s use <span class="math notranslate nohighlight">\(\xi_s\)</span> and <span class="math notranslate nohighlight">\(\xi_R\)</span> to represent the microscopic configurations of our system and the reservoir. The expectation value of observable <span class="math notranslate nohighlight">\(A\)</span> defined on the system is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle A\rangle=\frac{1}{|\Gamma_{E_t}|}\int d\xi_R\int d\xi_s A(\xi_s) \delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)\\
+=\frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \underbrace{\int d\xi_R\delta(H^{(s)}(\xi_s)+H^{(R)}(\xi_R)-E_t)}_{|\Gamma_R(E_t-H^{(s)}(\xi_s))|=\exp\left[k_B^{-1} S_R(E_t-H^{(s)}(\xi_s))\right]}\\
+\approx \frac{1}{|\Gamma_{E_t}|}\int d\xi_s A(\xi_s) \exp\left[k_B^{-1} \left( S_R(E_t)-\underbrace{\left.\frac{\partial S_R}{\partial E}\right|_{E_t}}_{T^{-1}} H^{(s)}(\xi_s)+\cdots \right)\right]
+\end{split}\]</div>
+</div>
+<p>In the last line, we expand the entropy <span class="math notranslate nohighlight">\(S_R\)</span> around the total energy <span class="math notranslate nohighlight">\(E_t\)</span>. Since the reservoir is huge comparing with our target system. So we can expand the expression around <span class="math notranslate nohighlight">\(E_t\)</span> By definition, <span class="math notranslate nohighlight">\(\langle A \rangle=\int d\xi_s A(\xi_s) P(\xi_s)\)</span>. From the above expression, we have shown</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+P(\xi_s)\propto \exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\text{.}
+\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>Why can we assume <span class="math notranslate nohighlight">\(A\)</span> only depends on <span class="math notranslate nohighlight">\(\xi_s\)</span>? The derivation above is true when we can have our observable defined on the support of the system’s microscopic configurations <span class="math notranslate nohighlight">\(\xi_s\)</span>. It turns out most of the observable related to the system can be defined in this way. For example, the volume of the system will depends only on the microscopic configurations of the target system. How about the energy of the system?</p>
+</div>
+<p>Once we know the probability is proportional with the Boltzmann factor, <span class="math notranslate nohighlight">\(\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\)</span>. We can normalize the probability <span class="math notranslate nohighlight">\(P(\xi_s)\)</span>. The normalization factor is the partition function</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z=\left\{
+\begin{array}{c}
+\sum_{\xi_s}\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]\\
+\int d\xi_s\exp\left[-\frac{H^{(s)}(\xi_s)}{k_BT}\right]
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+</div>
+<p>When <span class="math notranslate nohighlight">\(\xi\)</span> is treated as continuous variable, we can represent the expectation value of observable <span class="math notranslate nohighlight">\(A\)</span> as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\langle A\rangle =\int d\xi A(\xi) P(\xi)=\frac{1}{Z}\int dE'\underbrace{\left\{\int d\xi \delta( H(\xi)-E' ) A(\xi)\right\}}_{a^*(E')e^{\frac{S(E')T}{k_BT}}} exp\left[-\frac{E'}{k_BT}\right]\text{.}
+\]</div>
+</div>
+<p>Here, the integral in the curly parentheses is the average value of <span class="math notranslate nohighlight">\(A\)</span> in the micro canonical ensemble picture. As we have learned, the configuration number in micro canonical ensemble is overwhelmed by the configurations with equilibrium value <span class="math notranslate nohighlight">\(a^*\)</span>. So this integral can be approximated by the equilibrium value at <span class="math notranslate nohighlight">\(E'\)</span> times the phase space volume which can be expressed as the exponential of entropy according to the Boltzmann’s postulate.</p>
+<p>So we have</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\langle A\rangle =\frac{1}{Z}\int dE'a^*(E')exp\left[-\frac{E'-TS(E')}{k_BT}\right]\text{.}
+\]</div>
+</div>
+<p>If we stare at this expression, we can realize the degenerate configurations in the energy, <span class="math notranslate nohighlight">\(E'\)</span>, is captured by the entropy <span class="math notranslate nohighlight">\(S(E')\)</span>.</p>
+<p>Here, if we make a reasonable assumption that <span class="math notranslate nohighlight">\(a^*(E')\)</span> varies slowly comparing with the exponential function. We can use the saddle point approximation. The integral is dominated by the contribution that <span class="math notranslate nohighlight">\(E'=E^*\)</span> such that</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial}{\partial E'}\left( E'-TS(E')\right)\right|_{E'=E^*}=0\text{.}
+\]</div>
+</div>
+<p>This equation leads to</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial S}{\partial E}\right|_{E^*}=T\text{.}
+\]</div>
+</div>
+<p>That is, the integral is dominated by the energy such that the corresponding temperature is the equilibrium temperature <span class="math notranslate nohighlight">\(T\)</span>. <em>i.e.</em> the equilibrium energy <span class="math notranslate nohighlight">\(E^*=\langle H\rangle\)</span>. Similarly, the partition function will also have similar behavior.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z\approx \exp\left[-\frac{E^*-TS(E^*)}{k_BT}\right]\equiv \exp\left[-\frac{F}{k_BT}\right]\text{.}
+\]</div>
+</div>
+<p>Once we got <span class="math notranslate nohighlight">\(Z\)</span>, we can easily connect it with the Helmholtz free energy <span class="math notranslate nohighlight">\(F\)</span> by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+F=-k_BT\ln Z\text{.}
+\]</div>
+</div>
+<p>So statistical mechanics can bridge the microscopic picture with thermodynamics! Even more, it provides the probability for each microscopic configuration <span class="math notranslate nohighlight">\(P(\xi)\)</span>. To some extend, we have finer information so we can make further predictions about our system beyond conventional thermodynamics! Here we use the following calculation to show this point.</p>
+<section id="the-energy-fluctuation">
+<h2>The energy fluctuation<a class="headerlink" href="#the-energy-fluctuation" title="Permalink to this headline">#</a></h2>
+<p>The expectation value of the energy for continuous <span class="math notranslate nohighlight">\(\xi\)</span> can be expressed as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\langle H\rangle =\int d\xi H(\xi) P(\xi)=\frac{1}{Z}\int d\xi H(\xi)\exp\left[-\beta H(\xi)\right]\text{.}
+\]</div>
+</div>
+<p>Here, we follow the convention to denote <span class="math notranslate nohighlight">\((k_BT)^{-1}\)</span> as <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\partial \ln Z(\beta)}{\partial \beta}=-\int d\xi H(\xi) \frac{e^{-\beta H(\xi)}}{Z} =-\langle H\rangle =-E\propto N\\
+\frac{\partial^2 \ln Z(\beta)}{\partial \beta^2}= \langle H^2\rangle-\langle H\rangle^2=\frac{\partial (-E)}{\partial \beta}=k_BT^2\frac{\partial E}{\partial T}=k_BT^2C\propto N\ge0\text{.}
+\end{split}\]</div>
+</div>
+<p>So we have the very important result of the <em>Fluctuation-dissipation theorem</em>!</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\underbrace{\langle H^2\rangle-\langle H\rangle^2}_{\substack{\text{fluctuation}\\ \text{in energy}}}=k_BT^2\times \underbrace{C}_{\substack{\text{specific heat,}\\ \text{thermodynamic quantity}}}\text{.}
+\end{split}\]</div>
+</div>
+<p>Through statistical mechanics, we found the specific heat(macroscopic quantity) is related to the fluctuation(microscopic picture) in energy!</p>
+</section>
+<section id="the-ideal-gas-model-canonical-ensemble">
+<h2>The ideal gas model (canonical ensemble)<a class="headerlink" href="#the-ideal-gas-model-canonical-ensemble" title="Permalink to this headline">#</a></h2>
+<p>The partition function is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z=\frac{1}{N!}\int \left(\prod_{i=1}^{N}\frac{d \textbf{R}d\textbf{P}}{h^3}\right) \exp\left[-\beta \sum_{j=1}^N\frac{\textbf{P}_j^2}{2m}\right]
+=\frac{V^N}{N!}\left\{\int \frac{d P}{h} \exp\left[-\beta \frac{P^2}{2m}\right]\right\}^{3N}=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N\text{.}
+\]</div>
+</div>
+<p>In the second equality, we integrate over the space and use the fact that the momentum integral over each component of each particle factorizes. Here, the Gaussian integral over momentum give us the result that can be expressed by the de Broglie wave length, <span class="math notranslate nohighlight">\(\lambda=\sqrt{\frac{h^2}{2\pi mk_BT}}\)</span>.</p>
+<p>The Helmholtz free energy can be calculated by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\frac{-F}{k_BT}=\ln Z\xrightarrow{\text{Stirling's approximation}} N\ln\left[ e \frac{V/N}{\lambda^3}\right]\text{.}
+\]</div>
+</div>
+<p>When the average occupied space for each particle is much larger then the unit of volume formed by the de Broglie wave length, the wave function overlap can be ignored, so we don’t need to worry about the quantum statistics (<em>i.e.</em> the Bose/Fermi statistics). Once we have the Helmholtz free energy, we can derive other thermodynamic quantities easily.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="g_gc_ensemble.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Generalized ensemble and grand canonical ensemble</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="mc_ensemble.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Microcanonical ensemble</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Canonical ensemble</a><ul>
+<li><a class="reference internal" href="#the-energy-fluctuation">The energy fluctuation</a></li>
+<li><a class="reference internal" href="#the-ideal-gas-model-canonical-ensemble">The ideal gas model (canonical ensemble)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

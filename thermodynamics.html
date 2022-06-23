@@ -1,0 +1,424 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Motivation: Why learn statistical mechanics?" href="motivation.html" /><link rel="prev" title="Introduction" href="introduction.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Thermodynamics as an effective theory - 2022 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="syllabus.html"><div class="brand">2022 Statistical Mechanics (I) - PHYS521000</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="introduction.html">Introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale_invariance.html">Scale invariance and the concept of universality class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="thermodynamics-as-an-effective-theory">
+<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline">#</a></h1>
+<p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2" title="Luca Peliti. Statistical mechanics in a nutshell. Princeton University Press, 2011.">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> 6.4</em></p>
+<section id="what-is-thermodynamics">
+<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">#</a></h2>
+<p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
+<p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
+<p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
+<figure class="align-default" id="micro-macro-1">
+<a class="reference internal image-reference" href="_images/micro_macro_1.png"><img alt="_images/micro_macro_1.png" src="_images/micro_macro_1.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The microscopic physics and connection with macroscopic physics.</span><a class="headerlink" href="#micro-macro-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-to-go-from-microscopic-to-macroscopic">
+<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">#</a></h2>
+<p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
+<p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
+<p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
+<p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
+<section id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
+<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">#</a></h3>
+<p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
+<p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
+<p>There are at least two routes:</p>
+<ol class="simple">
+<li><p>Find a good computer and try to use the computational power to understand the complicated behavior of the system.</p></li>
+<li><p>Make some approximation. When we drop some information, maybe we will be able to analyze the problem. Then we compare with experiments to see if the approximation we made at the very beginning makes sense.</p></li>
+</ol>
+<p>How to proceed using different routes is related to condensed matter physics, so I am not going to elaborate on them further. The point is, no matter which route we take, we will eventually get the information of the energy spectrum if the approach works. Depending on our approach, the spectrum might be discrete, or it might be continuous. The energy spectrum we derived will depend on the microscopic parameters that characterize the system. With the information of the spectrum(derived with various routes), statistical mechanics provides a protocol to convert that information into the macroscopic measurable quantities such as specific heat, magnetization, <em>etc.</em> Then one can compare our calculations with the real experiments and see if we can learn something from the experiments to construct what happened at the microscopic scale. The result will not be identical to the experiments since we usually need to make certain approximations to proceed. The difference between our calculation and the experiments provides hints on improving our approximation or abandon the theoretically proposed microscopic picture. By iterating this process and comparing the experiments and theoretical predictions back and forth, we will eventually reach some conclusion, if we are lucky.</p>
+<figure class="align-default" id="micro-macro-logic-2">
+<a class="reference internal image-reference" href="_images/micro_macro_logic_2.png"><img alt="_images/micro_macro_logic_2.png" src="_images/micro_macro_logic_2.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">How statistical mechanics helps us understanding the physics at microscopic level.</span><a class="headerlink" href="#micro-macro-logic-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>That means statistical mechanics provides a way to extract finer information about what happened at the microscopic scale. That is very helpful for us to develop a picture that can bridge the macroscopic behavior using microscopic pictures.</p>
+<p>The astonishing part of thermodynamics is that we can describe the macroscopic system using relatively few physical quantities. Regularity emerges out of a macroscopic number of degrees of freedom. It is not obvious that we could find a way to describe the essential information of the macroscopic system with <span class="math notranslate nohighlight">\(10^{23}\)</span> degrees of freedom. A theory that captures the essential physics of the system with relatively small sets of physical observables is the <strong>effective theory</strong> of our complex system. It means we can understand the complex system effectively using our effective theory. <strong>Effective theory</strong> and the concept of <strong>emergent phenomena</strong> form the backbone of modern condensed matter physics and have profoundly influence other research fields. We will discuss the concept of emergent phenomena in the next section.</p>
+<figure class="align-default" id="directive-fig">
+<a class="reference internal image-reference" href="_images/StatMech_roadmap.png"><img alt="_images/StatMech_roadmap.png" src="_images/StatMech_roadmap.png" style="width: 750px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The roadmap of the course!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="motivation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Motivation: Why learn statistical mechanics?</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="introduction.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Thermodynamics as an effective theory</a><ul>
+<li><a class="reference internal" href="#what-is-thermodynamics">What is thermodynamics?</a></li>
+<li><a class="reference internal" href="#how-to-go-from-microscopic-to-macroscopic">How to go from microscopic to macroscopic?</a><ul>
+<li><a class="reference internal" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables">Microscopic theory, statistical mechanics and macroscopic observables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

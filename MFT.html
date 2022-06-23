@@ -1,0 +1,526 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Teaser of the Ginsburg-Landau theory" href="GL.html" /><link rel="prev" title="Transfer matrix method" href="Ising_models_2.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Mean-field theory - 2022 Statistical Mechanics (I) - PHYS521000</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="syllabus.html"><div class="brand">2022 Statistical Mechanics (I) - PHYS521000</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale_invariance.html">Scale invariance and the concept of universality class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html#the-solution-of-the-diffusion-equation">The solution of the diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html#key-points-to-learn-from-the-two-example">Key points to learn from the two example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="mean-field-theory">
+<h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline">#</a></h1>
+<section id="why-mean-field-theory">
+<h2>Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<p>Unfortunately, the transfer matrix method does not work beyond one-dimensional system. We will need some other methods to study the interacting systems. Here, we are going to introduce a versatile and simple approach – mean field theory. Mean field theory is probably the simplest self-consistent way to study interacting problems. It is also a powerful tool to describe ones “guess” about the physics. However, due to its generality and the simplicity, the result from this approach might not be robust or it may be <strong>qualitatively</strong> wrong. We will introduce the ideal of mean field theory first via a concrete example using the direct approach and the more formal variational approach. After that, we will discuss the structure of it and understand why it could give us qualitatively wrong answers. At the end of the section, we will discuss the relation between mean field theory and the Landau theory.</p>
+<p>We will focus on the <span class="math notranslate nohighlight">\(D\)</span> dimensional Ising model on hypercubic lattice. The coordinate number <span class="math notranslate nohighlight">\(z=2D\)</span> since we can move forward or backward on the lattice in any of the orthogonal directions.</p>
+</section>
+<section id="the-weiss-mean-field-theory">
+<h2>The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<p>From the previous study of Ising model, we know how to solve the <span class="math notranslate nohighlight">\(J=0\)</span> model where the spins are non-interacting two-level systems under external field, <span class="math notranslate nohighlight">\(H\)</span>, described by <span class="math notranslate nohighlight">\(H_0=-H\sum_{i}S_i\)</span> on hypercubic lattice sites <span class="math notranslate nohighlight">\(i\)</span>. The corresponding magnetization density <span class="math notranslate nohighlight">\(M=\tanh\left(\beta H\right)\)</span>.</p>
+<p>The question we are facing is: how to solve the interacting case <span class="math notranslate nohighlight">\(H_{\Omega}=-J\sum_{\langle i,j\rangle} S_iS_j-H\sum_i S_i\)</span> with <span class="math notranslate nohighlight">\(J&gt;0\)</span>? If we stare at the trouble maker term, we might see it is actually kind of similar to the effect introduced by magnetic field term. <em>i.e.</em></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+-J\sum_{\langle i,j\rangle} S_iS_j\stackrel{?}{\to}-\sum_{\langle i,j\rangle} \underbrace{(JS_i)}_{H_i ?}S_j\text{.}
+\]</div>
+</div>
+<p>If we make this analogy, we encounter a problem, the induced magnetic field <span class="math notranslate nohighlight">\(H_i\)</span> depends on the behavior of the spin on site <span class="math notranslate nohighlight">\(i\)</span>. The final solution of the system will describe the system’s behavior using the exact probability distribution function <span class="math notranslate nohighlight">\(P_E(\{S_i\})\)</span>. Even though we don’t know the answer yet. But we expect the distribution function describes the statistical behavior of <span class="math notranslate nohighlight">\(S_i\)</span> for each site <span class="math notranslate nohighlight">\(i\)</span>. In principle the distribution function could be anything, but our physical picture suggest the distribution should prefer to align all the spins and effective provide a non-zero expectation value of <span class="math notranslate nohighlight">\(S_i\)</span>. That is, we expect <span class="math notranslate nohighlight">\(\langle S_i\rangle_E=M_i\neq0\)</span> at the low temperature limit. At this moment, we don’t know whether the expectation value will depends on <span class="math notranslate nohighlight">\(i\)</span> or not. So we will leave the index <span class="math notranslate nohighlight">\(i\)</span> for now.</p>
+<p>The idea sounds very promising. How should we formulate the idea in equations? One can express the Hamiltonian in the following way</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+-J\sum_{\langle i,j\rangle} S_iS_j\stackrel{?}{\to}-\sum_{\langle i,j\rangle} \underbrace{J\left[\left( S_i-\langle S_i\rangle_t \right)+\langle S_i\rangle_t \right]}_{H_i ?}S_j\text{.}
+\]</div>
+</div>
+<p>At this moment, we don’t know what is the expectation value, it is simply a do nothing expression. The trial distribution function, <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> that is used to evaluate the expectation value is also not determined yet. (We use <span class="math notranslate nohighlight">\(\langle\rangle_t\)</span> to denote the expectation value evaluated by the trial distribution function.)</p>
+<p>The Weiss mean field theory makes the assumption that <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span> and is negligible. Then we use this assumption to see if we can find a self-consistent solution <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> that satisfy <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span>. To simplify our notation, we set <span class="math notranslate nohighlight">\(\langle S_i\rangle_t=m_i\)</span>. (If we are lucky to find the self consistent solution is the exact solution, <span class="math notranslate nohighlight">\(P_t(\{S_i\})=P_E(\{S_i\})\)</span> we can see <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E=0\)</span>.) This bold assumption leads to the fact that we have a mean-field Hamiltonian</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+H_{MFT}=-\sum_{\langle i,j\rangle} (H+J\langle S_i\rangle_t)S_j\xrightarrow{m_i=m}-\underbrace{(H+zJ m)}_{H_{eff}}\sum_jS_j\text{.}
+\]</div>
+</div>
+<p>In the last expression, we made a further assumption that <span class="math notranslate nohighlight">\(m_i\)</span> is site independent and describe it using <span class="math notranslate nohighlight">\(m\)</span>. If we stare at the final expression again, it is just the non-interacting spin system with “external” magnetic field again.</p>
+<p>At this moment, the implicit condition we imposed on the trial distribution function is: it must create the desired magnetization value <span class="math notranslate nohighlight">\(m\)</span>. However, from the fact that it looks like a non-interacting spin system with “external” field. We also know the corresponding distribution function of that system is parameterized by the effective magnetic field, <span class="math notranslate nohighlight">\((H+zJm)\)</span>. So we have the self-consistency check! We are effectively asking: at what value of <span class="math notranslate nohighlight">\(m\)</span>, the trial distribution function <span class="math notranslate nohighlight">\(P_t(\{S_i\})\)</span> parameterized by <span class="math notranslate nohighlight">\(H+zJm\)</span> can give the expectation value of single spin to be <span class="math notranslate nohighlight">\(m\)</span> also? We know how to evaluate the expectation value of single spin for the system, it is simply <span class="math notranslate nohighlight">\(\tanh\left[\beta(H+zJm\right]\)</span>. So the self-consistency equation is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+m=\tanh\left[\beta(H+zJm)\right]\text{.}
+\]</div>
+</div>
+<p>The qualitative behavior of this equation is a simple calculation problem. So I will leave it as an exercise.</p>
+<p>Logically, we have made several assumptions here.</p>
+<ol class="simple">
+<li><p>The “fluctuation” is small: <span class="math notranslate nohighlight">\(\langle (S_i-\langle S_i\rangle_t)\rangle_E\ll1\)</span></p></li>
+<li><p>The mean field parameter <span class="math notranslate nohighlight">\(m_i\)</span> is homogeneous in <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>We can self-consistently solve the equation.</p></li>
+</ol>
+<p><em>In this simple problem, we can also see the mean-field theory implicitly makes the distribution function factorizable, i.e. <span class="math notranslate nohighlight">\(P_t(\{S_i\})=\prod_iP_{t,i}(S_i)\)</span></em></p>
+<p>Fulfill the self-consistency equation is necessary, but not sufficient for the mean-field theory to work. The problem is, even if we have a trial distribution function that satisfy the self-consistency equation, it does not mean the fluctuation is small. A more important logical question is: even if the self-consistent trial distribution function can be derived, it does not guarantee the trial distribution function capture the qualitative physical picture of the exact distribution function.</p>
+<p>So the mean-field theory is a versatile and simple approach to formulate the physical picture. However, it also is limited by above mentioned reasons.</p>
+</section>
+<section id="the-variational-mean-field-theory">
+<h2>The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<p>The physical picture of the Weiss mean field theory is clear. However, the general structure behind the mean field theory might not be so clear. Here, I will discuss another approach to formulate the mean field theory, the variational mean field theory approach.</p>
+<p>The approach relies on the following inequality</p>
+<div class="math-wrapper docutils container" id="equation-exp-convex">
+<div class="math notranslate nohighlight" id="equation-exp-convex">
+<span class="eqno">(2)<a class="headerlink" href="#equation-exp-convex" title="Permalink to this equation">#</a></span>\[
+\langle e^{f(x)}\rangle\ge e^{\langle f(x)\rangle}\text{.}
+\]</div>
+</div>
+<p>The proof is not difficult, so I will leave it as an exercise.</p>
+<p>Now, let’s start from the partition function.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z=\sum_{\{S_i\}} e^{-\beta \left\{\left[H_{\Omega}(\{S_i\})-H_0(\{S_i\})\right]+H_0(\{S_i\})\right\}}\text{.}
+\]</div>
+</div>
+<p>Here, <span class="math notranslate nohighlight">\(H_{\Omega}\)</span> is the interacting Hamiltonian we want to solve. <span class="math notranslate nohighlight">\(H_0\)</span> is the non-interacting trial Hamiltonian that we know what will happen. Again, this is a do nothing expression. Now, we can rewrite the expression as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z=Z_0\sum_{\{S_i\}} e^{-\beta \left\{\left[H_{\Omega}(\{S_i\})-H_0(\{S_i\})\right]\right\}} \left[\frac{e^{-\beta H_0(\{S_i\})}}{Z_0}\right]=\langle e^{-\beta(H_{\Omega}-H_0)}\rangle_0
+\]</div>
+</div>
+<p>with</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z_0=\sum_{\{S_i\}}e^{-\beta H_0(\{S_i\})}=e^{-\beta F_0}=e^{-\beta(\langle H_0\rangle_0-TS_0)}\text{.}
+\]</div>
+</div>
+<p>Here, <span class="math notranslate nohighlight">\(\langle \rangle_0\)</span> represent the average over the distribution function generated by the canonical ensemble of the non-interacting trial Hamiltonian, <span class="math notranslate nohighlight">\(H_0\)</span>. Using <a class="reference internal" href="#equation-exp-convex">(2)</a>, we have</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Z\ge Z_0 e^{-\beta\langle H_{\Omega}-H_0\rangle_0}\equiv Z_{MFT}
+\]</div>
+</div>
+<p>The idea is, we want to find <span class="math notranslate nohighlight">\(H_0\)</span> such that <span class="math notranslate nohighlight">\(Z_{MFT}\)</span> is maximized. Eauivalently, we want to minimize <span class="math notranslate nohighlight">\(F_{MFT}\equiv -k_BT \ln Z_{MFT}\)</span>.</p>
+<p>By definition, we can show</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+f_{MFT}=N(\Omega)^{-1}F_{MFT}=N(\Omega)^{-1}(\langle H_{\Omega}\rangle_0-TS_0)\text{.}
+\]</div>
+</div>
+<p>Notice the expectation value of the interacting Hamiltonian, <span class="math notranslate nohighlight">\(H_{\Omega}\)</span>, is evaluated using the non-interacting trial distribution function formed by <span class="math notranslate nohighlight">\(H_0\)</span>. Once we express the free energy of the mean field theory using the variation parameter of the non-interacting Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span>, we can minimize the free energy with respect to this variation parameter and derive the self-consistent equation.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>The method we use here is to perform variation in terms of the “order parameter”, m. However, there is a more general method that we can perform to find the variational minima by regarding the probability distribution of the trail Hamiltonian as a variational function. The second approach is more general, however, due to the limit of time, I will not introduce it here. For reader who wants to explore the method further, please check <span id="id1">[<a class="reference internal" href="biblio.html#id17" title="Paul M Chaikin and Tom C Lubensky. Principles of condensed matter physics. Cambridge University Press, 2000.">CL00</a>]</span>.</p>
+</div>
+<p>Let’s use the simple Ising model to see how it works.</p>
+<p>We pick the trial Hamiltonian with variational parameter <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+H_0(\lambda)=-\lambda\sum_iS_i\text{.}
+\]</div>
+</div>
+<p>From our knowledge to this system, we know the magnetization <span class="math notranslate nohighlight">\(m\)</span> can have one-to-one mapping with the varaition parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. So later, we will perform the variation with respect to <span class="math notranslate nohighlight">\(m\)</span> directly.</p>
+<p>By definition</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\langle S_i\rangle_0\equiv m=\frac{N_{\uparrow}-N_{\downarrow}}{N(\Omega)}\text{.}
+\]</div>
+</div>
+<p>And we know the probability distribution function of <span class="math notranslate nohighlight">\(H_0\)</span> is factorizable.</p>
+<p>With this information, we can express <span class="math notranslate nohighlight">\(\langle H_{\Omega}\rangle_0\)</span> easily.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle H_{\Omega}\rangle_0=-J\sum_{\langle i,j\rangle_0 } \langle S_iS_j\rangle_0-H\sum_i\langle S_i\rangle_0=-J\sum_{\langle i,j\rangle} \langle S_i\rangle_0\langle S_j\rangle_0-H\sum_i\langle S_i\rangle_0\\
+=N(\Omega)\left[-Jm^2\frac{z}{2}-Hm\right]
+\end{split}\]</div>
+</div>
+<p>The entropy when <span class="math notranslate nohighlight">\(\langle S_i\rangle_0=m\)</span> is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+S_0=k_B\ln C^N_{N_{\uparrow}}\xrightarrow{\text{Stirling's approximation}}=N(\Omega)k_B\left\{\ln 2-\frac{1}{2}\left[(1+m)\ln(1+m)+(1-m)\ln(1-m)\right]\right\}\text{.}
+\]</div>
+</div>
+<p>Using the above expressions, we can construct the free energy density <span class="math notranslate nohighlight">\(f(T,m)\)</span>. We can minimize the free energy density with respect to <span class="math notranslate nohighlight">\(m\)</span> by requiring <span class="math notranslate nohighlight">\(\frac{df}{dm}=0\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dm}=-Jzm-H +k_BT\underbrace{\left[\frac{1}{2}\ln\left(\frac{1+m}{1-m}\right)\right]}_{\tanh^{-1} m}=0\text{.}
+\]</div>
+</div>
+<p>We can therefore have the self-consistency equation</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+m=\tanh\left[\beta(Jzm+H)\right]\text{.}
+\]</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="GL.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Teaser of the Ginsburg-Landau theory</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Ising_models_2.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Transfer matrix method</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Mean-field theory</a><ul>
+<li><a class="reference internal" href="#why-mean-field-theory">Why mean field theory?</a></li>
+<li><a class="reference internal" href="#the-weiss-mean-field-theory">The Weiss mean field theory</a></li>
+<li><a class="reference internal" href="#the-variational-mean-field-theory">The variational mean field theory</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
