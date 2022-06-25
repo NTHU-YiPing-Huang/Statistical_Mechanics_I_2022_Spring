@@ -3,7 +3,7 @@
 [//]: <> (> 盡信書不如無書。--孟子 道可道，非常道。--老子The quotes above are very elegant descriptions about the attitude of learning. If one completely believe what a book says, it is better not to read any books. Any books should not become an obstacles for thinking. )
 
 ## Basic information
-* **www.phys.nthu.edu.tw/~yphuang**
+* [The lecture note](https://nthu-yiping-huang.github.io/Statistical_Mechanics_I_2022_Spring)
 * Time: Thursday 13:20-16:20
 * Classroom: Physics building, Room 124
 * Instructor: Yi-Ping Huang
