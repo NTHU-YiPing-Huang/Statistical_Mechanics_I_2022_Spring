@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Teaser of the Ginsburg-Landau theory" href="GL.html" /><link rel="prev" title="Transfer matrix method" href="Ising_models_2.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Mean-field theory - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,14 +258,14 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="mean-field-theory">
-<h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline">#</a></h1>
+<h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this heading">#</a></h1>
 <section id="why-mean-field-theory">
-<h2>Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<h2>Why mean field theory?<a class="headerlink" href="#why-mean-field-theory" title="Permalink to this heading">#</a></h2>
 <p>Unfortunately, the transfer matrix method does not work beyond one-dimensional system. We will need some other methods to study the interacting systems. Here, we are going to introduce a versatile and simple approach – mean field theory. Mean field theory is probably the simplest self-consistent way to study interacting problems. It is also a powerful tool to describe ones “guess” about the physics. However, due to its generality and the simplicity, the result from this approach might not be robust or it may be <strong>qualitatively</strong> wrong. We will introduce the ideal of mean field theory first via a concrete example using the direct approach and the more formal variational approach. After that, we will discuss the structure of it and understand why it could give us qualitatively wrong answers. At the end of the section, we will discuss the relation between mean field theory and the Landau theory.</p>
 <p>We will focus on the <span class="math notranslate nohighlight">\(D\)</span> dimensional Ising model on hypercubic lattice. The coordinate number <span class="math notranslate nohighlight">\(z=2D\)</span> since we can move forward or backward on the lattice in any of the orthogonal directions.</p>
 </section>
 <section id="the-weiss-mean-field-theory">
-<h2>The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<h2>The Weiss mean field theory<a class="headerlink" href="#the-weiss-mean-field-theory" title="Permalink to this heading">#</a></h2>
 <p>From the previous study of Ising model, we know how to solve the <span class="math notranslate nohighlight">\(J=0\)</span> model where the spins are non-interacting two-level systems under external field, <span class="math notranslate nohighlight">\(H\)</span>, described by <span class="math notranslate nohighlight">\(H_0=-H\sum_{i}S_i\)</span> on hypercubic lattice sites <span class="math notranslate nohighlight">\(i\)</span>. The corresponding magnetization density <span class="math notranslate nohighlight">\(M=\tanh\left(\beta H\right)\)</span>.</p>
 <p>The question we are facing is: how to solve the interacting case <span class="math notranslate nohighlight">\(H_{\Omega}=-J\sum_{\langle i,j\rangle} S_iS_j-H\sum_i S_i\)</span> with <span class="math notranslate nohighlight">\(J&gt;0\)</span>? If we stare at the trouble maker term, we might see it is actually kind of similar to the effect introduced by magnetic field term. <em>i.e.</em></p>
 <div class="math-wrapper docutils container">
@@ -309,7 +310,7 @@ m=\tanh\left[\beta(H+zJm)\right]\text{.}
 <p>So the mean-field theory is a versatile and simple approach to formulate the physical picture. However, it also is limited by above mentioned reasons.</p>
 </section>
 <section id="the-variational-mean-field-theory">
-<h2>The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this headline">#</a></h2>
+<h2>The variational mean field theory<a class="headerlink" href="#the-variational-mean-field-theory" title="Permalink to this heading">#</a></h2>
 <p>The physical picture of the Weiss mean field theory is clear. However, the general structure behind the mean field theory might not be so clear. Here, I will discuss another approach to formulate the mean field theory, the variational mean field theory approach.</p>
 <p>The approach relies on the following inequality</p>
 <div class="math-wrapper docutils container" id="equation-exp-convex">
@@ -440,10 +441,10 @@ m=\tanh\left[\beta(Jzm+H)\right]\text{.}
                 </div>
                 <div class="title">Teaser of the Ginsburg-Landau theory</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="Ising_models_2.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -465,9 +466,7 @@ m=\tanh\left[\beta(Jzm+H)\right]\text{.}
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -479,7 +478,7 @@ m=\tanh\left[\beta(Jzm+H)\right]\text{.}
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -501,12 +500,11 @@ m=\tanh\left[\beta(Jzm+H)\right]\text{.}
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

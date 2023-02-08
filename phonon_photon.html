@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Free Fermions and Bosons" href="Fermion_Boson.html" /><link rel="prev" title="Oscillators" href="oscillators.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Phonon and photon - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,13 +258,13 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="phonon-and-photon">
-<h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this headline">#</a></h1>
+<h1>Phonon and photon<a class="headerlink" href="#phonon-and-photon" title="Permalink to this heading">#</a></h1>
 <p>We are going to discuss the statistical mechanics for phonon and photon. Here, we will brief discuss the origin of phonon and photon. The discussion will just focus on the physics and the relevant formalism to derive statistical mechanics descriptions. For readers who want to review details of the derivation, we will refer to the nice reference <span id="id1">[<a class="reference internal" href="biblio.html#id10" title="Steven H Simon. The Oxford solid state basics. OUP Oxford, 2013.">Sim13</a>]</span>.</p>
 <section id="phonon">
-<h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this headline">#</a></h2>
+<h2>Phonon<a class="headerlink" href="#phonon" title="Permalink to this heading">#</a></h2>
 <p>Phonons are the quantum of sound wave. Therefore, in order to understand it, we need to have a rough picture of sound wave in solid. To get the core concept, we will focus on the simplest type of phonon: phonon in simple lattice system.</p>
 <section id="the-phonon-band-structure">
-<h3>The phonon band structure<a class="headerlink" href="#the-phonon-band-structure" title="Permalink to this headline">#</a></h3>
+<h3>The phonon band structure<a class="headerlink" href="#the-phonon-band-structure" title="Permalink to this heading">#</a></h3>
 <p>Symmetries usually help us simplify the analysis the problems. The lattice system has a <em>discrete</em> translational symmetry. How to use this symmetry to simplify the analysis of our problem?</p>
 <p>In a system with <em>continuous</em> translation symmetry, the momentum is conserved. So we usually use momentum to label the eigen states of our system.</p>
 <p>For system with <em>discrete</em> translation symmetry, we can similarly use the crystal momentum vector <span class="math notranslate nohighlight">\(\textbf{k}\)</span> to label the eigen states.</p>
@@ -283,7 +284,7 @@
 <p>In the last section, we discussed <span class="math notranslate nohighlight">\(N\)</span> decoupled quantum harmonic oscillator. They can be considered as a good approximation to the optical phonon if the gapped modes are approximately <span class="math notranslate nohighlight">\(q\)</span> independent. In fact, that is the Einstein’s phonon model<span id="id2">[<a class="reference internal" href="biblio.html#id11" title="Albert Einstein. Die plancksche theorie der strahlung und die theorie der spezifischen wärme. Annalen der Physik, 327(1):180–190, 1907.">Ein07</a>]</span>.</p>
 </section>
 <section id="classical-1d-sound-wave">
-<h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this headline">#</a></h3>
+<h3>Classical 1D sound wave<a class="headerlink" href="#classical-1d-sound-wave" title="Permalink to this heading">#</a></h3>
 <p>Here, we are going to discuss a simple example which is an one-dimensional coupled oscillators. The example is a model that is analytically tractable. However, as all the simple models, we should care about the generic feature of such systems instead of focusing on the artifact due to its simplicity. I will explain what do I mean by that later.</p>
 <p>We will focus on the classical system first. Then we can derive the energy as a function of <span class="math notranslate nohighlight">\(q\)</span>. Then, we will take the short cut to perform the classical-quantum replacement <span class="math notranslate nohighlight">\(E(q)=\hbar\omega(q)\to\hbar\omega(q)\left(\frac{1}{2}+\hat{n}_q\right)\)</span>. Here <span class="math notranslate nohighlight">\(\hat{n}_q\)</span> is the quanta of a quantum oscillator with wave vector <span class="math notranslate nohighlight">\(q\)</span>.</p>
 <p>Let’s start our analysis. Consider <span class="math notranslate nohighlight">\(N\)</span> particles with mass <span class="math notranslate nohighlight">\(m\)</span> coupled through spring with elastic potential <span class="math notranslate nohighlight">\(\frac{\kappa}{2}\Delta x^2\)</span>. Here <span class="math notranslate nohighlight">\(\kappa\)</span> is the force constant and <span class="math notranslate nohighlight">\(\Delta x\)</span> is the displacement from the equilibrium position. We assume the equilibrium position of the particles form a lattice with lattice constant <span class="math notranslate nohighlight">\(a\)</span>.</p>
@@ -321,7 +322,7 @@ Z=\sum_{\left\{n_{q,\alpha}\right\}} \exp\left[-\beta \sum_{q,\alpha} \hbar\omeg
 <p>To focus on the point, we assume the dispersion is isotropic and replace the discrete sum by integral in the later discussion.</p>
 </section>
 <section id="debye-model">
-<h3>Debye model<a class="headerlink" href="#debye-model" title="Permalink to this headline">#</a></h3>
+<h3>Debye model<a class="headerlink" href="#debye-model" title="Permalink to this heading">#</a></h3>
 <p>As we mentioned previously, <span class="math notranslate nohighlight">\(\omega(q)\)</span> depends on the system detail. The generic feature due to the Goldstone theorem is <span class="math notranslate nohighlight">\(\omega(q)\sim vq\)</span> as <span class="math notranslate nohighlight">\(q\to0\)</span>. Another constraint is the classical limit of the quantum model should leads to specific heat <span class="math notranslate nohighlight">\(3Nk_B\)</span> for a 3D system. To incorporate the two generic feature into one model, Debye propose to linearize the whole spectrum and put in a frequency cutoff by hand. Let’s see how it is done.</p>
 <ol>
 <li><p>The linear dispersive mode: Let’s assume <span class="math notranslate nohighlight">\(\omega(q)=vq\)</span> and <span class="math notranslate nohighlight">\(dq=v^{-1}d\omega\)</span>. Then we have the energy expectation value described as</p>
@@ -375,7 +376,7 @@ After some algebra, we found</p>
 </section>
 </section>
 <section id="photon">
-<h2>Photon<a class="headerlink" href="#photon" title="Permalink to this headline">#</a></h2>
+<h2>Photon<a class="headerlink" href="#photon" title="Permalink to this heading">#</a></h2>
 <p>The calculation of phonon is very similar with the photon case. Here I just list some of the key difference and the derivation will be left as an exercise.</p>
 <ol class="simple">
 <li><p>Completely linear dispersive mode.</p></li>
@@ -416,10 +417,10 @@ After some algebra, we found</p>
                 </div>
                 <div class="title">Free Fermions and Bosons</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="oscillators.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -441,9 +442,7 @@ After some algebra, we found</p>
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -455,7 +454,7 @@ After some algebra, we found</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -481,12 +480,11 @@ After some algebra, we found</p>
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

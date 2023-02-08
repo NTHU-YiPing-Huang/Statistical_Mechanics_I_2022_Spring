@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Review of thermodynamics" href="rev_thermodyn.html" /><link rel="prev" title="Thermodynamics and statistical mechanics" href="Rev_thermodynamics.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>A simple example - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,10 +258,10 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="a-simple-example">
-<h1>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">#</a></h1>
+<h1>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this heading">#</a></h1>
 <p>Let’s start from the ideal gas model and comparing the deterministic approach and the statistical approach explicitly.</p>
 <section id="deterministic-approach">
-<h2>Deterministic approach<a class="headerlink" href="#deterministic-approach" title="Permalink to this headline">#</a></h2>
+<h2>Deterministic approach<a class="headerlink" href="#deterministic-approach" title="Permalink to this heading">#</a></h2>
 <p>To describe the system in a deterministic fashion, we need to specify the initial condition and the equation of motion.</p>
 <p>To specify the initial configuration of the system of <span class="math notranslate nohighlight">\(N\)</span> particles. We need to specify the case with one particle first. We know we need a three component position vector, <span class="math notranslate nohighlight">\(\textbf{R}\)</span>, and a three component velocity vector, <span class="math notranslate nohighlight">\(\textbf{V}\)</span>, to describe the initial condition for a single particle. When we have <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> such vectors for the position and <span class="math notranslate nohighlight">\(N\)</span> such vectors for the velocity. That is, the initial condition of the system is specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\equiv\{\textbf{R}_1,\cdots,\textbf{R}_N;\textbf{V}_1,\cdots,\textbf{V}_N\}\)</span>. Here <span class="math notranslate nohighlight">\(\textbf{r}\)</span> and <span class="math notranslate nohighlight">\(\textbf{v}\)</span> are vectors of length <span class="math notranslate nohighlight">\(3N\)</span>.</p>
 <p>With the initial condition specified by <span class="math notranslate nohighlight">\(\{\textbf{r},\textbf{v}\}\)</span>, we still need to construct the equation of motion. In general, they are described by</p>
@@ -273,7 +274,7 @@
 <p>In practice, we usually do not have the detailed information of the system with <span class="math notranslate nohighlight">\(N\sim \mathcal{O}(10^{23})\)</span>. Also, the coupled equation of motion is very complicated. Even if we manage to have the solution, it is impossible to make sense out of this complicated deterministic result.</p>
 </section>
 <section id="statistical-description">
-<h2>Statistical description<a class="headerlink" href="#statistical-description" title="Permalink to this headline">#</a></h2>
+<h2>Statistical description<a class="headerlink" href="#statistical-description" title="Permalink to this heading">#</a></h2>
 <p>Now we understand the challenge from the deterministic approach. We known we have a huge space that describes the possible initial condition of our macroscopic system. Are all the initial condition equivalent? Suppose we have a <span class="math notranslate nohighlight">\(1m^3\)</span> box, it is possible that we have a “homogeneous” distribution of or particle as our initial condition. The initial condition that all the particles are concentrated at the top left corner of <span class="math notranslate nohighlight">\(1cm^3\)</span> volume of our box is also valid. However, from the intuition, we know it is more likely that the gas molecules will distribute evenly, instead of choosing to sit at one corner.</p>
 <p>This intuition motivates us to make some postulation about the initial conditions. Following is the Maxwell’s postulates:</p>
 <ol class="simple">
@@ -332,7 +333,7 @@ P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{
 <p>So we have <span class="math notranslate nohighlight">\(\lambda=\frac{m}{2k_BT}\)</span>.</p>
 </section>
 <section id="what-do-we-achieve">
-<h2>What do we achieve?<a class="headerlink" href="#what-do-we-achieve" title="Permalink to this headline">#</a></h2>
+<h2>What do we achieve?<a class="headerlink" href="#what-do-we-achieve" title="Permalink to this heading">#</a></h2>
 <p>Let’s review what we have done here.</p>
 <ol class="simple">
 <li><p>We assume the initial condition satisfy some statistical properties. Here, it is the statistical independence between particles, statistical independence between <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span> and the statistical independence of the projection of <span class="math notranslate nohighlight">\(\textbf{r},\textbf{v}\)</span>  on the <span class="math notranslate nohighlight">\(x,y,z\)</span> axes.</p></li>
@@ -377,10 +378,10 @@ P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{
                 </div>
                 <div class="title">Review of thermodynamics</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="Rev_thermodynamics.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -402,9 +403,7 @@ P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -416,7 +415,7 @@ P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -438,12 +437,11 @@ P=\frac{|F|}{S}=\frac{|\Delta P|}{S\Delta t}=\rho m \langle v_x^2 \rangle=\frac{
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

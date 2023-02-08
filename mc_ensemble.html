@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Canonical ensemble" href="c_ensemble.html" /><link rel="prev" title="Ergodicity" href="ergodicity.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Microcanonical ensemble - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,7 +258,7 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="microcanonical-ensemble">
-<h1>Microcanonical ensemble<a class="headerlink" href="#microcanonical-ensemble" title="Permalink to this headline">#</a></h1>
+<h1>Microcanonical ensemble<a class="headerlink" href="#microcanonical-ensemble" title="Permalink to this heading">#</a></h1>
 <p>What is an ensemble? It is a framework that relate the microscopic configuration with a probability. The micro canonical ensemble might be the simplest one to define. The system we are considering is a system with conserved energy. The microscopic states that satisfy this energy conserving constraints form the phase space of the system. The micro canonical ensemble assign equal weights to all those states in the constrained phase space.</p>
 <p>Why this assignment is useful? Because the equilibrium configurations has overwhelming number in the constrained phase space. So we can calculate the equilibrium value using the micro canonical ensemble. <em>i.e.</em> For extensive variable <span class="math notranslate nohighlight">\(A\)</span>, we have its equilibrium value <span class="math notranslate nohighlight">\(a^*\)</span> to be</p>
 <div class="math-wrapper docutils container">
@@ -302,9 +303,9 @@ S(X;a^*)=k_B\ln\left[\int d\xi \delta(A(\xi)-a^*)\right]=k_B\ln(|\Gamma_{a^*}|)\
 <p>In principle, <span class="math notranslate nohighlight">\(A\)</span> can be any extensive variable. Usually, the most important conserved quantity is the energy. So we consider the micro canonical ensemble to be the ensemble with fixed value of energy if we did not specified the conserved quantity explicitly.</p>
 <p>Let’s try to use some examples to demonstrate the idea.</p>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <section id="ideal-gas-model">
-<h3>Ideal gas model<a class="headerlink" href="#ideal-gas-model" title="Permalink to this headline">#</a></h3>
+<h3>Ideal gas model<a class="headerlink" href="#ideal-gas-model" title="Permalink to this heading">#</a></h3>
 <p>The Hamiltonian of the ideal gas model is</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -355,7 +356,7 @@ At this point, we can see that statistical mechanics can let us calculate the th
 <p>For microcanonical ensemble, <span class="math notranslate nohighlight">\(P(\xi)=\frac{1}{|\Gamma_E|}\)</span>.</p>
 </section>
 <section id="paramagnetic-phase">
-<h3>Paramagnetic phase<a class="headerlink" href="#paramagnetic-phase" title="Permalink to this headline">#</a></h3>
+<h3>Paramagnetic phase<a class="headerlink" href="#paramagnetic-phase" title="Permalink to this heading">#</a></h3>
 <p>Paramagnetic phase is a phase where the behavior of the magnetic moments (spins) are dominated by entropy. So it is almost like the spins are not interacting with each other. In that case, the spins can only interact with the external field. We choose the direction of the field to be the <span class="math notranslate nohighlight">\(z\)</span> direction, <span class="math notranslate nohighlight">\(\vec{h}=h\hat{e}^z\)</span>. Consider we have a lattice where the magnetic moments sitting on site <span class="math notranslate nohighlight">\(i\)</span> to be <span class="math notranslate nohighlight">\(\vec{\mu}_i=\mu\sigma_i\hat{e}^z\)</span>. Here we make a bold assumption that the magnetic moment under field can only be parallel or anti-parallel with the external field. Since the spins are effectively decoupled with each other in the paramagnetic phase, this assumption is not a bad assumption to start with.</p>
 <p>The energy of the system is</p>
 <div class="math-wrapper docutils container">
@@ -423,10 +424,10 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
                 </div>
                 <div class="title">Canonical ensemble</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="ergodicity.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -448,9 +449,7 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -462,7 +461,7 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -486,12 +485,11 @@ S=k_B\ln(|\Gamma_E|)\xrightarrow{\text{Stirling's approximation}} S(M) \text{.}
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

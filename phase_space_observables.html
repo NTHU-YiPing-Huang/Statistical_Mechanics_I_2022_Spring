@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="The fundamental postulate" href="entropy_exp.html" /><link rel="prev" title="Postulates of statistical mechanics" href="Postulates_SM.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Phase space and Observables - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,16 +258,16 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="phase-space-and-observables">
-<h1>Phase space and Observables<a class="headerlink" href="#phase-space-and-observables" title="Permalink to this headline">#</a></h1>
+<h1>Phase space and Observables<a class="headerlink" href="#phase-space-and-observables" title="Permalink to this heading">#</a></h1>
 <p>The right hand side of the Boltzmann’s postulate is related to the concept of accessible phase space. So we will start our discussion from what is a phase space and how it could related to the thermodynamic extensive variables. After that, we can ask: why choosing the phase space? What’s so special about phase space? The answer is related to the Liouville’s theorem.</p>
 <section id="phase-space">
-<h2>Phase space<a class="headerlink" href="#phase-space" title="Permalink to this headline">#</a></h2>
+<h2>Phase space<a class="headerlink" href="#phase-space" title="Permalink to this heading">#</a></h2>
 <p>As we mentioned, we care about the canonical evolution of a Hamiltonian system where the energy is conserved. For one particle, we need to specify its position, <span class="math notranslate nohighlight">\(\textbf{R}_1\)</span>, and momentum, <span class="math notranslate nohighlight">\(\textbf{P}_1\)</span>, to uniquely define its status. For <span class="math notranslate nohighlight">\(N\)</span> particles, we will need <span class="math notranslate nohighlight">\(N\)</span> position vectors and <span class="math notranslate nohighlight">\(N\)</span> momentum vectors to describe them.</p>
 <p>We can use <span class="math notranslate nohighlight">\(\xi\equiv\{\textbf{R}_1,\textbf{R}_2,...,\textbf{R}_N;\textbf{P}_1,\textbf{P}_2,...,\textbf{P}_N\}\)</span> to describe the status of the <span class="math notranslate nohighlight">\(N\)</span> particle system. The space spanned by <span class="math notranslate nohighlight">\(\xi\)</span> is the phase space.</p>
 <p>The phase space is a space with <span class="math notranslate nohighlight">\(6N\)</span> degrees of freedom if we consider a three-dimensional system. Since <span class="math notranslate nohighlight">\(N\sim 10^{23}\)</span>, we actually have a high-dimensional system!</p>
 <p>When we consider the evolution where energy is conserved, we therefore has <span class="math notranslate nohighlight">\(6N-1\)</span> independent degrees of freedom. The evolution of the system therefore is described by a path parameterized by the evolution time <span class="math notranslate nohighlight">\(t\)</span> in the <span class="math notranslate nohighlight">\(6N\)</span> dimensional phase space.</p>
 <section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h3>
 <ol class="simple">
 <li><p>Single free particle in one-dimensional space:
 The phase space trajectory for a single free particle is easy. We know the momentum is a fixed value <span class="math notranslate nohighlight">\(p_0\)</span> and the position just grows linearly with time <span class="math notranslate nohighlight">\(t\)</span>. That trajectory is a straight line in the phase space.</p></li>
@@ -278,12 +279,12 @@ In this case, we have a 4 dimensional phase space. Even this simplest non-trivia
 </section>
 </section>
 <section id="observables-definition-of-accessible">
-<h2>Observables (Definition of “accessible”)<a class="headerlink" href="#observables-definition-of-accessible" title="Permalink to this headline">#</a></h2>
+<h2>Observables (Definition of “accessible”)<a class="headerlink" href="#observables-definition-of-accessible" title="Permalink to this heading">#</a></h2>
 <p>The path <span class="math notranslate nohighlight">\(\xi(t)\)</span> can be quite complicated in the high dimensional space. However, as we know the thermodynamic extensive variables such as energy and volume can fluctuates at the microscopic level, but they are relative smooth functions of the microscopic coordinates at the macroscopic scale.</p>
 <p>Therefore it is reasonable to define a family of function that take the rather complicated microscopic configurations <span class="math notranslate nohighlight">\(\xi(t)\)</span> as input, but output a relative smooth value as a function of time. We call such functions observables.</p>
 <p>It is quite reasonable to postulate that the extensive variables in thermodynamics are all observables. (We can measure them!) The accessible volume of the phase space is therefore specified by the thermodynamics extensive variables.</p>
 <section id="id1">
-<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Observable:</p>
 <ul>
@@ -314,7 +315,7 @@ x&lt;0, 0
 </div>
 </section>
 <section id="example-of-accessible-phase-space">
-<h3>Example of “accessible” phase space<a class="headerlink" href="#example-of-accessible-phase-space" title="Permalink to this headline">#</a></h3>
+<h3>Example of “accessible” phase space<a class="headerlink" href="#example-of-accessible-phase-space" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The piston: The volume of the chamber for a piston is a variable. When we discuss the accessible phase space for the gas inside the chamber, we need to discuss the real space part and the momentum part. We will discuss the space part first since it is relative straight forward. The gas in the chamber cannot escape. Therefore, the volume of the chamber is the accessible volume for the gas inside the chamber.</p></li>
 </ul>
@@ -353,10 +354,10 @@ x&lt;0, 0
                 </div>
                 <div class="title">The fundamental postulate</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="Postulates_SM.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -378,9 +379,7 @@ x&lt;0, 0
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -392,7 +391,7 @@ x&lt;0, 0
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -420,12 +419,11 @@ x&lt;0, 0
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>

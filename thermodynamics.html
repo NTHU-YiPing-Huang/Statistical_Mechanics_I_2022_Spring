@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Motivation: Why learn statistical mechanics?" href="motivation.html" /><link rel="prev" title="Introduction" href="introduction.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Thermodynamics as an effective theory - 2022 Statistical Mechanics (I) - PHYS521000</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -148,7 +148,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="syllabus.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="syllabus.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo-wide.svg" alt="Logo"/>
@@ -157,7 +157,7 @@
   <span class="sidebar-brand-text">2022 Statistical Mechanics (I) - PHYS521000</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -242,7 +242,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -257,10 +258,10 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="thermodynamics-as-an-effective-theory">
-<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this headline">#</a></h1>
+<h1>Thermodynamics as an effective theory<a class="headerlink" href="#thermodynamics-as-an-effective-theory" title="Permalink to this heading">#</a></h1>
 <p><em>Reference: <span id="id1">[<a class="reference internal" href="biblio.html#id2" title="Luca Peliti. Statistical mechanics in a nutshell. Princeton University Press, 2011.">Pel11</a>]</span> Chapter 2 and <span id="id2">[<a class="reference internal" href="biblio.html#id3" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> 6.4</em></p>
 <section id="what-is-thermodynamics">
-<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this headline">#</a></h2>
+<h2>What is thermodynamics?<a class="headerlink" href="#what-is-thermodynamics" title="Permalink to this heading">#</a></h2>
 <p>Thermodynamics is a phenomenological theory. Phenomenological theory means it is based on observed phenomena or based on experiments. However, the microscopic question such as why the macroscopic system behaves in a specific way given we assume how the microscopic components interact with each other is not within the describability region of a phenomenological theory.</p>
 <p>What phenomenological theory provides is the relation between different macroscopic quantities. For example, we will discuss energy, temperature, pressure, volume, particle number, chemical potential, free energy, <em>etc.</em> . Of course, those quantities are related to each other by several equations. Thermodynamics provides a framework to start from a minimum set of axioms such that we are able to derive the core relations and use them to construct various relations between those quantities that we need to explain our experiments.</p>
 <p>The logic is like we have a set of experiments; we might construct some relations using this particular set of experimental data. Then, we apply the set of rules to other systems. Of course, this set of rules could work or fail. If it works, we keep it into our phenomenological theory. If it doesn’t, we try to find ways to fix it by including other rules.  After exploring a huge set of experiments, we reformulate our theory by finding physical arguments to keep the core relations. We iterated this process for a long time; now, we have the thermodynamics in our textbook that can be applied to various systems.</p>
@@ -272,13 +273,13 @@
 </figure>
 </section>
 <section id="how-to-go-from-microscopic-to-macroscopic">
-<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this headline">#</a></h2>
+<h2>How to go from microscopic to macroscopic?<a class="headerlink" href="#how-to-go-from-microscopic-to-macroscopic" title="Permalink to this heading">#</a></h2>
 <p>Different systems might have very different microscopic descriptions. Therefore, going from microscopic physics to macroscopic physics also varies. It is usually challenging to derive the macroscopic expressions from microscopic theories. The challenge lies in the microscopic degrees of freedom that interact with each other.</p>
 <p>In this course, as many textbooks did, we will start from the idealized limit where the microscopic theory is “simple” in the sense that they do not have interaction. Those models are usually too naive to describe real physical systems. However, the non-interacting limit allows us to go pretty far and make an explicit connection with the macroscopic observables. In that sense, they are very useful for us to formulate abstract ideas in statistical mechanics. We will formally describe the idea of statistical mechanics and use those non-interacting systems to build some intuition about the meaning of the system.</p>
 <p>Once we know what happened in non-interacting systems, we can use them as a starting point to treat the interaction effects through mean-field treatment or perturbative pictures. With those examples, it helps us to develop a picture of how we can go from microscopic theory to macroscopic description, at least in principle.</p>
 <p>Of course, those examples are introduced because they are tractable and well studied. There are more interesting systems that are still under active research. We will not be able to cover them all. I will try to mention some of them during the lectures.</p>
 <section id="microscopic-theory-statistical-mechanics-and-macroscopic-observables">
-<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this headline">#</a></h3>
+<h3>Microscopic theory, statistical mechanics and macroscopic observables<a class="headerlink" href="#microscopic-theory-statistical-mechanics-and-macroscopic-observables" title="Permalink to this heading">#</a></h3>
 <p>I mentioned microscopic theory in the last section. What does it mean? The definition of microscopic physics is not very sharp. Usually, in condensed matter physics, what we mean by microscopic refers to the scale below or around atomic scales. For example, when we study the thermodynamic property of salt (<span class="math notranslate nohighlight">\(NaCl\)</span>), the microscopic degrees of freedom will be the ions <span class="math notranslate nohighlight">\(Na^+\)</span>, <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons surrounding them. In practice, understanding those degrees of freedom is still quite challenging. The nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span> and <span class="math notranslate nohighlight">\(Cl^-\)</span> will interact with electrons. The nuclei could oscillate. The electrons could interact with each other, <em>etc.</em></p>
 <p>At the microscopic scale defined above, we are facing a quite complicated system. There are at least three families of degrees of freedom: the nuclei of <span class="math notranslate nohighlight">\(Na^+\)</span>, the nuclei of <span class="math notranslate nohighlight">\(Cl^-\)</span> and the electrons. All of them are interact with each other. Even worse, we are talking about <span class="math notranslate nohighlight">\(10^{23}\)</span> of them. How should we analyze a system with such high complexity?</p>
 <p>There are at least two routes:</p>
@@ -336,10 +337,10 @@
                 </div>
                 <div class="title">Motivation: Why learn statistical mechanics?</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="introduction.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -361,9 +362,7 @@
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -375,7 +374,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -399,12 +398,11 @@
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
